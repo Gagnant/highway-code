@@ -34,17 +34,19 @@ extension HttpSessionConnector: HttpConnector {
         let resourceRequest = createSessionRequest(for: request)
         let task = SessionDataTaskAdapter<Value>()
         task.adaptee = session.dataTask(with: resourceRequest) { [decoder] (data, response, error) in
-            if let error = error {
-                task.onFailure?(error)
-            } else if let data = data {
-                do {
-                    let value = try decoder.decode(Value.self, from: data)
-                    task.onSuccess?(value)
-                } catch {
+            DispatchQueue.main.async {
+                if let error = error {
                     task.onFailure?(error)
+                } else if let data = data {
+                    do {
+                        let value = try decoder.decode(Value.self, from: data)
+                        task.onSuccess?(value)
+                    } catch {
+                        task.onFailure?(error)
+                    }
+                } else {
+                    NSLog("Invalid calling convention!")
                 }
-            } else {
-                NSLog("Invalid calling convention!")
             }
         }
         return AnyHttpConnectorTask(task)
@@ -54,10 +56,12 @@ extension HttpSessionConnector: HttpConnector {
         let resourceRequest = createSessionRequest(for: request)
         let task = SessionDataTaskAdapter<Void>()
         task.adaptee = session.dataTask(with: resourceRequest) { (data, response, error) in
-            if let error = error {
-                task.onFailure?(error)
-            } else {
-                task.onSuccess?(())
+            DispatchQueue.main.async {
+                if let error = error {
+                    task.onFailure?(error)
+                } else {
+                    task.onSuccess?(())
+                }
             }
         }
         return AnyHttpConnectorTask(task)
@@ -76,9 +80,12 @@ extension HttpSessionConnector: HttpConnector {
         sessionRequest.timeoutInterval = request.timeout
         sessionRequest.httpMethod = request.method
 
+        sessionRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+        sessionRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
         sessionRequest.setValue("1", forHTTPHeaderField: "vfx-version")
         sessionRequest.setValue("3", forHTTPHeaderField: "vfx-device-os")
-        sessionRequest.setValue(UIDevice.current.identifierForVendor!.uuidString ?? "", forHTTPHeaderField: "vfx-device-token")
+        sessionRequest.setValue(UIDevice.current.identifierForVendor!.uuidString, forHTTPHeaderField: "vfx-device-token")
 
         if let content = request.content {
             sessionRequest.httpBody = content.data
