@@ -95,6 +95,10 @@ private final class AnyResourceBox<R: Resource>: AnyResourceBase<R.Value> {
         resource.attach(observer, observation: observation)
     }
 
+    override func remove(_ observer: AnyObject) {
+        resource.remove(observer)
+    }
+
     override func update() {
         resource.update()
     }

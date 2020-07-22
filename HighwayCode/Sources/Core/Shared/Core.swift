@@ -15,14 +15,29 @@ class Core {
 
     /// Configures shared instance.
     static func configure() {
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+
+        let encoder = JSONEncoder()
+
         let httpConnector = HttpSessionConnector(
             session: URLSession.shared,
             baseURL: URL(string: "https://vfx-api.mvs.gov.ua/api/mobile/")!,
-            decoder: AnyTopLevelDecoder(JSONDecoder())
+            decoder: AnyTopLevelDecoder(decoder)
         )
+
         let connectors = ConnectorManager(http: httpConnector)
+
         let camerasService = RemoteCamerasService(connectors: connectors)
-        shared = Core(camerasService: camerasService)
+
+        let resolutionsService = RemoteResolutionsService(connectors: connectors, encoder: encoder)
+
+        shared = Core(camerasService: camerasService, resolutionsService: resolutionsService)
     }
 
     // MARK: -
@@ -30,8 +45,12 @@ class Core {
     /// Cameras service.
     let camerasService: CamerasService
 
-    init(camerasService: CamerasService) {
+    /// Resolutions service.
+    let resolutionsService: ResolutionsService
+
+    init(camerasService: CamerasService, resolutionsService: ResolutionsService) {
         self.camerasService = camerasService
+        self.resolutionsService = resolutionsService
     }
 
 }

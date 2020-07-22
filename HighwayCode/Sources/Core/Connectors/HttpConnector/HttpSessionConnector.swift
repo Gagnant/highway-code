@@ -42,7 +42,12 @@ extension HttpSessionConnector: HttpConnector {
                         let value = try decoder.decode(Value.self, from: data)
                         task.onSuccess?(value)
                     } catch {
-                        task.onFailure?(error)
+                        do {
+                            let value2 = try decoder.decode(Failure.self, from: data)
+                            task.onFailure?(value2)
+                        } catch let error2 {
+                            task.onFailure?(error2)
+                        }
                     }
                 } else {
                     NSLog("Invalid calling convention!")
@@ -55,12 +60,21 @@ extension HttpSessionConnector: HttpConnector {
     func task<Failure: Decodable & Error>(request: Request, errorType: Failure.Type) -> AnyHttpConnectorTask<Void> {
         let resourceRequest = createSessionRequest(for: request)
         let task = SessionDataTaskAdapter<Void>()
-        task.adaptee = session.dataTask(with: resourceRequest) { (data, response, error) in
+        task.adaptee = session.dataTask(with: resourceRequest) { [decoder] (data, response, error) in
             DispatchQueue.main.async {
                 if let error = error {
                     task.onFailure?(error)
-                } else {
+                } else if (response as! HTTPURLResponse).statusCode == 200 {
                     task.onSuccess?(())
+                } else if let data = data {
+                    do {
+                        let value2 = try decoder.decode(Failure.self, from: data)
+                        task.onFailure?(value2)
+                    } catch let error2 {
+                        task.onFailure?(error2)
+                    }
+                } else {
+                    fatalError()
                 }
             }
         }

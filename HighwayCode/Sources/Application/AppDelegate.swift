@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var window: UIWindow? = {
         let controller = UITabBarController()
         controller.viewControllers = [
-            CamerasBuilder.build()
+            CamerasBuilder.build(),
+            VehicleSubscriptionBuilder.build()
         ]
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = controller

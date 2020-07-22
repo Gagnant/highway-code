@@ -29,6 +29,12 @@
 		04AF61B824C83AF4009E93F3 /* AnyResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF61B724C83AF4009E93F3 /* AnyResource.swift */; };
 		04AF61BA24C83B14009E93F3 /* Resolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF61B924C83B14009E93F3 /* Resolution.swift */; };
 		04AF61BC24C83B34009E93F3 /* ResolutionMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF61BB24C83B34009E93F3 /* ResolutionMedia.swift */; };
+		04AF61C724C85620009E93F3 /* VehicleSubscriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF61C624C85620009E93F3 /* VehicleSubscriptionViewModel.swift */; };
+		04AF61CA24C8568F009E93F3 /* VehicleSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF61C924C8568F009E93F3 /* VehicleSubscriptionViewController.swift */; };
+		04AF61CC24C85698009E93F3 /* VehicleSubscriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF61CB24C85698009E93F3 /* VehicleSubscriptionViewController.xib */; };
+		04AF61CE24C856AA009E93F3 /* VehicleSubscriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF61CD24C856AA009E93F3 /* VehicleSubscriptionPresenter.swift */; };
+		04AF61D024C856BD009E93F3 /* VehicleSubscriptionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF61CF24C856BD009E93F3 /* VehicleSubscriptionRouter.swift */; };
+		04AF61D224C856CF009E93F3 /* VehicleSubscriptionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF61D124C856CF009E93F3 /* VehicleSubscriptionBuilder.swift */; };
 		04BE415024C6DFFF00673E45 /* RequestContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE414024C6DFFF00673E45 /* RequestContent.swift */; };
 		04BE415124C6DFFF00673E45 /* HttpConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE414124C6DFFF00673E45 /* HttpConnector.swift */; };
 		04BE415624C6DFFF00673E45 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE414824C6DFFF00673E45 /* Request.swift */; };
@@ -43,6 +49,11 @@
 		04BE416D24C6F07200673E45 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE416C24C6F07200673E45 /* Core.swift */; };
 		04BE416F24C6F0EE00673E45 /* ConnectorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE416E24C6F0EE00673E45 /* ConnectorManager.swift */; };
 		04BE417524C6F13700673E45 /* CamerasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE417424C6F13700673E45 /* CamerasService.swift */; };
+		04E1471A24C8609200313D01 /* IVehicleSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1471724C8609200313D01 /* IVehicleSubscriptionView.swift */; };
+		04E1471B24C8609200313D01 /* IVehicleSubscriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1471824C8609200313D01 /* IVehicleSubscriptionPresenter.swift */; };
+		04E1471C24C8609200313D01 /* IVehicleSubscriptionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1471924C8609200313D01 /* IVehicleSubscriptionRouter.swift */; };
+		04E1471E24C8623E00313D01 /* NVActivityIndicatorViewExtended.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E1471D24C8623E00313D01 /* NVActivityIndicatorViewExtended.framework */; };
+		04E1471F24C86B8D00313D01 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AF61D424C85F59009E93F3 /* NVActivityIndicatorView.framework */; };
 		04EB3B0024C6DAE100BD58DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB3AFF24C6DAE100BD58DD /* AppDelegate.swift */; };
 		04EB3B0924C6DAE600BD58DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EB3B0824C6DAE600BD58DD /* Assets.xcassets */; };
 		04EB3B0C24C6DAE600BD58DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EB3B0A24C6DAE600BD58DD /* LaunchScreen.storyboard */; };
@@ -71,6 +82,13 @@
 		04AF61B724C83AF4009E93F3 /* AnyResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyResource.swift; sourceTree = "<group>"; };
 		04AF61B924C83B14009E93F3 /* Resolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolution.swift; sourceTree = "<group>"; };
 		04AF61BB24C83B34009E93F3 /* ResolutionMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionMedia.swift; sourceTree = "<group>"; };
+		04AF61C624C85620009E93F3 /* VehicleSubscriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSubscriptionViewModel.swift; sourceTree = "<group>"; };
+		04AF61C924C8568F009E93F3 /* VehicleSubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSubscriptionViewController.swift; sourceTree = "<group>"; };
+		04AF61CB24C85698009E93F3 /* VehicleSubscriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleSubscriptionViewController.xib; sourceTree = "<group>"; };
+		04AF61CD24C856AA009E93F3 /* VehicleSubscriptionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSubscriptionPresenter.swift; sourceTree = "<group>"; };
+		04AF61CF24C856BD009E93F3 /* VehicleSubscriptionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSubscriptionRouter.swift; sourceTree = "<group>"; };
+		04AF61D124C856CF009E93F3 /* VehicleSubscriptionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSubscriptionBuilder.swift; sourceTree = "<group>"; };
+		04AF61D424C85F59009E93F3 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		04BE414024C6DFFF00673E45 /* RequestContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestContent.swift; sourceTree = "<group>"; };
 		04BE414124C6DFFF00673E45 /* HttpConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConnector.swift; sourceTree = "<group>"; };
 		04BE414824C6DFFF00673E45 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -85,6 +103,10 @@
 		04BE416C24C6F07200673E45 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		04BE416E24C6F0EE00673E45 /* ConnectorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectorManager.swift; sourceTree = "<group>"; };
 		04BE417424C6F13700673E45 /* CamerasService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerasService.swift; sourceTree = "<group>"; };
+		04E1471724C8609200313D01 /* IVehicleSubscriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVehicleSubscriptionView.swift; sourceTree = "<group>"; };
+		04E1471824C8609200313D01 /* IVehicleSubscriptionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVehicleSubscriptionPresenter.swift; sourceTree = "<group>"; };
+		04E1471924C8609200313D01 /* IVehicleSubscriptionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVehicleSubscriptionRouter.swift; sourceTree = "<group>"; };
+		04E1471D24C8623E00313D01 /* NVActivityIndicatorViewExtended.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewExtended.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewExtended.framework; sourceTree = "<group>"; };
 		04EB3AFC24C6DAE100BD58DD /* HighwayCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighwayCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EB3AFF24C6DAE100BD58DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04EB3B0824C6DAE600BD58DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +120,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				049E719F24C72C5500F6508F /* MapKit.framework in Frameworks */,
+				04E1471F24C86B8D00313D01 /* NVActivityIndicatorView.framework in Frameworks */,
+				04E1471E24C8623E00313D01 /* NVActivityIndicatorViewExtended.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +149,8 @@
 		049E719D24C72C5500F6508F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04E1471D24C8623E00313D01 /* NVActivityIndicatorViewExtended.framework */,
+				04AF61D424C85F59009E93F3 /* NVActivityIndicatorView.framework */,
 				049E719E24C72C5500F6508F /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -182,6 +208,46 @@
 				04AF61B524C83AD4009E93F3 /* Resource.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		04AF61BD24C85422009E93F3 /* VehicleSubscription */ = {
+			isa = PBXGroup;
+			children = (
+				04AF61BF24C85481009E93F3 /* Models */,
+				04AF61BE24C8547D009E93F3 /* Protocols */,
+				04AF61D124C856CF009E93F3 /* VehicleSubscriptionBuilder.swift */,
+				04AF61CD24C856AA009E93F3 /* VehicleSubscriptionPresenter.swift */,
+				04AF61CF24C856BD009E93F3 /* VehicleSubscriptionRouter.swift */,
+				04AF61C824C85683009E93F3 /* Controller */,
+			);
+			path = VehicleSubscription;
+			sourceTree = "<group>";
+		};
+		04AF61BE24C8547D009E93F3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				04E1471824C8609200313D01 /* IVehicleSubscriptionPresenter.swift */,
+				04E1471924C8609200313D01 /* IVehicleSubscriptionRouter.swift */,
+				04E1471724C8609200313D01 /* IVehicleSubscriptionView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		04AF61BF24C85481009E93F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04AF61C624C85620009E93F3 /* VehicleSubscriptionViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		04AF61C824C85683009E93F3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04AF61C924C8568F009E93F3 /* VehicleSubscriptionViewController.swift */,
+				04AF61CB24C85698009E93F3 /* VehicleSubscriptionViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		04BE413C24C6DFE800673E45 /* Connectors */ = {
@@ -373,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				04BE417624C6F31800673E45 /* Cameras */,
+				04AF61BD24C85422009E93F3 /* VehicleSubscription */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -417,6 +484,7 @@
 				04EB3AF824C6DAE100BD58DD /* Sources */,
 				04EB3AF924C6DAE100BD58DD /* Frameworks */,
 				04EB3AFA24C6DAE100BD58DD /* Resources */,
+				04AF61D324C85EF4009E93F3 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -467,12 +535,38 @@
 			files = (
 				04EB3B0C24C6DAE600BD58DD /* LaunchScreen.storyboard in Resources */,
 				049E71A824C73CE600F6508F /* Localizable.strings in Resources */,
+				04AF61CC24C85698009E93F3 /* VehicleSubscriptionViewController.xib in Resources */,
 				04EB3B0924C6DAE600BD58DD /* Assets.xcassets in Resources */,
 				049E718D24C7282400F6508F /* CamerasViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04AF61D324C85EF4009E93F3 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorViewExtended.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorViewExtended.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04EB3AF824C6DAE100BD58DD /* Sources */ = {
@@ -486,7 +580,10 @@
 				04BE415B24C6DFFF00673E45 /* HttpSessionConnector.swift in Sources */,
 				04EB3B0024C6DAE100BD58DD /* AppDelegate.swift in Sources */,
 				04BE415924C6DFFF00673E45 /* StringContent.swift in Sources */,
+				04AF61D224C856CF009E93F3 /* VehicleSubscriptionBuilder.swift in Sources */,
+				04AF61C724C85620009E93F3 /* VehicleSubscriptionViewModel.swift in Sources */,
 				04BE416924C6E72D00673E45 /* TopLevelDecoder.swift in Sources */,
+				04E1471C24C8609200313D01 /* IVehicleSubscriptionRouter.swift in Sources */,
 				049E71A124C72D0600F6508F /* Camera.swift in Sources */,
 				04BE415124C6DFFF00673E45 /* HttpConnector.swift in Sources */,
 				04AF61BC24C83B34009E93F3 /* ResolutionMedia.swift in Sources */,
@@ -495,6 +592,7 @@
 				049E718C24C7282400F6508F /* CamerasViewController.swift in Sources */,
 				04AF61B124C83A62009E93F3 /* Subscription.swift in Sources */,
 				04AF61AA24C7438D009E93F3 /* RemoteCamerasService.swift in Sources */,
+				04E1471A24C8609200313D01 /* IVehicleSubscriptionView.swift in Sources */,
 				04AF61BA24C83B14009E93F3 /* Resolution.swift in Sources */,
 				04BE416F24C6F0EE00673E45 /* ConnectorManager.swift in Sources */,
 				049E71A324C7369900F6508F /* CLLocationCoordinate2D+Extensions.swift in Sources */,
@@ -504,15 +602,19 @@
 				04BE416D24C6F07200673E45 /* Core.swift in Sources */,
 				049E719524C7286000F6508F /* CamerasBuilder.swift in Sources */,
 				04BE417524C6F13700673E45 /* CamerasService.swift in Sources */,
+				04AF61D024C856BD009E93F3 /* VehicleSubscriptionRouter.swift in Sources */,
 				04BE415624C6DFFF00673E45 /* Request.swift in Sources */,
 				049E718F24C7283000F6508F /* ICamerasView.swift in Sources */,
 				049E719824C7287A00F6508F /* CamerasViewModel.swift in Sources */,
 				049E719124C7284100F6508F /* ICamerasPresenter.swift in Sources */,
 				049E719324C7285000F6508F /* CamerasPresenter.swift in Sources */,
+				04AF61CE24C856AA009E93F3 /* VehicleSubscriptionPresenter.swift in Sources */,
 				04AF61B824C83AF4009E93F3 /* AnyResource.swift in Sources */,
+				04AF61CA24C8568F009E93F3 /* VehicleSubscriptionViewController.swift in Sources */,
 				04BE416524C6E40F00673E45 /* AnyHttpConnectorTask.swift in Sources */,
 				04BE415024C6DFFF00673E45 /* RequestContent.swift in Sources */,
 				04AF61AF24C767D7009E93F3 /* ResolutionsService.swift in Sources */,
+				04E1471B24C8609200313D01 /* IVehicleSubscriptionPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,6 +760,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MDY39C55RJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HighwayCode/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -676,6 +782,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MDY39C55RJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HighwayCode/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
