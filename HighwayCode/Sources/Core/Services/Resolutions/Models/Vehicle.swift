@@ -14,7 +14,7 @@ struct Vehicle: Decodable, Hashable {
     let plate: String
 
     /// Vehicle brand.
-    let brand: String
+    let brand: String?
 
     /// Vehicle model.
     let model: String?

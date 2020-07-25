@@ -26,7 +26,6 @@ class CamerasViewController: UIViewController, ICamerasView {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
-        configureTabBar()
         configureCameraView()
     }
 
@@ -49,28 +48,8 @@ class CamerasViewController: UIViewController, ICamerasView {
     // MARK: -
 
     func update(with viewModel: CamerasViewModel) {
-        if viewModel.isLoading {
-            activityIndicator.startAnimating()
-        } else {
-            activityIndicator.stopAnimating()
-        }
-
-
-        let existingAnot = camerasMapView.annotations.compactMap { $0 as? CameraAnnotation }
-
-        let removed = existingAnot.filter { annot -> Bool in
-            return !viewModel.cameras.contains(annot.camera)
-        }
-        camerasMapView.removeAnnotations(removed)
-
-        let added = viewModel.cameras.filter { camera -> Bool in
-            return !existingAnot.map { $0.camera }.contains(camera)
-        }.map(CameraAnnotation.init)
-
-
-        camerasMapView.addAnnotations(added)
-
-
+        viewModel.isLoading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+        updateAnnotations(viewModel: viewModel)
     }
 
     // MARK: -
@@ -89,19 +68,22 @@ class CamerasViewController: UIViewController, ICamerasView {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: activityIndicator)
     }
 
-    private func configureTabBar() {
-        precondition(navigationController?.viewControllers.first == self)
-        navigationController?.tabBarItem.title = NSLocalizedString("screen-cameras-tab-title", comment: "")
-
-        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 20, height: 20))
-        let image = renderer.image { context in
-            #imageLiteral(resourceName: "SpeedCamera").draw(in: CGRect.init(origin: CGPoint.zero, size: CGSize(width: 20, height: 20)))
-        }
-        navigationController?.tabBarItem.image = image
-    }
-
     private func configureCameraView() {
         camerasMapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "MarkerAnnotationView")
+    }
+
+    private func updateAnnotations(viewModel: CamerasViewModel) {
+        let currentAnnotations = camerasMapView.annotations.compactMap {
+            $0 as? CameraAnnotation
+        }
+        let replacementCameras = Set(viewModel.cameras)
+        let removedAnnotations = currentAnnotations.filter {
+            !replacementCameras.contains($0.camera)
+        }
+        camerasMapView.removeAnnotations(removedAnnotations)
+        let currentCameras = Set(currentAnnotations.map(\.camera))
+        let addedAnnotations = replacementCameras.subtracting(currentCameras).map(CameraAnnotation.init)
+        camerasMapView.addAnnotations(addedAnnotations)
     }
 
 }
@@ -117,7 +99,7 @@ extension CamerasViewController: MKMapViewDelegate {
         ) as! MKMarkerAnnotationView
         annotationView.titleVisibility = .hidden
         annotationView.subtitleVisibility = .adaptive
-        annotationView.glyphImage = #imageLiteral(resourceName: "SpeedCamera")
+        annotationView.animatesWhenAdded = true
         return annotationView
     }
 

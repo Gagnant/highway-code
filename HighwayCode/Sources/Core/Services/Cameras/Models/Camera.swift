@@ -29,10 +29,7 @@ extension Camera: Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        location = CLLocationCoordinate2D(
-            latitude: try container.decode(Double.self, forKey: .latitude),
-            longitude: try container.decode(Double.self, forKey: .longitude)
-        )
+        location = try CLLocationCoordinate2D(from: decoder)
         address = try container.decode(String.self, forKey: .address)
         name = try container.decode(String.self, forKey: .name)
     }

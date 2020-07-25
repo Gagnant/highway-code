@@ -13,16 +13,16 @@ class VehicleSubscriptionRouter: IVehicleSubscriptionRouter {
     weak var controller: UIViewController?
 
     func next() {
-        // TODO: Do something
+        controller?.navigationController?.dismiss(animated: true, completion: nil)
     }
 
     func dismiss() {
-        // TODO: Do something
+        controller?.navigationController?.dismiss(animated: true, completion: nil)
     }
 
     func error(message: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        let actionTitle = NSLocalizedString("alert-error-continue", comment: "")
+        let actionTitle = NSLocalizedString("vehicle-subscription-error-continue", comment: "")
         let action = UIAlertAction(title: actionTitle, style: .default, handler: nil)
         alert.addAction(action)
         controller?.present(alert, animated: true, completion: nil)

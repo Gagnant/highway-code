@@ -10,17 +10,16 @@ import UIKit
 
 class CamerasBuilder {
 
-    private init() {
-        // NOP
-    }
-
     static func build() -> UIViewController {
         let presenter = CamerasPresenter(
             camerasService: Core.shared.camerasService
         )
         let controller = CamerasViewController(presenter: presenter)
         presenter.view = controller
-        return UINavigationController(rootViewController: controller)
+        let navigation = UINavigationController(rootViewController: controller)
+        navigation.tabBarItem.title = NSLocalizedString("cameras-list-tab-title", comment: "")
+        navigation.tabBarItem.image = #imageLiteral(resourceName: "SpeedCameraAlternative")
+        return navigation
     }
 
 }

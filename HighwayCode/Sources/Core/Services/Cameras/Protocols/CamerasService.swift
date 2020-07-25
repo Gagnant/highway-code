@@ -9,6 +9,6 @@
 protocol CamerasService {
 
     /// Available cameras.
-    var cameras: AnyResource<Cameras> { get }
+    var cameras: AnyResource<[Camera]> { get }
 
 }

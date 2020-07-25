@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Document"; ObjectID = "8QI-q8-64f"; */
+"8QI-q8-64f.text" = "Document";
+
+/* Class = "UITextField"; placeholder = "AA 1234 AX"; ObjectID = "AxQ-h3-yCv"; */
+"AxQ-h3-yCv.placeholder" = "AA 1234 AX";
+
+/* Class = "UITextField"; placeholder = "00 АА 000000"; ObjectID = "F8W-nu-zh2"; */
+"F8W-nu-zh2.placeholder" = "00 АА 000000";
+
+/* Class = "UILabel"; text = "Vehicle Number"; ObjectID = "cpx-mr-5ch"; */
+"cpx-mr-5ch.text" = "Vehicle Number";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "tqM-ar-2Oa"; */
+"tqM-ar-2Oa.normalTitle" = "Submit";

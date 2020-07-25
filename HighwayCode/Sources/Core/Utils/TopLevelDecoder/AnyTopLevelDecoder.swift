@@ -1,6 +1,6 @@
 //
 //  AnyTopLevelDecoder.swift
-//  Cash Collection
+//  HighwayCode
 //
 //  Created by Andrew Visotskyy on 21.04.2020.
 //  Copyright © 2020 Andrew Vysotskyi. All rights reserved.

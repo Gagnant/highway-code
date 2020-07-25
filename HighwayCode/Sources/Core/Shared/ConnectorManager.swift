@@ -11,4 +11,10 @@ struct ConnectorManager {
     /// Subscription connector.
     let http: HttpConnector
 
+    /// Subscriptions connector.
+    let subscription: SubscriptionConnector
+
+    /// Callable connector.
+    let callable: CallableConnector
+
 }

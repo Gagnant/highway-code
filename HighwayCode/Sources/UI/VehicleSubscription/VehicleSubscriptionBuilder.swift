@@ -10,18 +10,12 @@ import UIKit
 
 class VehicleSubscriptionBuilder {
 
-    private init() {
-        // NOP
-    }
-
     static func build() -> UIViewController {
         let router = VehicleSubscriptionRouter()
         let presenter = VehicleSubscriptionPresenter(
             router: router, resolutions: Core.shared.resolutionsService
         )
-        let controller = VehicleSubscriptionViewController(
-            presenter: presenter, isSkipAvailable: false
-        )
+        let controller = VehicleSubscriptionViewController(presenter: presenter)
         presenter.view = controller
         router.controller = controller
         let navigation = UINavigationController(rootViewController: controller)

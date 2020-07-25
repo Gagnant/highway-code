@@ -19,7 +19,7 @@ final class CamerasPresenter: ICamerasPresenter {
 
     func viewWillAppear() {
         let camerasResource = camerasService.cameras
-        camerasResource.attach(self) { [weak self] in
+        camerasResource.require(self) { [weak self] in
             self?.updateView()
         }
         camerasResource.update()
@@ -27,7 +27,7 @@ final class CamerasPresenter: ICamerasPresenter {
     }
 
     func viewDidDisappear() {
-        camerasService.cameras.remove(self)
+        camerasService.cameras.unrequire(self)
     }
 
     func didTapRefreshButton() {
@@ -37,7 +37,7 @@ final class CamerasPresenter: ICamerasPresenter {
     // MARK: - Private
 
     private func updateView() {
-        let cameras = camerasService.cameras.value?.devices.map { camera -> CameraViewModel in
+        let cameras = camerasService.cameras.value?.map { camera -> CameraViewModel in
             return .init(name: camera.name, address: camera.address, location: camera.location)
         }
         let viewModel = CamerasViewModel(

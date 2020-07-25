@@ -8,6 +8,9 @@
 
 protocol IVehicleSubscriptionPresenter {
 
+    /// Invoked when view is loaded into memory.
+    func viewDidLoad()
+
     /// Called when document value changes.
     func didChange(document: String)
 

@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "vehicles-list-action"; ObjectID = "I8c-c7-px1"; */
+"I8c-c7-px1.normalTitle" = "vehicles-list-action";
+
+/* Class = "UILabel"; text = "vehicles-list-missing-content"; ObjectID = "R3h-aV-Bpx"; */
+"R3h-aV-Bpx.text" = "vehicles-list-missing-content";
+
+/* Class = "UILabel"; text = "vehicles-list-title"; ObjectID = "RaI-pw-GyD"; */
+"RaI-pw-GyD.text" = "vehicles-list-title";

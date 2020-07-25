@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="s9Q-KU-Vz5" customClass="FineDetailsImageMediaCollectionCell" customModule="HighwayCode" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="btt-Lz-NR5">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFd-Tb-NKz" userLabel="Container">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="URP-F0-RhI">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="URP-F0-RhI" secondAttribute="height" multiplier="1:1" id="d8b-ZH-7nk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="URP-F0-RhI" firstAttribute="leading" secondItem="fFd-Tb-NKz" secondAttribute="leading" id="2lV-mt-EEu"/>
+                            <constraint firstItem="URP-F0-RhI" firstAttribute="top" secondItem="fFd-Tb-NKz" secondAttribute="top" id="EZ7-Gr-1OB"/>
+                            <constraint firstAttribute="bottom" secondItem="URP-F0-RhI" secondAttribute="bottom" id="U6h-fB-RRg"/>
+                            <constraint firstAttribute="trailing" secondItem="URP-F0-RhI" secondAttribute="trailing" id="Wwz-Tl-MvI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="fFd-Tb-NKz" firstAttribute="leading" secondItem="btt-Lz-NR5" secondAttribute="leading" id="AVA-Uc-07s"/>
+                    <constraint firstItem="fFd-Tb-NKz" firstAttribute="top" secondItem="btt-Lz-NR5" secondAttribute="top" id="Fol-O3-bZi"/>
+                    <constraint firstAttribute="bottom" secondItem="fFd-Tb-NKz" secondAttribute="bottom" id="Pwp-JW-Jb3"/>
+                    <constraint firstAttribute="trailing" secondItem="fFd-Tb-NKz" secondAttribute="trailing" id="aGY-cr-Rqk"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="177" height="158.5"/>
+            <connections>
+                <outlet property="mediaImageView" destination="URP-F0-RhI" id="xZ4-il-uK2"/>
+            </connections>
+            <point key="canvasLocation" x="166.66666666666669" y="92.410714285714278"/>
+        </collectionViewCell>
+    </objects>
+</document>

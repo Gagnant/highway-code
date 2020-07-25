@@ -13,7 +13,6 @@ class VehicleSubscriptionPresenter: IVehicleSubscriptionPresenter {
     private var document: String?
     private var vehicleNumber: String?
 
-
     private let router: IVehicleSubscriptionRouter
     private let resolutions: ResolutionsService
 
@@ -46,7 +45,7 @@ class VehicleSubscriptionPresenter: IVehicleSubscriptionPresenter {
 
     func didTapNext() {
         guard let document = self.document, let vehicleNumber = self.vehicleNumber else {
-            NSLog("Car information is missing!")
+            NSLog("Vehicle information is missing!")
             return
         }
         assert(!document.isEmpty && !vehicleNumber.isEmpty)

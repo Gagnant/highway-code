@@ -1,6 +1,6 @@
 //
 //  RequestContent.swift
-//  Cash Collection
+//  HighwayCode
 //
 //  Created by Andrew Visotskyy on 22.04.2020.
 //  Copyright © 2020 Gagnant. All rights reserved.

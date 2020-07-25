@@ -36,10 +36,10 @@ struct Resolution: Decodable {
     let media: [ResolutionMedia]
 
     /// Price of related violation.
-    let amount: Int
+    let amount: Decimal
 
     /// Amount to pay in UAH coins.
-    let payAmount: Int
+    let payAmount: Decimal
 
     /// Defines is resolution was paid.
     let isPaid: Bool
@@ -63,8 +63,8 @@ struct Resolution: Decodable {
         resolutionDate = try container.decode(Date.self, forKey: .resolutionDate)
         location = try CLLocationCoordinate2D(from: decoder)
         media = try container.decode([ResolutionMedia].self, forKey: .media)
-        amount = try container.decode(Int.self, forKey: .amount)
-        payAmount = try container.decode(Int.self, forKey: .payAmount)
+        amount = Decimal(try container.decode(Int.self, forKey: .amount)) / 100
+        payAmount = Decimal(try container.decode(Int.self, forKey: .payAmount)) / 100
         isPaid = try container.decode(Bool.self, forKey: .isPaid)
         violationText = try container.decode(String.self, forKey: .violationText)
     }

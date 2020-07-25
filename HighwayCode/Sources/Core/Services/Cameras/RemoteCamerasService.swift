@@ -16,10 +16,12 @@ class RemoteCamerasService: CamerasService {
 
     // MARK: - CamerasService
 
-    private(set) lazy var cameras: AnyResource<Cameras> = {
+    private(set) lazy var cameras: AnyResource<[Camera]> = {
         let request = Request(method: "GET", path: "cameras")
-        let resource = HttpResource<Cameras, ServiceError>(connector: connectors.http, request: request)
-        return AnyResource(resource)
+        let resource = HttpConnectorResource<CamerasResponse, ServiceError>(
+            connector: connectors.http, request: request
+        )
+        return resource.map { $0.devices }
     }()
 
 }

@@ -1,20 +1,37 @@
 //
 //  Core.swift
-//  PersonsSample
+//  HighwayCode
 //
 //  Created by Andrew Visotskyy on 18.06.2020.
-//  Copyright © 2020 gagnant. All rights reserved.
+//  Copyright © 2020 Gagnant. All rights reserved.
 //
 
 import Foundation
+import Firebase
+import FirebaseFunctions
 
 class Core {
 
     /// Shared core instance.
     static var shared: Core!
 
-    /// Configures shared instance.
+    /// Configures a shared `Core`. This method should be called after the app
+    /// is launched and before using `Core` services. This method should be
+    /// called from the main thread.
     static func configure() {
+        FirebaseApp.configure()
+        let connectors = createSharedConnectorManager()
+        let resolutionsService = RemoteResolutionsService(connectors: connectors, encoder: JSONEncoder())
+        let core = Core(
+            authService: FirebaseAuthenticationService(firebase: FirebaseApp.app()!),
+            camerasService: RemoteCamerasService(connectors: connectors),
+            paymentsService: RemotePaymentsService(connectors: connectors, resolutionProvider: resolutionsService),
+            resolutionsService: resolutionsService
+        )
+        shared = core
+    }
+
+    private static func createSharedConnectorManager() -> ConnectorManager {
 
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -31,115 +48,48 @@ class Core {
             decoder: AnyTopLevelDecoder(decoder)
         )
 
-        let connectors = ConnectorManager(http: httpConnector)
 
-        let camerasService = RemoteCamerasService(connectors: connectors)
-
-        let resolutionsService = RemoteResolutionsService(connectors: connectors, encoder: encoder)
-
-        shared = Core(camerasService: camerasService, resolutionsService: resolutionsService)
+        let firebase: (subscription: SubscriptionConnector, callable: CallableConnector) = {
+            let firebase = FirebaseApp.app()!
+            let functions = Functions.functions(region: "europe-west1")
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .secondsSince1970
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .secondsSince1970
+            let connectors = (
+                subscription: FirestoreConnector(firebase: firebase, decoder: decoder),
+                callable: CallableFunctionsConnector(functions: functions, decoder: decoder, encoder: encoder)
+            )
+            return connectors
+        }()
+        return .init(http: httpConnector, subscription: firebase.subscription, callable: firebase.callable)
     }
 
     // MARK: -
 
+    /// Authentication serivce.
+    let authService: AuthenticationService
+
     /// Cameras service.
     let camerasService: CamerasService
+
+    /// Payments service.
+    let paymentsService: PaymentsService
 
     /// Resolutions service.
     let resolutionsService: ResolutionsService
 
-    init(camerasService: CamerasService, resolutionsService: ResolutionsService) {
+    /// Creates core instance.
+    init(
+        authService: AuthenticationService,
+        camerasService: CamerasService,
+        paymentsService: PaymentsService,
+        resolutionsService: ResolutionsService
+    ) {
+        self.authService = authService
         self.camerasService = camerasService
+        self.paymentsService = paymentsService
         self.resolutionsService = resolutionsService
     }
 
 }
-
-
-
-
-class HttpResource<Value: Decodable, Failure: Decodable & Error>: Resource {
-
-    /// Connector to fetch resource from.
-    let connector: HttpConnector
-
-    /// Resource request.
-    let request: Request
-
-    // MARK: - Resource
-
-    init(connector: HttpConnector, request: Request) {
-        self.connector = connector
-        self.request = request
-        isLoading = false
-        observations = [:]
-    }
-
-    /// Value.
-    var value: Value?
-
-    /// Error.
-    var error: Error?
-
-    /// Is loading.
-    var isLoading: Bool
-
-    private var observations: [ObjectIdentifier: () -> Void]
-
-    func update() {
-        guard !isLoading else {
-            return
-        }
-        var task = connector.task(request: request, errorType: Failure.self, valueType: Value.self)
-        task.onSuccess = { [weak self] value in
-            self?.error = nil
-            self?.value = value
-            self?.isLoading = false
-            self?.observations.values.forEach { $0() }
-        }
-        task.onFailure = { [weak self] error in
-            self?.error = error
-            self?.isLoading = false
-            self?.observations.values.forEach { $0() }
-        }
-        isLoading = true
-        task.resume()
-        observations.values.forEach { $0() }
-    }
-
-    func attach(_ observer: AnyObject, observation: @escaping () -> Void) {
-        let identifier = ObjectIdentifier(observer)
-        guard observations[identifier] == nil else {
-            NSLog("Observation for given observer is already registerd!")
-            return
-        }
-        observations[identifier] = observation
-    }
-
-    func remove(_ observer: AnyObject) {
-        let identifier = ObjectIdentifier(observer)
-        observations[identifier] = nil
-    }
-
-    func didChanged() {
-        observations.values.forEach { $0() }
-    }
-
-}
-
-
-
-
-
-
-import CoreLocation
-
-
-
-
-
-
-
-
-//
-
