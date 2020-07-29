@@ -94,7 +94,6 @@
 		049E719F24C72C5500F6508F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049E719E24C72C5500F6508F /* MapKit.framework */; };
 		049E71A124C72D0600F6508F /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E71A024C72D0600F6508F /* Camera.swift */; };
 		049E71A324C7369900F6508F /* CLLocationCoordinate2D+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E71A224C7369900F6508F /* CLLocationCoordinate2D+Extensions.swift */; };
-		049E71A824C73CE600F6508F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 049E71AA24C73CE600F6508F /* Localizable.strings */; };
 		049E71AC24C741BF00F6508F /* CamerasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E71AB24C741BF00F6508F /* CamerasResponse.swift */; };
 		04AF61AA24C7438D009E93F3 /* RemoteCamerasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF61A924C7438D009E93F3 /* RemoteCamerasService.swift */; };
 		04AF61AF24C767D7009E93F3 /* ResolutionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF61AE24C767D7009E93F3 /* ResolutionsService.swift */; };
@@ -121,6 +120,7 @@
 		04B2C0C724CB05880059C08C /* FineDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2C0C624CB05880059C08C /* FineDetailsPresenter.swift */; };
 		04B2C0C924CB05960059C08C /* FineDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2C0C824CB05960059C08C /* FineDetailsRouter.swift */; };
 		04B2C0CB24CB05A10059C08C /* FineDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2C0CA24CB05A10059C08C /* FineDetailsBuilder.swift */; };
+		04B44FA524D1FABD00BBCA40 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04B44FA324D1FABD00BBCA40 /* Localizable.strings */; };
 		04B7B1F324D043A500BD5447 /* Resource+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7B1F224D043A500BD5447 /* Resource+Transform.swift */; };
 		04B7B1F624D0446500BD5447 /* HttpConnectorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7B1F524D0446500BD5447 /* HttpConnectorResource.swift */; };
 		04BE415024C6DFFF00673E45 /* RequestContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE414024C6DFFF00673E45 /* RequestContent.swift */; };
@@ -202,7 +202,6 @@
 		0458EC6D24D000DC00DB60E7 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		047F407B24D0A4A200154191 /* AnyFinesListElementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyFinesListElementViewModel.swift; sourceTree = "<group>"; };
 		047F407D24D0B02C00154191 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/VehicleSubscriptionViewController.strings; sourceTree = "<group>"; };
-		047F407F24D0B02E00154191 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		047F408124D0B1C800154191 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VehiclesListViewController.xib; sourceTree = "<group>"; };
 		047F408424D0B1D200154191 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VehiclesListViewController.strings; sourceTree = "<group>"; };
 		047F408624D0B1D300154191 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/VehiclesListViewController.strings; sourceTree = "<group>"; };
@@ -270,7 +269,6 @@
 		049E719E24C72C5500F6508F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		049E71A024C72D0600F6508F /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		049E71A224C7369900F6508F /* CLLocationCoordinate2D+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extensions.swift"; sourceTree = "<group>"; };
-		049E71A924C73CE600F6508F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		049E71AB24C741BF00F6508F /* CamerasResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerasResponse.swift; sourceTree = "<group>"; };
 		04AF61A924C7438D009E93F3 /* RemoteCamerasService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCamerasService.swift; sourceTree = "<group>"; };
 		04AF61AE24C767D7009E93F3 /* ResolutionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionsService.swift; sourceTree = "<group>"; };
@@ -289,7 +287,6 @@
 		04B2C0A324C9ECC90059C08C /* FinesListTooltipCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinesListTooltipCollectionCell.swift; sourceTree = "<group>"; };
 		04B2C0A524C9ECD30059C08C /* FinesListTooltipCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinesListTooltipCollectionCell.xib; sourceTree = "<group>"; };
 		04B2C0A824CA24280059C08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VehicleSubscriptionViewController.xib; sourceTree = "<group>"; };
-		04B2C0AE24CA246A0059C08C /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		04B2C0B024CA266B0059C08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VehicleSubscriptionViewController.strings; sourceTree = "<group>"; };
 		04B2C0B924CB020D0059C08C /* FineDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDetailsViewModel.swift; sourceTree = "<group>"; };
 		04B2C0BB24CB021D0059C08C /* IFineDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFineDetailsView.swift; sourceTree = "<group>"; };
@@ -299,6 +296,12 @@
 		04B2C0C624CB05880059C08C /* FineDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDetailsPresenter.swift; sourceTree = "<group>"; };
 		04B2C0C824CB05960059C08C /* FineDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDetailsRouter.swift; sourceTree = "<group>"; };
 		04B2C0CA24CB05A10059C08C /* FineDetailsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDetailsBuilder.swift; sourceTree = "<group>"; };
+		04B44FA024D1F9C700BBCA40 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/FineDetailsViewController.strings; sourceTree = "<group>"; };
+		04B44FA424D1FABD00BBCA40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04B44FA624D1FAD300BBCA40 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04B44FA724D1FAF700BBCA40 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04B44FA824D1FBB400BBCA40 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B44FAB24D1FE1500BBCA40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FineDetailsViewController.strings; sourceTree = "<group>"; };
 		04B7B1F224D043A500BD5447 /* Resource+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Transform.swift"; sourceTree = "<group>"; };
 		04B7B1F524D0446500BD5447 /* HttpConnectorResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpConnectorResource.swift; sourceTree = "<group>"; };
 		04BE414024C6DFFF00673E45 /* RequestContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestContent.swift; sourceTree = "<group>"; };
@@ -348,7 +351,6 @@
 		04EB3AFC24C6DAE100BD58DD /* HighwayCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighwayCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EB3AFF24C6DAE100BD58DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04EB3B0824C6DAE600BD58DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04EB3B0D24C6DAE600BD58DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1090,10 +1092,10 @@
 		04EB3B1724C6DC4300BD58DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				04EB3B0D24C6DAE600BD58DD /* Info.plist */,
+				04B44FA324D1FABD00BBCA40 /* Localizable.strings */,
+				04B44FA824D1FBB400BBCA40 /* Info.plist */,
 				0482133F24CDB1C200A8BA23 /* GoogleService-Info.plist */,
 				04EB3B0824C6DAE600BD58DD /* Assets.xcassets */,
-				049E71AA24C73CE600F6508F /* Localizable.strings */,
 				047F408F24D0B5D900154191 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -1181,9 +1183,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B44FA524D1FABD00BBCA40 /* Localizable.strings in Resources */,
 				0421008C24CF5D2B002BCB9C /* VehiclesListElementCollectionCell.xib in Resources */,
 				04E1475624C8753D00313D01 /* FinesListViewController.xib in Resources */,
-				049E71A824C73CE600F6508F /* Localizable.strings in Resources */,
 				04B2C0A724CA24280059C08C /* VehicleSubscriptionViewController.xib in Resources */,
 				04E1475124C8753D00313D01 /* FinesListHeaderCollectionCell.xib in Resources */,
 				04EB3B0924C6DAE600BD58DD /* Assets.xcassets in Resources */,
@@ -1364,6 +1366,8 @@
 			children = (
 				044E3C5224CC2EE700E3F370 /* Base */,
 				047F408E24D0B51D00154191 /* uk */,
+				04B44FA024D1F9C700BBCA40 /* ru */,
+				04B44FAB24D1FE1500BBCA40 /* en */,
 			);
 			name = FineDetailsViewController.xib;
 			sourceTree = "<group>";
@@ -1391,16 +1395,6 @@
 			name = FinesListFineDetailsCollectionCell.xib;
 			sourceTree = "<group>";
 		};
-		049E71AA24C73CE600F6508F /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				049E71A924C73CE600F6508F /* en */,
-				04B2C0AE24CA246A0059C08C /* uk */,
-				047F407F24D0B02E00154191 /* ru */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		04B2C0A924CA24280059C08C /* VehicleSubscriptionViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1410,6 +1404,16 @@
 				047F408C24D0B3BB00154191 /* uk */,
 			);
 			name = VehicleSubscriptionViewController.xib;
+			sourceTree = "<group>";
+		};
+		04B44FA324D1FABD00BBCA40 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04B44FA424D1FABD00BBCA40 /* en */,
+				04B44FA624D1FAD300BBCA40 /* ru */,
+				04B44FA724D1FAF700BBCA40 /* uk */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

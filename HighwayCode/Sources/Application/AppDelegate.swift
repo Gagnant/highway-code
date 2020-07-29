@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = controller
-        window.tintColor = #colorLiteral(red: 0.9882352941, green: 0.3647058824, blue: 0.3019607843, alpha: 1)
+        window.tintColor = #colorLiteral(red: 0.08235294118, green: 0.4941176471, blue: 0.9843137255, alpha: 1)
         return window
     }()
 

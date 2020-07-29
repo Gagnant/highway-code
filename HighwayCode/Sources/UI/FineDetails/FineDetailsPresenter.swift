@@ -78,7 +78,7 @@ class FineDetailsPresenter: IFineDetailsPresenter {
             series: resolution.series,
             number: resolution.number,
             vehiclePlate: resolution.vehicle.plate,
-            violationText: resolution.violationText,
+            violationText: #""\#(resolution.violationText)""#,
             violationDate: resolution.violationDate,
             resolutionDate: resolution.resolutionDate,
             location: resolution.location,
@@ -93,3 +93,4 @@ class FineDetailsPresenter: IFineDetailsPresenter {
     }
 
 }
+

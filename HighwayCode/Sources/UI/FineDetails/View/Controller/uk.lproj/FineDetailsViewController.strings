@@ -1,11 +1,11 @@
-/* Class = "UIButton"; normalTitle = "fine-details-action-pay"; ObjectID = "2Xw-KZ-ies"; */
-"2Xw-KZ-ies.normalTitle" = "fine-details-action-pay";
+/*Class = "UIButton"; normalTitle = "fine-details-action-pay"; ObjectID = "2Xw-KZ-ies";*/
+"2Xw-KZ-ies.normalTitle" = "Сплатити";
 
-/* Class = "UILabel"; text = "fine-details-vehicle-title"; ObjectID = "NZp-up-duX"; */
-"NZp-up-duX.text" = "fine-details-vehicle-title";
+/*Class = "UILabel"; text = "fine-details-vehicle-title"; ObjectID = "NZp-up-duX";*/
+"NZp-up-duX.text" = "Номерний знак ТЗ";
 
-/* Class = "UILabel"; text = "fine-details-resolution-date-title"; ObjectID = "vSb-7h-p0U"; */
-"vSb-7h-p0U.text" = "fine-details-resolution-date-title";
+/*Class = "UILabel"; text = "fine-details-resolution-date-title"; ObjectID = "vSb-7h-p0U";*/
+"vSb-7h-p0U.text" = "Дата винесення постанови";
 
 /* Class = "UILabel"; text = "fine-details-resolution-number-title"; ObjectID = "zEd-P7-gDV"; */
-"zEd-P7-gDV.text" = "fine-details-resolution-number-title";
+"zEd-P7-gDV.text" = "Серія та номер постанови";

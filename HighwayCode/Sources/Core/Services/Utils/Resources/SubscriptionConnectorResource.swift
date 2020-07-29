@@ -67,7 +67,7 @@ class SubscriptionConnectorResource<Value: Decodable>: Resource {
     }
 
     private func didUnrequireSubscription() {
-        guard let subscription = subscription else {
+        guard let subscription = subscription, observations.isEmpty else {
             return
         }
         connector.cancelSubscription(subscription)

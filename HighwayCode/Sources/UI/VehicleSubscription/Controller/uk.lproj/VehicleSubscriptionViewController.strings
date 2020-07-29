@@ -1,15 +1,14 @@
-
-/* Class = "UILabel"; text = "vehicle-subscription-document-title"; ObjectID = "8QI-q8-64f"; */
+/*Class = "UILabel"; text = "vehicle-subscription-document-title"; ObjectID = "8QI-q8-64f";*/
 "8QI-q8-64f.text" = "ІПН / серія та номер паспорта / серія та номер посвідчення водія / серія та номер свідотства про реєстрацію ТЗ";
 
-/* Class = "UITextField"; placeholder = "vehicle-subscription-plate-input"; ObjectID = "AxQ-h3-yCv"; */
-"AxQ-h3-yCv.placeholder" = "AA 1234 AX";
+/*Class = "UITextField"; placeholder = "vehicle-subscription-plate-input"; ObjectID = "AxQ-h3-yCv";*/
+"AxQ-h3-yCv.placeholder" = "AA 7777 AX";
 
-/* Class = "UITextField"; placeholder = "vehicle-subscription-document-input"; ObjectID = "F8W-nu-zh2"; */
-"F8W-nu-zh2.placeholder" = "ВУА 00102";
+/*Class = "UITextField"; placeholder = "vehicle-subscription-document-input"; ObjectID = "F8W-nu-zh2";*/
+"F8W-nu-zh2.placeholder" = "ВАХ 000001";
 
-/* Class = "UILabel"; text = "vehicle-subscription-plate-title"; ObjectID = "cpx-mr-5ch"; */
+/*Class = "UILabel"; text = "vehicle-subscription-plate-title"; ObjectID = "cpx-mr-5ch";*/
 "cpx-mr-5ch.text" = "Номер транспортного засобу";
 
-/* Class = "UIButton"; normalTitle = "vehicle-subscription-action"; ObjectID = "tqM-ar-2Oa"; */
+/*Class = "UIButton"; normalTitle = "vehicle-subscription-action"; ObjectID = "tqM-ar-2Oa";*/
 "tqM-ar-2Oa.normalTitle" = "Додати";

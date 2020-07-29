@@ -1,8 +1,44 @@
-/* No comment provided by engineer. */
+/*No comment provided by engineer.*/
+"cameras-list-tab-title" = "Мапа камер";
+
+/*No comment provided by engineer.*/
+"fine-details-navigation-title" = "Постанова";
+
+/*No comment provided by engineer.*/
+"resolutions-list-extinguished-title" = "Погашені постанови";
+
+/*No comment provided by engineer.*/
+"resolutions-list-navigation-title" = "Мої штрафи";
+
+/*No comment provided by engineer.*/
+"resolutions-list-paid-title" = "Оплачені постанови";
+
+/*No comment provided by engineer.*/
+"resolutions-list-tooltip-paid-description" = "Після оплати штрафу його погашення відбувається протягом 5-10 робочих днів.";
+
+/*No comment provided by engineer.*/
+"resolutions-list-tooltip-paid-title" = "ЗВЕРНІТЬ УВАГУ!";
+
+/*No comment provided by engineer.*/
+"resolutions-list-tooltip-unpaid-description" = "При оплаті адміністративного штрафу в 10-ти денний термін, сума штрафу складає 50% від загальної суми.";
+
+/*No comment provided by engineer.*/
+"resolutions-list-tooltip-unpaid-title" = "ЗВЕРНІТЬ УВАГУ!";
+
+/*No comment provided by engineer.*/
+"resolutions-list-unpaid-title" = "Неоплачені постанови";
+
+/*No comment provided by engineer.*/
 "screen-cameras-navigation-title" = "Камери автофіксації";
 
-/* No comment provided by engineer. */
-"screen-cameras-tab-title" = "Камери";
+/*No comment provided by engineer.*/
+"screen-fine-details-navigation-title" = "Постанова";
 
-/* No comment provided by engineer. */
-"screen-fine-details-navigation-title" = "Порушення";
+/*No comment provided by engineer.*/
+"screen-fines-list-tab-title" = "Штрафи";
+
+/*No comment provided by engineer.*/
+"vehicle-subscription-error-continue" = "Зрозуміло";
+
+/*No comment provided by engineer.*/
+"vehicle-subscription-navigation-title" = "Додати транспорт";

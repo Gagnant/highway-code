@@ -1,33 +1,11 @@
-
-/* Class = "UIButton"; normalTitle = "Pay"; ObjectID = "2Xw-KZ-ies"; */
+/* Class = "UIButton"; normalTitle = "fine-details-action-pay"; ObjectID = "2Xw-KZ-ies"; */
 "2Xw-KZ-ies.normalTitle" = "Pay";
 
-/* Class = "UILabel"; text = "Vehicle Number"; ObjectID = "35D-7m-8n5"; */
-"35D-7m-8n5.text" = "Vehicle Number";
+/* Class = "UILabel"; text = "fine-details-vehicle-title"; ObjectID = "NZp-up-duX"; */
+"NZp-up-duX.text" = "Vehicle license plate";
 
-/* Class = "UILabel"; text = "Number"; ObjectID = "IcU-4j-Jle"; */
-"IcU-4j-Jle.text" = "Number";
+/* Class = "UILabel"; text = "fine-details-resolution-date-title"; ObjectID = "vSb-7h-p0U"; */
+"vSb-7h-p0U.text" = "Resolution issue date";
 
-/* Class = "UILabel"; text = "Date"; ObjectID = "Lcb-2q-PCe"; */
-"Lcb-2q-PCe.text" = "Date";
-
-/* Class = "UILabel"; text = "Vehicle"; ObjectID = "NZp-up-duX"; */
-"NZp-up-duX.text" = "Vehicle";
-
-/* Class = "UILabel"; text = "Description"; ObjectID = "Ycl-gh-w8p"; */
-"Ycl-gh-w8p.text" = "Description";
-
-/* Class = "UILabel"; text = "Date"; ObjectID = "cUf-67-Cj1"; */
-"cUf-67-Cj1.text" = "Date";
-
-/* Class = "UILabel"; text = "Reduced Amount"; ObjectID = "d4o-G8-HI7"; */
-"d4o-G8-HI7.text" = "Reduced Amount";
-
-/* Class = "UILabel"; text = "Amount"; ObjectID = "qFe-RO-xAF"; */
-"qFe-RO-xAF.text" = "Amount";
-
-/* Class = "UILabel"; text = "Resolution date"; ObjectID = "vSb-7h-p0U"; */
-"vSb-7h-p0U.text" = "Resolution date";
-
-/* Class = "UILabel"; text = "Resolution"; ObjectID = "zEd-P7-gDV"; */
-"zEd-P7-gDV.text" = "Resolution";
+/* Class = "UILabel"; text = "fine-details-resolution-number-title"; ObjectID = "zEd-P7-gDV"; */
+"zEd-P7-gDV.text" = "Resolution series and number";
