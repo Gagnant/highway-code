@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import DifferenceKit
 
 class FineDetailsViewController: UIViewController, IFineDetailsView {
 
@@ -26,7 +27,7 @@ class FineDetailsViewController: UIViewController, IFineDetailsView {
     @IBOutlet private var vehiclePlateLabel: UILabel!
 
     private let presenter: IFineDetailsPresenter
-    private var viewModel: FineDetailsViewModel?
+    private var mediaViewModels: [FineDetailsViewModel.Media]?
 
     init(presenter: IFineDetailsPresenter) {
         self.presenter = presenter
@@ -78,12 +79,22 @@ class FineDetailsViewController: UIViewController, IFineDetailsView {
         resolutionNumberLabel.text = viewModel.series + " " + viewModel.number
         resolutionDateLabel.text = dateFormatter.string(from: viewModel.resolutionDate)
         vehiclePlateLabel.text = viewModel.vehiclePlate
-        self.viewModel = viewModel
-        mediaCollectionView.reloadData()
+        configureMedia(viewModel: viewModel)
     }
 
     func setLoading(_ isLoading: Bool) {
-        isLoading ? rootScrollView.refreshControl?.beginRefreshing() : rootScrollView.refreshControl?.endRefreshing()
+        let refreshControl = rootScrollView.refreshControl
+        guard !isLoading else {
+            return
+        }
+        refreshControl?.endRefreshing()
+    }
+
+    private func configureMedia(viewModel: FineDetailsViewModel) {
+        let changeset = StagedChangeset(source: mediaViewModels ?? [], target: viewModel.media)
+        mediaCollectionView.reload(using: changeset) { [weak self] mediaItems in
+            self?.mediaViewModels = mediaItems
+        }
     }
 
     private func configureMap(location: CLLocationCoordinate2D) {
@@ -158,11 +169,11 @@ extension FineDetailsViewController: UICollectionViewDelegateFlowLayout & UIColl
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.media.count ?? 0
+        return mediaViewModels?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let itemViewModel = self.viewModel?.media[indexPath.row] else {
+        guard let itemViewModel = mediaViewModels?[indexPath.row] else {
             NSLog("Inconsistent controller state.")
             return UICollectionViewCell()
         }

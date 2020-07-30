@@ -9,17 +9,12 @@
 import UIKit
 import Foundation
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var window: UIWindow? = {
-        let controller = UITabBarController()
-        controller.viewControllers = [
-            FinesListBuilder.build(), CamerasBuilder.build()
-        ]
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = controller
+        window.rootViewController = WelcomeBuilder.build(window: window)
         window.tintColor = #colorLiteral(red: 0.08235294118, green: 0.4941176471, blue: 0.9843137255, alpha: 1)
         return window
     }()
@@ -29,24 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         Core.configure()
-        configureKeyboardManager()
         window?.makeKeyAndVisible()
         return true
     }
 
 }
-
-// MARK: -
-
-import IQKeyboardManagerSwift
-
-extension AppDelegate {
-
-    private func configureKeyboardManager() {
-        IQKeyboardManager.shared.keyboardDistanceFromTextField = 20
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableAutoToolbar = false
-    }
-
-}
-

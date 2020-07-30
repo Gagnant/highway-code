@@ -35,12 +35,11 @@ class VehiclesListViewController: UIViewController, IVehiclesListView {
         super.viewDidLoad()
         configureCollectionView()
         configureActivityIndicator()
-        UIView.performWithoutAnimation(presenter.viewDidLoad)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.viewWillAppear()
+        UIView.performWithoutAnimation(presenter.viewWillAppear)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -88,7 +87,6 @@ class VehiclesListViewController: UIViewController, IVehiclesListView {
     }
 
 }
-
 
 extension VehiclesListViewController: UICollectionViewDataSource {
 

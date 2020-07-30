@@ -98,7 +98,7 @@ extension CamerasViewController: MKMapViewDelegate {
             withIdentifier: "MarkerAnnotationView", for: annotation
         ) as! MKMarkerAnnotationView
         annotationView.titleVisibility = .hidden
-        annotationView.subtitleVisibility = .adaptive
+        annotationView.subtitleVisibility = .hidden
         annotationView.animatesWhenAdded = true
         return annotationView
     }

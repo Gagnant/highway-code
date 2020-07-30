@@ -22,8 +22,8 @@ final class FinesListTooltipCollectionCell: UICollectionViewCell {
         return UINib(nibName: "FinesListTooltipCollectionCell", bundle: bundle)
     }
 
-    static func instantiate(withOwner owner: Any? = nil) -> Self {
-        return nib.instantiate(withOwner: owner, options: nil).first as! Self
+    static func instantiate() -> FinesListTooltipCollectionCell {
+        return nib.instantiate(withOwner: nil, options: nil).first as! FinesListTooltipCollectionCell
     }
 
     // MARK: -

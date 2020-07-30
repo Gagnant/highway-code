@@ -1,0 +1,16 @@
+/* 
+  Core.strings
+  HighwayCode
+
+  Created by Andrew Visotskyy on 01.08.2020.
+  Copyright © 2020 Gagnant. All rights reserved.
+*/
+
+/*No comment provided by engineer.*/
+"error-missing-vehicle" = "Для указанного транспортного средства правонарушения не найдены.";
+
+/*No comment provided by engineer.*/
+"error-document-not-related-to-vehicle" = "Указанный документ не принадлежит владельцу транспортного средства.";
+
+/*No comment provided by engineer.*/
+"error-client-internal" = "К сожалению, что-то пошло не так, пожалуйста, попробуйте еще раз. Если ошибка повторится, обратитесь в службу поддержки.";

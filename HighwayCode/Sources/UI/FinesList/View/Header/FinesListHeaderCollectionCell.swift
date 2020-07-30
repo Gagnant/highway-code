@@ -21,8 +21,8 @@ final class FinesListHeaderCollectionCell: UICollectionViewCell {
         return UINib(nibName: "FinesListHeaderCollectionCell", bundle: bundle)
     }
 
-    static func instantiate(withOwner owner: Any? = nil) -> Self {
-        return nib.instantiate(withOwner: owner, options: nil).first as! Self
+    static func instantiate() -> FinesListHeaderCollectionCell {
+        return nib.instantiate(withOwner: nil, options: nil).first as! FinesListHeaderCollectionCell
     }
 
     // MARK: -

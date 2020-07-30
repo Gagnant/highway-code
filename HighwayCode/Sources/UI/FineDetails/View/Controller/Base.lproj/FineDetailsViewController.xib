@@ -62,6 +62,7 @@
                                                 </collectionView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Wan-CY-Zsl" firstAttribute="centerX" secondItem="LwR-SU-7Zb" secondAttribute="centerX" id="1rN-en-H1P"/>
                                                 <constraint firstItem="Wan-CY-Zsl" firstAttribute="centerY" secondItem="LwR-SU-7Zb" secondAttribute="centerY" id="I3o-c6-Nvy"/>

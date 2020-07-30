@@ -22,7 +22,7 @@ class VehicleSubscriptionRouter: IVehicleSubscriptionRouter {
 
     func error(message: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        let actionTitle = NSLocalizedString("vehicle-subscription-error-continue", comment: "")
+        let actionTitle = NSLocalizedString("generic-error-continue", comment: "")
         let action = UIAlertAction(title: actionTitle, style: .default, handler: nil)
         alert.addAction(action)
         controller?.present(alert, animated: true, completion: nil)

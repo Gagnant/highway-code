@@ -63,16 +63,15 @@ class FineDetailsPresenter: IFineDetailsPresenter {
     }
 
     private func updateView() {
-        let resolutionsResource = resolutionsService.resolutions
-        let _resolution = resolutionsResource.value?.first { [resolutionId] in
-            return $0.id == resolutionId
-        }
-        guard let resolution = _resolution else {
+        guard let resolution = resolutionsService.resolution(id: resolutionId) else {
             NSLog("Resolution with given id is missing.")
             return
         }
         let mediaViewModels = resolution.media.map { media -> FineDetailsViewModel.Media in
-            return .init(type: media.type == .image ? .image : .video, url: media.url, action: nil)
+            let action = TaggedClosureBox(id: "media-action") { [router] in
+                router.media(resolutionId: resolution.id, mediaId: media.id)
+            }
+            return .init(type: media.type == .image ? .image : .video, url: media.url, action: action)
         }
         let viewModel = FineDetailsViewModel(
             series: resolution.series,
@@ -86,9 +85,9 @@ class FineDetailsPresenter: IFineDetailsPresenter {
             amount: resolution.amount,
             payAmount: resolution.payAmount,
             isPaid: paymentsService.isResolutionPaid(resolutionId: resolutionId) ?? false,
-            isPaymentApproved: resolution.isPaid
+            isPaymentApproved: resolution.isExtinguished
         )
-        view?.setLoading(resolutionsResource.isLoading)
+        view?.setLoading(resolutionsService.resolutions.isLoading)
         view?.update(with: viewModel)
     }
 

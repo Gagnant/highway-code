@@ -8,17 +8,14 @@
 
 import Foundation
 
-class HttpConnectorResource<Value: Decodable, Failure: Decodable & Error>: Resource {
+class HttpConnectorResource<Content: Encodable, Value: Decodable, Failure: Decodable & Error>: Resource {
 
-    /// Connector to fetch resource from.
-    let connector: HttpConnector
-
-    /// Resource request.
-    let request: Request
+    private let connector: HttpConnector
+    private var request: Request<Content, Value, Failure>
 
     // MARK: - Resource
 
-    init(connector: HttpConnector, request: Request) {
+    init(connector: HttpConnector, request: Request<Content, Value, Failure>) {
         self.connector = connector
         self.request = request
         isLoading = false
@@ -26,35 +23,32 @@ class HttpConnectorResource<Value: Decodable, Failure: Decodable & Error>: Resou
     }
 
     /// Value.
-    var value: Value?
+    private(set) var value: Value?
 
     /// Error.
-    var error: Error?
+    private(set) var error: Error?
 
     /// Is loading.
-    var isLoading: Bool
-
-    private var observations: [ObjectIdentifier: () -> Void]
+    private(set) var isLoading: Bool
 
     func update() {
         guard !isLoading else {
             return
         }
-        var task = connector.task(request: request, errorType: Failure.self, valueType: Value.self)
-        task.onSuccess = { [weak self] value in
+        request.success = { [weak self] value in
             self?.error = nil
             self?.value = value
             self?.isLoading = false
-            self?.observations.values.forEach { $0() }
+            self?.didChange()
         }
-        task.onFailure = { [weak self] error in
+        request.failure = { [weak self] error in
             self?.error = error
             self?.isLoading = false
-            self?.observations.values.forEach { $0() }
+            self?.didChange()
         }
         isLoading = true
-        task.resume()
-        observations.values.forEach { $0() }
+        didChange()
+        _ = connector.execute(request: request)
     }
 
     func require(_ observer: AnyObject, observation: @escaping () -> Void) {
@@ -73,11 +67,9 @@ class HttpConnectorResource<Value: Decodable, Failure: Decodable & Error>: Resou
         didUnrequireSubscription()
     }
 
-    func didChanged() {
-        observations.values.forEach { $0() }
-    }
-
     // MARK: -
+
+    private var observations: [ObjectIdentifier: () -> Void]
 
     private func didRequireSubscription() {
         update()
@@ -85,6 +77,10 @@ class HttpConnectorResource<Value: Decodable, Failure: Decodable & Error>: Resou
 
     private func didUnrequireSubscription() {
         // NOP
+    }
+
+    private func didChange() {
+        observations.values.forEach { $0() }
     }
 
 }

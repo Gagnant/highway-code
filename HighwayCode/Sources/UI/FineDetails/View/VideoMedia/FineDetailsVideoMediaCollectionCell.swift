@@ -34,22 +34,31 @@ class FineDetailsVideoMediaCollectionCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         viewModel = nil
+        NotificationCenter.default.removeObserver(self)
         super.prepareForReuse()
     }
 
     func configure(viewModel: FineDetailsViewModel.Media) {
         assert(viewModel.type == .video)
-        let playerItem = AVPlayerItem(url: viewModel.url)
-        let queuePlayer = AVQueuePlayer(playerItem: playerItem)
-        videoPlayerLooper = AVPlayerLooper(player: queuePlayer, templateItem: playerItem)
-        videoPlayerView.player = queuePlayer
-        queuePlayer.play()
+        let player = AVPlayer(url: viewModel.url)
+        videoPlayerView.player = player
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(restartPlayer), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem
+        )
+        player.play()
+        self.viewModel = viewModel
     }
 
     // MARK: -
 
     @objc private func didTapContent() {
-        viewModel?.action?()
+        viewModel?.action?.closure(())
+    }
+
+    @objc private func restartPlayer() {
+        let player = videoPlayerView.player
+        player?.seek(to: .zero)
+        player?.play()
     }
 
     private func configureGesture() {

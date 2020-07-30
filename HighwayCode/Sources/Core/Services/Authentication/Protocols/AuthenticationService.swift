@@ -8,11 +8,11 @@
 
 protocol AuthenticationService {
 
-    /// Current user.
-    var user: User? { get }
-
     /// Delegate.
     var delegate: MulticastDelegate<AuthenticationServiceDelegate> { get }
+
+    /// Current user.
+    var user: User? { get }
 
     /// Authenticates user.
     func authenticate(success: (() -> Void)?, failure: (() -> Void)?)

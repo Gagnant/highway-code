@@ -14,12 +14,23 @@ struct ServiceError: LocalizedError, Decodable {
     let code: Int
 
     /// Error description.
-    let errorDescription: String?
+    var errorDescription: String? {
+        return localizedDescriptions(for: code)
+    }
 
-    // MARK: - LocalizedError
+    // MARK: -
 
     private enum CodingKeys: String, CodingKey {
-        case code = "resultCode", errorDescription = "errorText"
+        case code = "resultCode"
+    }
+
+    private func localizedDescriptions(for code: Int) -> String {
+        let descriptionKeys = [
+            107: "error-missing-vehicle",
+            108: "error-document-not-related-to-vehicle"
+        ]
+        let key = descriptionKeys[code] ?? "error-client-internal"
+        return NSLocalizedString(key, tableName: "Core", bundle: .main, comment: "")
     }
 
 }

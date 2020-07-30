@@ -17,8 +17,8 @@ class RemoteCamerasService: CamerasService {
     // MARK: - CamerasService
 
     private(set) lazy var cameras: AnyResource<[Camera]> = {
-        let request = Request(method: "GET", path: "cameras")
-        let resource = HttpConnectorResource<CamerasResponse, ServiceError>(
+        let request = Request<VoidCodable, CamerasResponse, ServiceError>(method: "GET", path: "cameras")
+        let resource = HttpConnectorResource(
             connector: connectors.http, request: request
         )
         return resource.map { $0.devices }

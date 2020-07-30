@@ -11,4 +11,7 @@ protocol IFinesListView: class {
     /// Updates view's content with given view model.
     func update(viewModel: FinesListViewModel)
 
+    /// Determines if view is loading.
+    func setLoading(_ isLoading: Bool)
+
 }

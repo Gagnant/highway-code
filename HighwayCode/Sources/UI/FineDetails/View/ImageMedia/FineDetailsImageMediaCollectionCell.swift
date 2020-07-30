@@ -39,12 +39,13 @@ class FineDetailsImageMediaCollectionCell: UICollectionViewCell {
         assert(viewModel.type == .image)
         mediaImageView.image = nil
         mediaImageView.sd_setImage(with: viewModel.url, completed: nil)
+        self.viewModel = viewModel
     }
 
     // MARK: -
 
     @objc private func didTapContent() {
-        viewModel?.action?()
+        viewModel?.action?.closure(())
     }
 
     private func configureGesture() {
@@ -53,7 +54,8 @@ class FineDetailsImageMediaCollectionCell: UICollectionViewCell {
     }
 
     private func configureImageView() {
-        //mediaImageView.sd_imageIndicator = SDWebImageProgressIndicator.`default`
+        mediaImageView.sd_imageIndicator = SDWebImageActivityIndicator.whiteLarge
+        mediaImageView.sd_imageTransition = .fade
     }
 
 }

@@ -8,10 +8,15 @@
 
 import Foundation
 
-struct ResolutionMedia: Decodable {
+struct ResolutionMedia: Decodable, Equatable {
 
     enum ContentType: Int, Decodable {
         case image = 1, video = 2
+    }
+
+    /// Resolution identifier.
+    var id: String {
+        return url.absoluteString
     }
 
     /// Media type.

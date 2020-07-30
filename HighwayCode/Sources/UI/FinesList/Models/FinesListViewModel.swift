@@ -14,7 +14,7 @@ struct FinesListViewModel {
     /// Elements.
     let elements: [AnyFinesListElementViewModel]
 
-    /// Determines if view is loading.
-    let isLoading: Bool
+    /// Determines if view is refreshing.
+    let isRefreshing: Bool
 
 }

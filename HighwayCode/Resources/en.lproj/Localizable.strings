@@ -38,7 +38,22 @@
 "screen-fines-list-tab-title" = "Fines";
 
 /*No comment provided by engineer.*/
-"vehicle-subscription-error-continue" = "Ok";
+"vehicle-subscription-navigation-title" = "Add vehicle";
 
 /*No comment provided by engineer.*/
-"vehicle-subscription-navigation-title" = "Add vehicle";
+"resolution-media-title-connector" = "%d of %d";
+
+/*No comment provided by engineer.*/
+"generic-error-message" = "Something went wrong, please try again.";
+
+/*No comment provided by engineer.*/
+"generic-error-continue" = "Continue";
+
+/*No comment provided by engineer.*/
+"vehicle-resolutions-action-remove" = "Delete";
+
+/*No comment provided by engineer.*/
+"vehicle-resolutions-removal-approve" = "Delete";
+
+/*No comment provided by engineer.*/
+"vehicle-resolutions-removal-cancel" = "Cancel";

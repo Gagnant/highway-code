@@ -12,11 +12,11 @@ class FinesListBuilder {
 
     static func build() -> UIViewController {
         let router = FinesListRouter()
-        let presenter = FinesListPresenter(
-            router: router,
+        let interactor = FinesListInteractor(
             resolutionsService: Core.shared.resolutionsService,
             paymentsService: Core.shared.paymentsService
         )
+        let presenter = FinesListPresenter(router: router, interactor: interactor)
         let controller = FinesListViewController(
             presenter: presenter, vehiclesListControllerFactory: router
         )

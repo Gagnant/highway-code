@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "title"; ObjectID = "PpU-ge-RdW"; */
+"PpU-ge-RdW.text" = "Штрафы ПДД";
+
+/* Class = "UILabel"; text = "description"; ObjectID = "fUH-YY-NdV"; */
+"fUH-YY-NdV.text" = "Проверка и оплата";
+
+/* Class = "UIButton"; normalTitle = "action-continue"; ObjectID = "ayN-WR-khQ"; */
+"ayN-WR-khQ.normalTitle" = "Продолжить";
+
+/* Class = "UILabel"; text = "action-details"; ObjectID = "vdd-Wz-QYc"; */
+"vdd-Wz-QYc.text" = "Нажимая \"Продолжить\" вы соглашаетесь с условиями и положениями сервиса.";

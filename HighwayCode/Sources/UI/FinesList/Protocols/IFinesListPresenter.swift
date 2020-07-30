@@ -17,7 +17,7 @@ protocol IFinesListPresenter {
     /// Invoked when view has disappeared.
     func viewDidDisappear()
 
-    /// Invoke when update button is pressed.
+    /// Invoked when update button is pressed.
     func didTapUpdate()
 
 }

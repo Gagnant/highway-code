@@ -10,7 +10,7 @@ import Foundation
 
 extension PaymentOrder {
 
-    struct Resolution: Codable {
+    struct Resolution: Codable, Equatable {
 
         /// Resolution identifier.
         let id: Int
@@ -23,7 +23,7 @@ extension PaymentOrder {
 
     }
 
-    struct Payment: Codable {
+    struct Payment: Codable, Equatable {
 
         /// Data.
         let data: String
@@ -33,13 +33,13 @@ extension PaymentOrder {
 
     }
 
-    enum Status: String, Codable {
+    enum Status: String, Codable, Equatable {
         case draft, success, failure, progress
     }
 
 }
 
-struct PaymentOrder {
+struct PaymentOrder: Equatable {
 
     /// Order id.
     let id: String

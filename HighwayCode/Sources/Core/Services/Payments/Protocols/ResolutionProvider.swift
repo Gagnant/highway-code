@@ -9,6 +9,6 @@
 protocol ResolutionProvider: class {
 
     /// Returns resolution for given id.
-    func resolution(for id: Int) -> Resolution?
+    func resolution(id: Int) -> Resolution?
 
 }

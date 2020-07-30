@@ -13,8 +13,8 @@ class VehiclesListRouter: IVehiclesListRouter {
     weak var controller: UIViewController?
 
     func resolutions(subscriptionId: Int) {
-//        let destination = FinesListBuilder.build(subscriptionId: subscriptionId)
-//        controller?.navigationController?.pushViewController(destination, animated: true)
+        let destination = VehicleFinesListBuilder.build(subscriptionId: subscriptionId)
+        controller?.navigationController?.pushViewController(destination, animated: true)
     }
 
     func subscription() {

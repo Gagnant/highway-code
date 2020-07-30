@@ -13,12 +13,6 @@ protocol HttpConnector {
     ///   - request: request.
     ///   - errorType: response error type.
     ///   - valueType: expected response value type.
-    func task<Value: Decodable, Failure: Decodable & Error>(request: Request, errorType: Failure.Type, valueType: Value.Type) -> AnyHttpConnectorTask<Value>
-
-    /// Invokes method with given request.
-    /// - Parameters:
-    ///   - request: request.
-    ///   - errorType: response error type.
-    func task<Failure: Decodable & Error>(request: Request, errorType: Failure.Type) -> AnyHttpConnectorTask<Void>
+    func execute<Content: Encodable, Value: Decodable, Failure: Decodable & Error>(request: Request<Content, Value, Failure>) -> Cancellable
 
 }

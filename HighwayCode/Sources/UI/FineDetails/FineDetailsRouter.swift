@@ -17,8 +17,9 @@ final class FineDetailsRouter: IFineDetailsRouter {
         controller?.present(destination, animated: true, completion: nil)
     }
 
-    func media(resolutionId: Int) {
-        // NOP
+    func media(resolutionId: Int, mediaId: String) {
+        let destination = ResolutionMediaBuilder.build(resolutionId: resolutionId, mediaId: mediaId)
+        controller?.present(destination, animated: true, completion: nil)
     }
     
 }

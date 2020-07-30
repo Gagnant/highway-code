@@ -28,8 +28,8 @@ class FinesListFineDetailsCollectionCell: UICollectionViewCell {
         return UINib(nibName: "FinesListFineDetailsCollectionCell", bundle: bundle)
     }
 
-    static func instantiate(withOwner owner: Any? = nil) -> Self {
-        return nib.instantiate(withOwner: owner, options: nil).first as! Self
+    static func instantiate() -> FinesListFineDetailsCollectionCell {
+        return nib.instantiate(withOwner: nil, options: nil).first as! FinesListFineDetailsCollectionCell
     }
 
     // MARK: -
@@ -71,6 +71,7 @@ class FinesListFineDetailsCollectionCell: UICollectionViewCell {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currencyAccounting
         numberFormatter.currencyCode = "UAH"
+        numberFormatter.numberStyle = .currency
         numberFormatter.maximumFractionDigits = 1
         return numberFormatter
     }()

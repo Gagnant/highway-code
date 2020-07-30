@@ -68,8 +68,11 @@ class PaymentViewController: UIViewController {
     }
 
     private func didFailToCreateOrder() {
-        // TODO: Display sad message.
         setLoading(false)
+        let action: () -> Void = { [weak self] in
+            self?.navigationController?.dismiss(animated: true, completion: nil)
+        }
+        presentGenericError(action: action)
     }
 
     private func createRequest(for order: PaymentOrder) -> URLRequest {
@@ -79,6 +82,14 @@ class PaymentViewController: UIViewController {
             URLQueryItem(name: "signature", value: order.payment.signature)
         ]
         return URLRequest(url: components!.url!)
+    }
+
+    private func presentGenericError(action: @escaping () -> Void) {
+        let alert = UIAlertController(title: "", message: NSLocalizedString("generic-error-message", comment: ""), preferredStyle: .alert)
+        let actionTitle = NSLocalizedString("generic-error-continue", comment: "")
+        let action = UIAlertAction(title: actionTitle, style: .default) { _ in action() }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 
 }

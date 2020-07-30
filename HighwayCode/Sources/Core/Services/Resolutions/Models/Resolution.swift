@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-struct Resolution: Decodable {
+struct Resolution: Decodable, Equatable {
 
     /// Resolution id.
     let id: Int
@@ -41,8 +41,8 @@ struct Resolution: Decodable {
     /// Amount to pay in UAH coins.
     let payAmount: Decimal
 
-    /// Defines is resolution was paid.
-    let isPaid: Bool
+    /// Defines is resolution was extinguished.
+    let isExtinguished: Bool
 
     /// Violation text.
     let violationText: String
@@ -50,7 +50,7 @@ struct Resolution: Decodable {
     // MARK: - Resolution
 
     private enum CodingKeys: String, CodingKey {
-        case id, series, number = "num", violationDate, resolutionDate, media, amount, payAmount, isPaid, violationText
+        case id, series, number = "num", violationDate, resolutionDate, media, amount, payAmount, isExtinguished = "isPaid", violationText
     }
 
     init(from decoder: Decoder) throws {
@@ -65,7 +65,7 @@ struct Resolution: Decodable {
         media = try container.decode([ResolutionMedia].self, forKey: .media)
         amount = Decimal(try container.decode(Int.self, forKey: .amount)) / 100
         payAmount = Decimal(try container.decode(Int.self, forKey: .payAmount)) / 100
-        isPaid = try container.decode(Bool.self, forKey: .isPaid)
+        isExtinguished = try container.decode(Bool.self, forKey: .isExtinguished)
         violationText = try container.decode(String.self, forKey: .violationText)
     }
 

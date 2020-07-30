@@ -38,7 +38,22 @@
 "screen-fines-list-tab-title" = "Штрафи";
 
 /*No comment provided by engineer.*/
-"vehicle-subscription-error-continue" = "Зрозуміло";
+"vehicle-subscription-navigation-title" = "Додати транспорт";
 
 /*No comment provided by engineer.*/
-"vehicle-subscription-navigation-title" = "Додати транспорт";
+"resolution-media-title-connector" = "%d з %d";
+
+/*No comment provided by engineer.*/
+"generic-error-message" = "На жаль, щось пішло не так, будь ласка, спробуйте ще раз.";
+
+/*No comment provided by engineer.*/
+"generic-error-continue" = "Продовжити";
+
+/*No comment provided by engineer.*/
+"vehicle-resolutions-action-remove" = "Видалити";
+
+/*No comment provided by engineer.*/
+"vehicle-resolutions-removal-approve" = "Видалити";
+
+/*No comment provided by engineer.*/
+"vehicle-resolutions-removal-cancel" = "Скасувати";

@@ -60,6 +60,15 @@ struct FinesListCellProvider: IFinesListElementViewModelVisitor {
         return cell
     }
 
+    func visit(viewModel: FinesListActionViewModel) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: FinesListActionCollectionCell.reuseIdentifier, for: indexPath
+        )
+        let actionCell = cell as? FinesListActionCollectionCell
+        actionCell?.configure(viewModel: viewModel)
+        return cell
+    }
+
 }
 
 protocol VehiclesListControllerFactory {

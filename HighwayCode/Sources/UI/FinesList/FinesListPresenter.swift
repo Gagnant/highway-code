@@ -8,42 +8,45 @@
 
 import Foundation
 
-final class FinesListPresenter: IFinesListPresenter {
+class FinesListPresenter: IFinesListPresenter, FinesListInteractorDelegate {
 
-    private let resolutionsService: ResolutionsService
-    private let paymentsService: PaymentsService
     private let router: IFinesListRouter
+    private var interactor: IFinesListInteractor
 
+    /// View.
     weak var view: IFinesListView?
 
-    init(router: IFinesListRouter, resolutionsService: ResolutionsService, paymentsService: PaymentsService) {
+    init(router: IFinesListRouter, interactor: IFinesListInteractor) {
         self.router = router
-        self.resolutionsService = resolutionsService
-        self.paymentsService = paymentsService
+        self.interactor = interactor
     }
 
     // MARK: - FinesListPresenter
 
     func viewDidLoad() {
+        interactor.delegate = self
         configureView()
     }
 
     func viewWillAppear() {
-        requireResources()
-        updateResources()
+        interactor.start()
     }
 
     func viewDidDisappear() {
-        unrequireResources()
+        interactor.stop()
     }
 
     func didTapUpdate() {
-        updateResources()
+        interactor.update()
     }
 
-    // MARK: - Private
+    func didChangeContent() {
+        configureView()
+    }
 
-    private func configureView() {
+    // MARK: -
+
+    func configureView() {
         var elements: [AnyFinesListElementViewModel] = [
             .init(FinesListVehiclesViewModel(id: "vehicles-list"))
         ]
@@ -51,17 +54,16 @@ final class FinesListPresenter: IFinesListPresenter {
         let viewModel = FinesListViewModel(
             title: NSLocalizedString("resolutions-list-navigation-title", comment: ""),
             elements: elements,
-            isLoading: resolutionsService.resolutions.isLoading || paymentsService.orders.isLoading
+            isRefreshing: interactor.isLoading
         )
         view?.update(viewModel: viewModel)
     }
 
-    private var unpaidResolutionsElements: [AnyFinesListElementViewModel] {
-        let isIncluded: (Resolution) -> Bool = { [paymentsService] in
-            let hasPaidOrder = paymentsService.isResolutionPaid(resolutionId: $0.id) ?? false
-            return !($0.isPaid || hasPaidOrder)
-        }
-        guard let resolutions = resolutionsService.resolutions.value?.filter(isIncluded), !resolutions.isEmpty else {
+    // MARK: - Private
+
+    var unpaidResolutionsElements: [AnyFinesListElementViewModel] {
+        let resolutions = interactor.unpaidResolutions
+        guard !resolutions.isEmpty else {
             return []
         }
         var elements: [AnyFinesListElementViewModel] = [
@@ -77,12 +79,9 @@ final class FinesListPresenter: IFinesListPresenter {
         return elements
     }
 
-    private var paidResolutionsElements: [AnyFinesListElementViewModel] {
-        let isIncluded: (Resolution) -> Bool = { [paymentsService] in
-            let hasPaidOrder = paymentsService.isResolutionPaid(resolutionId: $0.id) ?? false
-            return !$0.isPaid && hasPaidOrder
-        }
-        guard let resolutions = resolutionsService.resolutions.value?.filter(isIncluded), !resolutions.isEmpty else {
+    var paidResolutionsElements: [AnyFinesListElementViewModel] {
+        let resolutions = interactor.paidResolutions
+        guard !resolutions.isEmpty else {
             return []
         }
         var elements: [AnyFinesListElementViewModel] = [
@@ -98,8 +97,9 @@ final class FinesListPresenter: IFinesListPresenter {
         return elements
     }
 
-    private var extinguishedResolutionsElements: [AnyFinesListElementViewModel] {
-        guard let resolutions = resolutionsService.resolutions.value?.filter(\.isPaid), !resolutions.isEmpty else {
+    var extinguishedResolutionsElements: [AnyFinesListElementViewModel] {
+        let resolutions = interactor.extinguishedResolutions
+        guard !resolutions.isEmpty else {
             return []
         }
         var elements: [AnyFinesListElementViewModel] = [
@@ -110,9 +110,6 @@ final class FinesListPresenter: IFinesListPresenter {
     }
 
     private func createViewModel(for resolution: Resolution) -> AnyFinesListElementViewModel {
-        let hasPaidOrder = paymentsService.isResolutionPaid(
-            resolutionId: resolution.id
-        ) ?? false
         let mainAction = TaggedClosureBox(id: "action-main") { [router] in
             router.resolution(id: resolution.id)
         }
@@ -126,28 +123,9 @@ final class FinesListPresenter: IFinesListPresenter {
             vehicleNumber: resolution.vehicle.plate,
             date: resolution.violationDate,
             mainAction: mainAction,
-            payAction: hasPaidOrder || resolution.isPaid ? nil : payAction
+            payAction: interactor.isPaid(resolutionId: resolution.id) || resolution.isExtinguished ? nil : payAction
         )
         return AnyFinesListElementViewModel(viewModel)
-    }
-
-    private func requireResources() {
-        let observation: () -> Void = { [weak self] in
-            self?.configureView()
-        }
-        resolutionsService.resolutions.require(self, observation: observation)
-        paymentsService.orders.require(self, observation: observation)
-        configureView()
-    }
-
-    private func unrequireResources() {
-        paymentsService.orders.unrequire(self)
-        resolutionsService.resolutions.unrequire(self)
-    }
-
-    private func updateResources() {
-        resolutionsService.resolutions.update()
-        paymentsService.orders.update()
     }
 
 }

@@ -13,7 +13,13 @@ class VehicleSubscriptionViewController: UIViewController, NVActivityIndicatorVi
 
     @IBOutlet private var documentTextField: UITextField!
     @IBOutlet private var vehicleTextField: UITextField!
+    @IBOutlet private var documentContainerView: UIView!
     @IBOutlet private var nextButton: UIButton!
+    @IBOutlet private var contentScrollView: UIScrollView!
+
+    private lazy var keyboardManager = {
+        return KeyboardAvoidanceManager(scrollView: contentScrollView, distance: 16)
+    }()
 
     private let presenter: IVehicleSubscriptionPresenter
 
@@ -32,6 +38,16 @@ class VehicleSubscriptionViewController: UIViewController, NVActivityIndicatorVi
         super.viewDidLoad()
         configureNavigationItem()
         presenter.viewDidLoad()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        keyboardManager.start()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        keyboardManager.stop()
     }
 
     // MARK: - Actions
@@ -63,7 +79,7 @@ class VehicleSubscriptionViewController: UIViewController, NVActivityIndicatorVi
             barButtonSystemItem: .cancel, target: self, action: #selector(didTapCancelButton)
         )
         navigationItem.title = NSLocalizedString("vehicle-subscription-navigation-title", comment: "")
-        navigationItem.largeTitleDisplayMode = .always
+        navigationItem.largeTitleDisplayMode = .never
     }
 
 }
@@ -82,6 +98,15 @@ extension VehicleSubscriptionViewController: UITextFieldDelegate {
         return true
     }
 
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField === vehicleTextField {
+            keyboardManager.setTrackedView(documentContainerView)
+        } else if textField === documentTextField {
+            keyboardManager.setTrackedView(nextButton)
+        }
+        return true
+    }
+
 }
 
 extension VehicleSubscriptionViewController: IVehicleSubscriptionView {
@@ -92,7 +117,12 @@ extension VehicleSubscriptionViewController: IVehicleSubscriptionView {
     }
 
     func setLoading(_ isLoading: Bool) {
-        isLoading ? startAnimating(type: .circleStrokeSpin) : stopAnimating()
+        if isLoading {
+            startAnimating(type: .circleStrokeSpin)
+            view.endEditing(true)
+        } else {
+            stopAnimating()
+        }
     }
     
 }

@@ -12,6 +12,6 @@ protocol IFineDetailsRouter {
     func payment(resolutionId: Int)
 
     /// Shows media for given resolution.
-    func media(resolutionId: Int)
+    func media(resolutionId: Int, mediaId: String)
 
 }

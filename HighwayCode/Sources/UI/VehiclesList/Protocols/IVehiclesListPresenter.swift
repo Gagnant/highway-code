@@ -8,9 +8,6 @@
 
 protocol IVehiclesListPresenter {
 
-    /// Invoked when view is loaded into memory.
-    func viewDidLoad()
-
     /// Invoked when view is about to appear.
     func viewWillAppear()
 

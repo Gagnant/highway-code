@@ -8,8 +8,9 @@
 
 import UIKit
 import DifferenceKit
+import NVActivityIndicatorViewExtended
 
-final class FinesListViewController: UIViewController {
+final class FinesListViewController: UIViewController, NVActivityIndicatorViewable {
 
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var collectionLayout: CollectionViewDecoratedFlowLayout!
@@ -75,16 +76,23 @@ extension FinesListViewController: IFinesListView {
             self?.elementsViewModels = elements
         }
         navigationItem.title = viewModel.title
-        setLoading(viewModel.isLoading)
+        setRefreshing(viewModel.isRefreshing)
+    }
+
+    func setLoading(_ isLoading: Bool) {
+        isLoading ? startAnimating(type: .circleStrokeSpin) : stopAnimating()
     }
 
 }
 
 extension FinesListViewController {
 
-    private func setLoading(_ isLoading: Bool) {
+    private func setRefreshing(_ isRefreshing: Bool) {
         let refreshControl = collectionView.refreshControl
-        isLoading ? refreshControl?.beginRefreshing() : refreshControl?.endRefreshing()
+        guard !isRefreshing else {
+            return
+        }
+        refreshControl?.endRefreshing()
     }
 
     private func configureCollectionView() {
@@ -103,6 +111,10 @@ extension FinesListViewController {
         collectionView.register(
             FinesListHeaderCollectionCell.nib,
             forCellWithReuseIdentifier: FinesListHeaderCollectionCell.reuseIdentifier
+        )
+        collectionView.register(
+            FinesListActionCollectionCell.nib,
+            forCellWithReuseIdentifier: FinesListActionCollectionCell.reuseIdentifier
         )
         collectionView.contentInset.top = 16
         collectionView.contentInset.bottom = 16

@@ -20,10 +20,6 @@ class VehiclesListPresenter: IVehiclesListPresenter {
 
     // MARK: - IVehiclesListPresenter
 
-    func viewDidLoad() {
-        updateView()
-    }
-
     func viewWillAppear() {
         startObservations()
         updateView()
@@ -50,7 +46,7 @@ class VehiclesListPresenter: IVehiclesListPresenter {
         let viewModel = VehiclesListViewModel(
             vehicles: elementsViewModels ?? [],
             isLoading: subscriptions.isLoading && elementsViewModels == nil,
-            isContentMissing: !subscriptions.isLoading && elementsViewModels == nil
+            isContentMissing: elementsViewModels?.isEmpty ?? false
         )
         view?.update(viewModel: viewModel)
     }

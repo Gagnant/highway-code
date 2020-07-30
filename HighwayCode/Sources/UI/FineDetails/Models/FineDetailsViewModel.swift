@@ -8,12 +8,13 @@
 
 import Foundation
 import CoreLocation
+import DifferenceKit
 
 struct FineDetailsViewModel {
 
-    struct Media {
+    struct Media: Equatable {
 
-        enum ContentType {
+        enum ContentType: Int {
             case image, video
         }
 
@@ -24,7 +25,7 @@ struct FineDetailsViewModel {
         let url: URL
 
         /// Main action handler.
-        let action: (() -> Void)?
+        let action: TaggedClosureBox<Void, Void>?
 
     }
 
@@ -63,5 +64,13 @@ struct FineDetailsViewModel {
 
     /// Defines if payment was accepted.
     let isPaymentApproved: Bool
+
+}
+
+extension FineDetailsViewModel.Media: Differentiable {
+
+    var differenceIdentifier: String {
+        return url.absoluteString
+    }
 
 }

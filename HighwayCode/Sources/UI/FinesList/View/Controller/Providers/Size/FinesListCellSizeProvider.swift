@@ -31,7 +31,7 @@ class FinesListCellSizeProvider: IFinesListElementCellSizeProvider, IFinesListEl
     // MARK: - IFinesListElementViewModelVisitor
 
     func visit(viewModel: FinesListVehiclesViewModel) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 150)
+        return CGSize(width: adjustedComponentWidth, height: 150)
     }
 
     func visit(viewModel: FinesListFineDetailsViewModel) -> CGSize {
@@ -50,6 +50,10 @@ class FinesListCellSizeProvider: IFinesListElementCellSizeProvider, IFinesListEl
         headerTemplateCell.prepareForReuse()
         headerTemplateCell.configure(title: viewModel.name)
         return size(for: headerTemplateCell.contentView)
+    }
+
+    func visit(viewModel: FinesListActionViewModel) -> CGSize {
+        return CGSize(width: adjustedComponentWidth, height: 72)
     }
 
     // MARK: - Private

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Request {
+struct Request<Content, Value, Failure> {
 
     /// Method type.
     var method: String
@@ -20,7 +20,13 @@ struct Request {
     var queryItems: [String: String] = [:]
 
     /// Parameters.
-    var content: RequestContent? = nil
+    var content: Content? = nil
+
+    /// The completion handler to call when the load request is succeded.
+    var success: ((Value) -> Void)?
+
+    /// The completion handler to call when the load request is failed.
+    var failure: ((Error) -> Void)?
 
     /// If during a connection attempt the request remains idle for longer
     /// than the timeout interval, the request is considered to have timed

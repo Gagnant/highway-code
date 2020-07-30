@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "title"; ObjectID = "PpU-ge-RdW"; */
+"PpU-ge-RdW.text" = "Traffic Fines";
+
+/* Class = "UILabel"; text = "description"; ObjectID = "fUH-YY-NdV"; */
+"fUH-YY-NdV.text" = "Examination and repayment";
+
+/* Class = "UIButton"; normalTitle = "action-continue"; ObjectID = "ayN-WR-khQ"; */
+"ayN-WR-khQ.normalTitle" = "Continue";
+
+/* Class = "UILabel"; text = "action-details"; ObjectID = "vdd-Wz-QYc"; */
+"vdd-Wz-QYc.text" = "By clicking continue you are agreeing to the Terms and Conditions.";

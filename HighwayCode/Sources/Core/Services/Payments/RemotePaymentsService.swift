@@ -21,11 +21,11 @@ class RemotePaymentsService: PaymentsService {
     // MARK: -
 
     var orders: AnyResource<[PaymentOrder]> {
-        return AnyResource(_orders)
+        return _orders.map { Array($0.values) }
     }
 
     func order(for resolutionId: Int) -> PaymentOrder? {
-        guard let resolution = resolutionProvider?.resolution(for: resolutionId) else {
+        guard let resolution = resolutionProvider?.resolution(id: resolutionId) else {
             return nil
         }
         let order = orders.value?.first {
@@ -35,7 +35,7 @@ class RemotePaymentsService: PaymentsService {
     }
 
     func createOrder(for resolutionId: Int, success: @escaping (PaymentOrder) -> Void, failure: (() -> Void)?) {
-        if let order = self.order(for: resolutionId) {
+        if let order = self.order(for: resolutionId), order.status == .draft {
             return success(order)
         }
         guard let paymentRequest = self.paymentRequest(for: resolutionId) else {
@@ -46,8 +46,8 @@ class RemotePaymentsService: PaymentsService {
         request.failure = { _ in
             failure?()
         }
-        request.success = { order in
-            // TODO: update local storage.
+        request.success = { [weak self] order in
+            self?.didCreateOrder(order)
             success(order)
         }
         connectors.callable.call(request: request)
@@ -62,13 +62,26 @@ class RemotePaymentsService: PaymentsService {
 
     // MARK: -
 
-    private lazy var _orders: SubscriptionConnectorResource<[PaymentOrder]> = {
+    private lazy var _orders: MutableResourceDecorator<[String: PaymentOrder]> = {
         let request = SubscriptionConnectorRequest<[PaymentOrder]>(path: "orders")
-        return SubscriptionConnectorResource(connector: connectors.subscription, request: request)
+        let resource = SubscriptionConnectorResource(connector: connectors.subscription, request: request).map {
+            return Dictionary(uniqueKeysWithValues: $0.lazy.map { ($0.id, $0) })
+        }
+        return MutableResourceDecorator(resource: resource)
     }()
 
+    private func didCreateOrder(_ order: PaymentOrder) {
+        var currentOrders = _orders.value ?? [:]
+        guard currentOrders[order.id] == nil else {
+            return
+        }
+        currentOrders[order.id] = order
+        _orders.value = currentOrders
+        _orders.didChange()
+    }
+
     private func paymentRequest(for resolutionId: Int) -> PaymentRequest? {
-        guard let resolution = resolutionProvider?.resolution(for: resolutionId) else {
+        guard let resolution = resolutionProvider?.resolution(id: resolutionId) else {
             return nil
         }
         let request = PaymentRequest(

@@ -15,6 +15,9 @@ protocol ResolutionsService {
     /// - Parameter subscription: subscription.
     var resolutions: AnyResource<[Resolution]> { get }
 
+    /// Returns resolution for given id if any.
+    func resolution(id: Int) -> Resolution?
+
     /// Subscribes for updates for given vehicle.
     /// - Parameters:
     ///   - document: document.
@@ -22,6 +25,9 @@ protocol ResolutionsService {
     func subscribe(
         document: String, vehicle: String, success: @escaping () -> Void, error: @escaping (Error) -> Void
     )
+
+    /// Returns subscription for given id if any.
+    func subscription(id: Int) -> VehicleSubscription?
 
     /// Cancells given subscription.
     func remove(subscriptionId: Int, success: @escaping () -> Void, error: @escaping (Error) -> Void)

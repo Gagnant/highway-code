@@ -9,13 +9,18 @@
 import FirebaseAuth
 import Firebase
 
-class FirebaseAuthenticationService: AuthenticationService {
+class FirebaseAuthenticationService: AuthenticationService, AccessTokenProvider {
 
-    private let firebaseAuth: Auth
+    private var credentialsStorage: CredentialsStorage!
+    private let auth: Auth
+    private let callable: CallableConnector
 
-    init(firebase: FirebaseApp) {
-        firebaseAuth = Auth.auth(app: firebase)
+    init(auth: Auth, callable: CallableConnector, credentialsStorage: CredentialsStorage) {
+        self.auth = auth
+        self.callable = callable
+        self.credentialsStorage = credentialsStorage
         delegate = MulticastDelegate()
+        updateUser()
     }
 
     // MARK: -
@@ -27,16 +32,16 @@ class FirebaseAuthenticationService: AuthenticationService {
     }
 
     func authenticate(success: (() -> Void)?, failure: (() -> Void)?) {
-        firebaseAuth.signInAnonymously { [weak self] result, error in
-            self?.user = result.flatMap {
-                User(id: $0.user.uid)
-            }
-            if result != nil {
+        let completion: AuthDataResultCallback = { [weak self] result, error in
+            if let user = result?.user {
+                self?.user = User(id: user.uid)
                 success?()
-                return
+            } else {
+                self?.user = nil
+                failure?()
             }
-            failure?()
         }
+        auth.signInAnonymously(completion: completion)
     }
 
     // MARK: - Private
@@ -46,6 +51,45 @@ class FirebaseAuthenticationService: AuthenticationService {
             return
         }
         delegate.invoke { $0.authenticationServiceUserDidChange(self) }
+    }
+
+    private func updateUser() {
+        user = auth.currentUser.flatMap { User(id: $0.uid) }
+    }
+
+    // MARK: - AccessTokenProvider
+
+    func generateAccessToken(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) -> Cancellable {
+        if let accessToken = storedAccessToken {
+            success(accessToken)
+            return BlockCancellable()
+        }
+        guard let user = self.user else {
+            failure(NSError())
+            return BlockCancellable()
+        }
+        return _generateAccessToken(userId: user.id, success: success, failure: failure)
+    }
+
+    private func _generateAccessToken(userId: String, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) -> Cancellable {
+        var request = CallableFunctionRequest<VoidCodable, GenerateAccessTokenResponse>(
+            method: "generateAccessToken", parameters: VoidCodable()
+        )
+        request.success = { [weak self] response in
+            self?.credentialsStorage.credentials = Credentials(userId: userId, accessToken: response.accessToken)
+            success(response.accessToken)
+        }
+        request.failure = { error in
+            failure(error)
+        }
+        return callable.call(request: request)
+    }
+
+    private var storedAccessToken: String? {
+        guard let user = self.user, let credentials = credentialsStorage.credentials else {
+            return nil
+        }
+        return credentials.userId == user.id ? credentials.accessToken : nil
     }
 
 }

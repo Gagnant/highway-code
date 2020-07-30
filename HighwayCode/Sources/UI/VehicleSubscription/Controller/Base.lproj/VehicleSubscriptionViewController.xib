@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VehicleSubscriptionViewController" customModule="HighwayCode" customModuleProvider="target">
             <connections>
+                <outlet property="contentScrollView" destination="haF-PK-hBa" id="zqO-Ik-wai"/>
+                <outlet property="documentContainerView" destination="tGa-rw-o3B" id="vFm-r1-9Z1"/>
                 <outlet property="documentTextField" destination="F8W-nu-zh2" id="eyC-Ez-D1X"/>
                 <outlet property="nextButton" destination="tqM-ar-2Oa" id="Xxl-Lk-cUZ"/>
                 <outlet property="vehicleTextField" destination="AxQ-h3-yCv" id="PUv-l3-Ruq"/>

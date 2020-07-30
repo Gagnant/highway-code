@@ -29,15 +29,10 @@ class HostingCollectionCell: UICollectionViewCell {
 
     private func host(controller hosted: UIViewController, parent: UIViewController) {
         parent.addChild(hosted)
-        hosted.view.translatesAutoresizingMaskIntoConstraints = false
+        hosted.view.translatesAutoresizingMaskIntoConstraints = true
+        hosted.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        hosted.view.frame = contentView.bounds
         contentView.addSubview(hosted.view)
-        let constraints = [
-            hosted.view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            hosted.view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            hosted.view.topAnchor.constraint(equalTo: contentView.topAnchor),
-            hosted.view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-        ]
-        NSLayoutConstraint.activate(constraints)
         hosted.didMove(toParent: parent)
         self.hostedController = hosted
     }

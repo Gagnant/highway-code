@@ -22,4 +22,7 @@ protocol IFinesListElementViewModelVisitor {
     /// Visits tooltip view model.
     func visit(viewModel: FinesListHeaderViewModel) -> Result
 
+    /// VIsits action view model.
+    func visit(viewModel: FinesListActionViewModel) -> Result
+
 }
