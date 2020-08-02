@@ -13,8 +13,8 @@ class VehicleFinesListBuilder {
     static func build(subscriptionId: Int) -> UIViewController {
         let router = VehicleFinesListRouter()
         let interactor = VehicleFinesListInteractor(
-            resolutionsService: Core.shared.resolutionsService,
-            paymentsService: Core.shared.paymentsService,
+            resolutionsService: Core.shared.resolutions,
+            paymentsService: Core.shared.payments,
             subscriptionId: subscriptionId
         )
         let presenter = VehicleFinesListPresenter(

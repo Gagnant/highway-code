@@ -12,7 +12,7 @@ class CamerasBuilder {
 
     static func build() -> UIViewController {
         let presenter = CamerasPresenter(
-            camerasService: Core.shared.camerasService
+            camerasService: Core.shared.cameras
         )
         let controller = CamerasViewController(presenter: presenter)
         presenter.view = controller

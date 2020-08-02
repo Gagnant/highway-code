@@ -12,7 +12,7 @@ class PaymentBuilder {
 
     static func build(resolutionId: Int) -> UIViewController {
         let controller = PaymentViewController(
-            resolutionId: resolutionId, paymentsService: Core.shared.paymentsService
+            resolutionId: resolutionId, paymentsService: Core.shared.payments
         )
         let navigation = UINavigationController(rootViewController: controller)
         return navigation

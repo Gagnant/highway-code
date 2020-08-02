@@ -14,7 +14,7 @@ class ResolutionMediaBuilder {
         let controller = ResolutionMediaViewController(
             resolutionId: resolutionId,
             mediaId: mediaId,
-            resolutionsService: Core.shared.resolutionsService
+            resolutionsService: Core.shared.resolutions
         )
         controller.modalPresentationStyle = .fullScreen
         return controller

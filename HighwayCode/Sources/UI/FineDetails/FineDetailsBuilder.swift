@@ -15,8 +15,8 @@ class FineDetailsBuilder {
         let presenter = FineDetailsPresenter(
             router: router,
             resolutionId: resolutionId,
-            resolutionsService: Core.shared.resolutionsService,
-            paymentsService: Core.shared.paymentsService
+            resolutionsService: Core.shared.resolutions,
+            paymentsService: Core.shared.payments
         )
         let controller = FineDetailsViewController(presenter: presenter)
         presenter.view = controller

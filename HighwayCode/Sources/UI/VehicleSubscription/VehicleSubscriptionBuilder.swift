@@ -13,7 +13,7 @@ class VehicleSubscriptionBuilder {
     static func build() -> UIViewController {
         let router = VehicleSubscriptionRouter()
         let presenter = VehicleSubscriptionPresenter(
-            router: router, resolutions: Core.shared.resolutionsService
+            router: router, resolutions: Core.shared.resolutions
         )
         let controller = VehicleSubscriptionViewController(presenter: presenter)
         presenter.view = controller

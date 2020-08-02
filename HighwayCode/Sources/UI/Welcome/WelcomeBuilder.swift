@@ -13,7 +13,7 @@ class WelcomeBuilder {
     static func build(window: UIWindow) -> UIViewController {
         let router = WelcomeRouter(window: window)
         let controller = WelcomeViewController(
-            router: router, authenticationService: Core.shared.authService
+            router: router, authenticationService: Core.shared.authentication
         )
         router.controller = controller
         return controller

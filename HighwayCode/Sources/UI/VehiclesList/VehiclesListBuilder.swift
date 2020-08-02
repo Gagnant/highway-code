@@ -13,7 +13,7 @@ class VehiclesListBuilder {
     static func build() -> UIViewController {
         let router = VehiclesListRouter()
         let presenter = VehiclesListPresenter(
-            resolutionsService: Core.shared.resolutionsService, router: router
+            resolutionsService: Core.shared.resolutions, router: router
         )
         let controller = VehiclesListViewController(presenter: presenter)
         presenter.view = controller

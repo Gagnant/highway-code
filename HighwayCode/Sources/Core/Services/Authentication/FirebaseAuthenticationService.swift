@@ -15,8 +15,8 @@ class FirebaseAuthenticationService: AuthenticationService, AccessTokenProvider 
     private let auth: Auth
     private let callable: CallableConnector
 
-    init(auth: Auth, callable: CallableConnector, credentialsStorage: CredentialsStorage) {
-        self.auth = auth
+    init(firebase: FirebaseApp, callable: CallableConnector, credentialsStorage: CredentialsStorage) {
+        self.auth = Auth.auth(app: firebase)
         self.callable = callable
         self.credentialsStorage = credentialsStorage
         delegate = MulticastDelegate()

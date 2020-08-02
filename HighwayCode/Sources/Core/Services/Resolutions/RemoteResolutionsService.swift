@@ -11,11 +11,9 @@ import Foundation
 class RemoteResolutionsService: ResolutionsService, ResolutionProvider {
 
     private let connectors: ConnectorManager
-    private let encoder: JSONEncoder
 
-    init(connectors: ConnectorManager, encoder: JSONEncoder) {
+    init(connectors: ConnectorManager) {
         self.connectors = connectors
-        self.encoder = encoder
     }
 
     // MARK: -
