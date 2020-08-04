@@ -42,10 +42,11 @@ class FineDetailsVideoMediaCollectionCell: UICollectionViewCell {
         assert(viewModel.type == .video)
         let player = AVPlayer(url: viewModel.url)
         videoPlayerView.player = player
+        NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(
             self, selector: #selector(restartPlayer), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem
         )
-        player.playImmediately(atRate: 1.0)
+        player.play()
         self.viewModel = viewModel
     }
 

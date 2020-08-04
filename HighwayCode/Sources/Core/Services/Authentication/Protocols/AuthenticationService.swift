@@ -14,6 +14,9 @@ protocol AuthenticationService {
     /// Current user.
     var user: User? { get }
 
+    /// Returns value indicating if user is currently authenticated.
+    var isAuthenticated: Bool { get }
+
     /// Authenticates user.
     func authenticate(success: (() -> Void)?, failure: (() -> Void)?)
 

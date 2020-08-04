@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResolutionMediaImageViewController" customModule="HighwayCode" customModuleProvider="target">
             <connections>
-                <outlet property="contentImageView" destination="6lD-ac-leW" id="vuq-df-Dhl"/>
+                <outlet property="contentImageView" destination="6lD-ac-leW" id="Vi4-Si-4pN"/>
+                <outlet property="contentScrollView" destination="MVU-uD-PTr" id="1KT-Ux-BdO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="I5r-H6-ZgK"/>
             </connections>
         </placeholder>
@@ -19,24 +20,28 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="MVU-uD-PTr">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="MVU-uD-PTr" customClass="CenteringScrollView" customModule="HighwayCode" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6lD-ac-leW">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6lD-ac-leW" customClass="AspectResizableImageView" customModule="HighwayCode" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="6lD-ac-leW" secondAttribute="height" multiplier="1:1" priority="750" id="U87-lb-BDA"/>
+                            </constraints>
                         </imageView>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="6lD-ac-leW" firstAttribute="top" secondItem="IKh-f0-unt" secondAttribute="top" id="BkY-GT-Rb7"/>
-                        <constraint firstItem="6lD-ac-leW" firstAttribute="height" secondItem="I07-T3-uEk" secondAttribute="height" id="Nrd-dk-pUM"/>
-                        <constraint firstItem="6lD-ac-leW" firstAttribute="bottom" secondItem="IKh-f0-unt" secondAttribute="bottom" id="TtS-im-tfz"/>
-                        <constraint firstItem="6lD-ac-leW" firstAttribute="trailing" secondItem="IKh-f0-unt" secondAttribute="trailing" id="cwx-cT-1DQ"/>
-                        <constraint firstItem="6lD-ac-leW" firstAttribute="width" secondItem="I07-T3-uEk" secondAttribute="width" id="eN5-IA-gdv"/>
-                        <constraint firstItem="6lD-ac-leW" firstAttribute="leading" secondItem="IKh-f0-unt" secondAttribute="leading" id="zIk-y4-G2v"/>
+                        <constraint firstItem="6lD-ac-leW" firstAttribute="trailing" secondItem="g21-LZ-qWi" secondAttribute="trailing" id="8mw-MN-8ht"/>
+                        <constraint firstItem="6lD-ac-leW" firstAttribute="width" secondItem="JyY-dX-kgJ" secondAttribute="width" priority="751" id="H0F-Ve-Xqv"/>
+                        <constraint firstItem="6lD-ac-leW" firstAttribute="leading" secondItem="g21-LZ-qWi" secondAttribute="leading" id="Kkw-1J-bqc"/>
+                        <constraint firstItem="6lD-ac-leW" firstAttribute="bottom" secondItem="g21-LZ-qWi" secondAttribute="bottom" id="qOM-k3-LbH"/>
+                        <constraint firstItem="6lD-ac-leW" firstAttribute="top" secondItem="g21-LZ-qWi" secondAttribute="top" id="rcs-L1-VdU"/>
                     </constraints>
-                    <viewLayoutGuide key="contentLayoutGuide" id="IKh-f0-unt"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="I07-T3-uEk"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="g21-LZ-qWi"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="JyY-dX-kgJ"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="HQZ-2m-lHq"/>
                     </connections>

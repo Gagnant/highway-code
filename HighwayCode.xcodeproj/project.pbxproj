@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0418070524E01B46000FC5D9 /* AspectResizableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418070424E01B46000FC5D9 /* AspectResizableImageView.swift */; };
+		0418070724E02D5A000FC5D9 /* CenteringScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418070624E02D5A000FC5D9 /* CenteringScrollView.swift */; };
 		0421008824CF420A002BCB9C /* VehiclesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421008724CF420A002BCB9C /* VehiclesListPresenter.swift */; };
 		0421008C24CF5D2B002BCB9C /* VehiclesListElementCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0421008B24CF5D2B002BCB9C /* VehiclesListElementCollectionCell.xib */; };
 		0421008E24CF6953002BCB9C /* HostingCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421008D24CF6953002BCB9C /* HostingCollectionCell.swift */; };
@@ -205,6 +207,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0418070424E01B46000FC5D9 /* AspectResizableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectResizableImageView.swift; sourceTree = "<group>"; };
+		0418070624E02D5A000FC5D9 /* CenteringScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteringScrollView.swift; sourceTree = "<group>"; };
 		0421008724CF420A002BCB9C /* VehiclesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VehiclesListPresenter.swift; path = Protocols/VehiclesListPresenter.swift; sourceTree = "<group>"; };
 		0421008B24CF5D2B002BCB9C /* VehiclesListElementCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = VehiclesListElementCollectionCell.xib; path = ../Protocols/VehiclesListElementCollectionCell.xib; sourceTree = "<group>"; };
 		0421008D24CF6953002BCB9C /* HostingCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingCollectionCell.swift; sourceTree = "<group>"; };
@@ -1181,6 +1185,8 @@
 				0421008D24CF6953002BCB9C /* HostingCollectionCell.swift */,
 				047F409124D0B90600154191 /* PlayerView.swift */,
 				0444B6CF24D5D935002D6362 /* KeyboardAvoidanceManager.swift */,
+				0418070424E01B46000FC5D9 /* AspectResizableImageView.swift */,
+				0418070624E02D5A000FC5D9 /* CenteringScrollView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1444,6 +1450,7 @@
 				04BE416924C6E72D00673E45 /* TopLevelDecoder.swift in Sources */,
 				04E1471C24C8609200313D01 /* IVehicleSubscriptionRouter.swift in Sources */,
 				04E1477B24C8893C00313D01 /* IFinesListElementViewModel.swift in Sources */,
+				0418070524E01B46000FC5D9 /* AspectResizableImageView.swift in Sources */,
 				049E71A124C72D0600F6508F /* Camera.swift in Sources */,
 				04BE415124C6DFFF00673E45 /* HttpConnector.swift in Sources */,
 				0482138724CDBCB700A8BA23 /* User.swift in Sources */,
@@ -1553,6 +1560,7 @@
 				04AF61CE24C856AA009E93F3 /* VehicleSubscriptionPresenter.swift in Sources */,
 				04E1476F24C881FD00313D01 /* FinesListViewModel.swift in Sources */,
 				0493058B24D01A5100350CB5 /* RemotePaymentsService.swift in Sources */,
+				0418070724E02D5A000FC5D9 /* CenteringScrollView.swift in Sources */,
 				04B2C0BA24CB020D0059C08C /* FineDetailsViewModel.swift in Sources */,
 				04E1475924C8753D00313D01 /* FinesListFineDetailsCollectionCell.swift in Sources */,
 				0421009A24CF69AC002BCB9C /* VehiclesListRouter.swift in Sources */,

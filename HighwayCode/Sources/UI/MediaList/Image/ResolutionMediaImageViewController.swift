@@ -11,13 +11,21 @@ import SDWebImage
 
 class ResolutionMediaImageViewController: ResolutionMediaContentViewController, UIScrollViewDelegate {
 
+    @IBOutlet private var contentScrollView: UIScrollView!
     @IBOutlet private var contentImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         assert(media.type == .image)
+        configureScroll()
         configureImageView()
     }
+
+    deinit {
+        contentImageView.sd_cancelCurrentImageLoad()
+    }
+
+    // MARK: -
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return contentImageView
@@ -28,7 +36,11 @@ class ResolutionMediaImageViewController: ResolutionMediaContentViewController, 
     private func configureImageView() {
         contentImageView.sd_imageIndicator = SDWebImageActivityIndicator.whiteLarge
         contentImageView.sd_imageTransition = .fade
-        contentImageView.sd_setImage(with: media.url, completed: nil)
+        contentImageView.sd_setImage(with: media.url)
+    }
+
+    private func configureScroll() {
+        contentScrollView.decelerationRate = .fast
     }
 
 }

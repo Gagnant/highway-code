@@ -19,21 +19,27 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="o6o-TH-BCd">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="o6o-TH-BCd" customClass="CenteringScrollView" customModule="HighwayCode" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQP-1n-CzP" userLabel="Player Container" customClass="PlayerView" customModule="HighwayCode" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQP-1n-CzP" userLabel="Player" customClass="PlayerView" customModule="HighwayCode" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="lQP-1n-CzP" secondAttribute="height" multiplier="1:1" priority="750" id="df3-vj-dLZ"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isAspectTrackingEnabled" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="lQP-1n-CzP" firstAttribute="top" secondItem="RJc-za-mcq" secondAttribute="top" id="HcR-Kx-Hrj"/>
-                        <constraint firstItem="lQP-1n-CzP" firstAttribute="height" secondItem="SWC-IM-Kgk" secondAttribute="height" id="dUQ-e3-gxQ"/>
-                        <constraint firstItem="RJc-za-mcq" firstAttribute="bottom" secondItem="lQP-1n-CzP" secondAttribute="bottom" id="fgQ-ZR-MYZ"/>
-                        <constraint firstItem="RJc-za-mcq" firstAttribute="trailing" secondItem="lQP-1n-CzP" secondAttribute="trailing" id="g0j-U8-nGM"/>
-                        <constraint firstItem="lQP-1n-CzP" firstAttribute="leading" secondItem="RJc-za-mcq" secondAttribute="leading" id="mLw-wL-HpC"/>
-                        <constraint firstItem="lQP-1n-CzP" firstAttribute="width" secondItem="SWC-IM-Kgk" secondAttribute="width" id="tsZ-lN-ZBm"/>
+                        <constraint firstItem="lQP-1n-CzP" firstAttribute="bottom" secondItem="RJc-za-mcq" secondAttribute="bottom" id="445-eD-umt"/>
+                        <constraint firstItem="lQP-1n-CzP" firstAttribute="width" secondItem="SWC-IM-Kgk" secondAttribute="width" id="5oo-ef-JwY"/>
+                        <constraint firstItem="lQP-1n-CzP" firstAttribute="leading" secondItem="RJc-za-mcq" secondAttribute="leading" id="QRy-NB-S7V"/>
+                        <constraint firstItem="lQP-1n-CzP" firstAttribute="top" secondItem="RJc-za-mcq" secondAttribute="top" id="gto-ot-Put"/>
+                        <constraint firstItem="lQP-1n-CzP" firstAttribute="trailing" secondItem="RJc-za-mcq" secondAttribute="trailing" id="ybQ-bF-nrd"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="RJc-za-mcq"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="SWC-IM-Kgk"/>

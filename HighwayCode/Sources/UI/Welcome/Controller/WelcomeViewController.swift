@@ -28,7 +28,7 @@ class WelcomeViewController: UIViewController, NVActivityIndicatorViewable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        foobar()
+        updateView()
     }
 
     // MARK: -
@@ -50,13 +50,8 @@ class WelcomeViewController: UIViewController, NVActivityIndicatorViewable {
         isLoading ? startAnimating(type: .circleStrokeSpin) : stopAnimating()
     }
 
-    private func foobar() {
-        if authService.user == nil {
-            continueContainerView.isHidden = false
-            return
-        }
-        continueContainerView.isHidden = true
-        router.next()
+    private func updateView() {
+        continueContainerView.isHidden = false
     }
 
 }

@@ -31,6 +31,10 @@ class FirebaseAuthenticationService: AuthenticationService, AccessTokenProvider 
         didSet { didSetUser(oldValue) }
     }
 
+    var isAuthenticated: Bool {
+        return user != nil
+    }
+
     func authenticate(success: (() -> Void)?, failure: (() -> Void)?) {
         let completion: AuthDataResultCallback = { [weak self] result, error in
             if let user = result?.user {

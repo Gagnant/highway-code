@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ResolutionMediaVideoViewController: ResolutionMediaContentViewController {
+class ResolutionMediaVideoViewController: ResolutionMediaContentViewController, UIScrollViewDelegate {
 
     @IBOutlet private var contentPlayerView: PlayerView!
 
@@ -24,6 +24,8 @@ class ResolutionMediaVideoViewController: ResolutionMediaContentViewController {
         NotificationCenter.default.removeObserver(self)
     }
 
+    // MARK: - UIScrollViewDelegate
+
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return contentPlayerView
     }
@@ -37,6 +39,7 @@ class ResolutionMediaVideoViewController: ResolutionMediaContentViewController {
     private func resumeVideo() {
         let player = AVPlayer(url: media.url)
         contentPlayerView.player = player
+        NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(
             self, selector: #selector(restartPlayer), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem
         )

@@ -11,6 +11,7 @@ import UIKit
 class ResolutionMediaViewController: UIViewController {
 
     @IBOutlet private var contentTitleLabel: UILabel!
+    @IBOutlet private var navigationView: UIView!
 
     private let resolutionsService: ResolutionsService
     private let mediaId: String
@@ -90,6 +91,7 @@ class ResolutionMediaViewController: UIViewController {
         contentPageController.view.translatesAutoresizingMaskIntoConstraints = true
         contentPageController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         contentPageController.view.frame = view.bounds
+        contentPageController.additionalSafeAreaInsets.top = navigationView.bounds.height
         view.addSubview(contentPageController.view)
         view.sendSubviewToBack(contentPageController.view)
         contentPageController.didMove(toParent: self)
