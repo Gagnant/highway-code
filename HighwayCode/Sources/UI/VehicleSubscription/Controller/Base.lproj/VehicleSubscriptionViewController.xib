@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -197,7 +198,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.94901960784313721" green="0.94509803921568625" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" name="Colors/Background"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="J0X-zu-F4q" firstAttribute="bottom" secondItem="m0M-zV-rEg" secondAttribute="bottom" id="Q4g-P9-05v"/>
@@ -213,7 +214,7 @@
                     </connections>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="0.94901960784313721" green="0.94509803921568625" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" name="Colors/Background"/>
             <constraints>
                 <constraint firstItem="J0X-zu-F4q" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" priority="250" id="bUj-bX-W8M"/>
                 <constraint firstItem="haF-PK-hBa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="r5j-FW-6KU"/>
@@ -230,4 +231,9 @@
             </connections>
         </tapGestureRecognizer>
     </objects>
+    <resources>
+        <namedColor name="Colors/Background">
+            <color red="0.94901960784313721" green="0.94509803921568625" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

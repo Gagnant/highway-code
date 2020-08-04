@@ -1,0 +1,26 @@
+{
+  "images" : [
+    {
+      "filename" : "Suppressed[EN].pdf",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "Suppressed[RU].pdf",
+      "idiom" : "universal",
+      "locale" : "ru"
+    },
+    {
+      "filename" : "Suppressed[UK].pdf",
+      "idiom" : "universal",
+      "locale" : "uk"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true,
+    "preserves-vector-representation" : true
+  }
+}

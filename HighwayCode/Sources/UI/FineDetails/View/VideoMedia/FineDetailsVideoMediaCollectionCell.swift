@@ -45,7 +45,7 @@ class FineDetailsVideoMediaCollectionCell: UICollectionViewCell {
         NotificationCenter.default.addObserver(
             self, selector: #selector(restartPlayer), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem
         )
-        player.play()
+        player.playImmediately(atRate: 1.0)
         self.viewModel = viewModel
     }
 

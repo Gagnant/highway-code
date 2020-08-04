@@ -37,16 +37,12 @@ class KeychainCredentialsStorage: CredentialsStorage {
     private func storeCredentials(_ credentials: Credentials) {
         let account = credentials.userId
         let password = Data(credentials.accessToken.utf8)
-        // Create an access control instance that dictates how the item can be read later.
-        let access = SecAccessControlCreateWithFlags(
-            nil, kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly, .userPresence, nil
-        )
         // Build the query for use in the add operation.
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrAccount as String: account,
             kSecAttrService as String: service,
-            kSecAttrAccessControl as String: access as Any,
+            kSecAttrAccessible as String: kSecAttrAccessibleAfterFirstUnlock,
             kSecValueData as String: password
         ]
         let status = SecItemAdd(query as CFDictionary, nil)

@@ -18,7 +18,7 @@ class FineDetailsViewController: UIViewController, IFineDetailsView {
     @IBOutlet private var violationDateLabel: UILabel!
     @IBOutlet private var fineAmountLabel: UILabel!
     @IBOutlet private var reducedFineAmountLabel: UILabel!
-    @IBOutlet private var paidStampImageView: UIImageView!
+    @IBOutlet private var stampImageView: UIImageView!
     @IBOutlet private var violationDetailsLabel: UILabel!
     @IBOutlet private var mapView: MKMapView!
     @IBOutlet private var paymentActionContainerView: UIView!
@@ -80,6 +80,7 @@ class FineDetailsViewController: UIViewController, IFineDetailsView {
         resolutionDateLabel.text = dateFormatter.string(from: viewModel.resolutionDate)
         vehiclePlateLabel.text = viewModel.vehiclePlate
         configureMedia(viewModel: viewModel)
+        configureStampImage(viewModel: viewModel)
     }
 
     func setLoading(_ isLoading: Bool) {
@@ -98,7 +99,7 @@ class FineDetailsViewController: UIViewController, IFineDetailsView {
     }
 
     private func configureMap(location: CLLocationCoordinate2D) {
-        let region = MKCoordinateRegion(center: location, latitudinalMeters: 2000, longitudinalMeters: 2000)
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: 50000, longitudinalMeters: 50000)
         mapView.setRegion(region, animated: true)
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
@@ -108,7 +109,6 @@ class FineDetailsViewController: UIViewController, IFineDetailsView {
     private func configureFineDetails(viewModel: FineDetailsViewModel) {
         violationDateLabel.text = dateFormatter.string(from: viewModel.violationDate)
         violationDetailsLabel.text = viewModel.violationText
-        paidStampImageView.isHidden = !viewModel.isPaymentApproved
         let strikethroughAttributes: [NSAttributedString.Key: Any] = [
             .strikethroughStyle: NSUnderlineStyle.single.rawValue, .strikethroughColor: #colorLiteral(red: 0.5607843137, green: 0.5607843137, blue: 0.5607843137, alpha: 1),
         ]
@@ -118,6 +118,16 @@ class FineDetailsViewController: UIViewController, IFineDetailsView {
         )
         fineAmountLabel.isHidden = viewModel.amount == viewModel.payAmount
         reducedFineAmountLabel.text = currencyNumberFormatter.string(from: viewModel.payAmount as NSNumber)
+    }
+
+    private func configureStampImage(viewModel: FineDetailsViewModel) {
+        if viewModel.isPaid && !viewModel.isPaymentApproved {
+            stampImageView.image = #imageLiteral(resourceName: "Stamps/Paid")
+        } else if viewModel.isPaymentApproved {
+            stampImageView.image = #imageLiteral(resourceName: "Stamps/Suppressed")
+        } else {
+            stampImageView.image = nil
+        }
     }
 
     // MARK: - Private

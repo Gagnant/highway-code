@@ -29,3 +29,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+import AVFoundation
+
+final class AssetManager: NSObject, AVAssetResourceLoaderDelegate {
+
+//    private let asset: AVURLAsset
+//
+//    init(asset: AVURLAsset) {
+//        assert(asset.resourceLoader.delegate == nil)
+//        self.asset = asset
+//        asset.resourceLoader.setDelegate(self, queue: .main)
+//    }
+
+    // MARK: -
+
+    static func asset(url: URL) -> AVAsset {
+        fatalError()
+    }
+
+    // MARK: - AVAssetResourceLoaderDelegate
+
+    func resourceLoader(_ resourceLoader: AVAssetResourceLoader, shouldWaitForLoadingOfRequestedResource request: AVAssetResourceLoadingRequest) -> Bool {
+
+
+        
+
+
+
+
+        // 1. Determine if request should be donwloaded by manager by checking scheme.
+        // 2. Initiate resource loading
+        // 2. If yes return true
+
+
+
+        fatalError()
+    }
+
+    func resourceLoader(_ resourceLoader: AVAssetResourceLoader, shouldWaitForRenewalOfRequestedResource _: AVAssetResourceRenewalRequest) -> Bool {
+        // Renewal is ignored.
+        return false
+    }
+
+    func resourceLoader(_ resourceLoader: AVAssetResourceLoader, didCancel request: AVAssetResourceLoadingRequest) {
+        fatalError()
+    }
+
+}

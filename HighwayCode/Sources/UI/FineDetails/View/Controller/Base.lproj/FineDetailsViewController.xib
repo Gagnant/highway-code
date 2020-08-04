@@ -14,12 +14,12 @@
                 <outlet property="mapView" destination="f68-Yi-qCr" id="f9e-Nj-X0w"/>
                 <outlet property="mediaCollectionView" destination="Wan-CY-Zsl" id="ibA-sf-LTN"/>
                 <outlet property="mediaContainerView" destination="LwR-SU-7Zb" id="c3l-6Y-Sbf"/>
-                <outlet property="paidStampImageView" destination="VPh-K4-mgP" id="wdW-fK-WJ7"/>
                 <outlet property="paymentActionContainerView" destination="BZx-Io-D4G" id="N9I-Si-29J"/>
                 <outlet property="reducedFineAmountLabel" destination="d4o-G8-HI7" id="BHY-yq-5u7"/>
                 <outlet property="resolutionDateLabel" destination="Lcb-2q-PCe" id="fuY-gn-2Pa"/>
                 <outlet property="resolutionNumberLabel" destination="IcU-4j-Jle" id="QDz-yv-86d"/>
                 <outlet property="rootScrollView" destination="ZXn-8Q-uVd" id="eqk-sE-Skp"/>
+                <outlet property="stampImageView" destination="VPh-K4-mgP" id="6Ps-vE-xYG"/>
                 <outlet property="vehiclePlateLabel" destination="35D-7m-8n5" id="i8j-sJ-bnN"/>
                 <outlet property="view" destination="E5N-fg-PLR" id="qhQ-T5-LXh"/>
                 <outlet property="violationDateLabel" destination="cUf-67-Cj1" id="ebN-b0-Zcl"/>
@@ -102,15 +102,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StampPaid" translatesAutoresizingMaskIntoConstraints="NO" id="VPh-K4-mgP" userLabel="Paid Stamp Image">
-                                                    <rect key="frame" x="243" y="23" width="135" height="72"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VPh-K4-mgP" userLabel="Paid Stamp Image">
+                                                    <rect key="frame" x="258" y="34" width="120" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="72" id="HT0-64-365"/>
-                                                        <constraint firstAttribute="width" secondItem="VPh-K4-mgP" secondAttribute="height" multiplier="15:8" id="moc-VT-UvZ"/>
+                                                        <constraint firstAttribute="width" secondItem="VPh-K4-mgP" secondAttribute="height" multiplier="187:78" id="2Wi-po-EBf"/>
+                                                        <constraint firstAttribute="height" constant="50" id="vHB-Ot-xoj"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.transform.rotation.z">
-                                                            <real key="value" value="-0.17499999999999999"/>
+                                                            <real key="value" value="0.17499999999999999"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
@@ -298,7 +298,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="141.96428571428569"/>
         </view>
     </objects>
-    <resources>
-        <image name="StampPaid" width="85" height="32"/>
-    </resources>
 </document>
