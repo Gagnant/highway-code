@@ -17,7 +17,7 @@ class VehiclesListElementCollectionCell: UICollectionViewCell {
 
     // MARK: - FinesListFineDetailsCollectionCell
 
-    static let reuseIdentifier = String(describing: "VehiclesListElementCollectionCell")
+    static let reuseIdentifier = "VehiclesListElementCollectionCell"
 
     static var nib: UINib {
         let bundle = Bundle(for: VehiclesListElementCollectionCell.self)

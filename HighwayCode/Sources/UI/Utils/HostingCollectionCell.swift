@@ -10,7 +10,7 @@ import UIKit
 
 class HostingCollectionCell: UICollectionViewCell {
 
-    static let reuseIdentifier = String(describing: "HostingCollectionCell")
+    static let reuseIdentifier = "HostingCollectionCell"
 
     // MARK: -
 
@@ -22,6 +22,7 @@ class HostingCollectionCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         hostedController.map(self.remove)
+        hostedController = nil
         super.prepareForReuse()
     }
 

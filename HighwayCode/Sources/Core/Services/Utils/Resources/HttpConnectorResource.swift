@@ -47,8 +47,8 @@ class HttpConnectorResource<Content: Encodable, Value: Decodable, Failure: Decod
             self?.didChange()
         }
         isLoading = true
-        didChange()
         _ = connector.execute(request: request)
+        didChange()
     }
 
     func require(_ observer: AnyObject, observation: @escaping () -> Void) {

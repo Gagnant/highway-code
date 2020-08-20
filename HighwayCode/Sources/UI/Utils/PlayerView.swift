@@ -44,20 +44,18 @@ final class PlayerView: UIView {
         guard isAspectTrackingEnabled else {
             return
         }
-        let options: NSKeyValueObservingOptions = [.new, .old, .initial]
-        let observation = playerLayer.observe(\.player?.currentItem?.asset.tracks, options: options) { [weak self] (_, _) in
+        let observation = playerLayer.observe(\.player?.currentItem?.tracks) { [weak self] (_, _) in
             self?.updateAspectConstraint()
         }
-        self.currentAssetObservation = observation
+        currentAssetObservation = observation
+        updateAspectConstraint()
     }
 
     private func updateAspectConstraint() {
         aspectLayoutConstraint?.isActive = false
         aspectLayoutConstraint = nil
         guard isAspectTrackingEnabled,
-              let asset = player?.currentItem?.asset,
-              asset.statusOfValue(forKey: "tracks", error: nil) == .loaded,
-              let track = asset.tracks(withMediaType: .video).first else {
+            let track = player?.currentItem?.tracks(withMediaType: .video).first?.assetTrack else {
             return
         }
         let trackSize = track.naturalSize.applying(track.preferredTransform)

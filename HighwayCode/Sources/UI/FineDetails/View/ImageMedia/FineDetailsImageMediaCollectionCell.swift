@@ -16,7 +16,7 @@ class FineDetailsImageMediaCollectionCell: UICollectionViewCell {
 
     // MARK: - FineDetailsImageMediaCollectionCell
 
-    static let reuseIdentifier = String(describing: "FineDetailsImageMediaCollectionCell")
+    static let reuseIdentifier = "FineDetailsImageMediaCollectionCell"
 
     static var nib: UINib {
         let bundle = Bundle(for: FineDetailsImageMediaCollectionCell.self)

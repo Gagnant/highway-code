@@ -19,6 +19,8 @@ class KeychainCredentialsStorage: CredentialsStorage {
 
     // MARK: - CredentialsStorage
 
+    private var _credentials: Credentials?
+
     var credentials: Credentials? {
         get { return readCredentials() }
         set { setCredentials(credentials: newValue) }
@@ -50,11 +52,15 @@ class KeychainCredentialsStorage: CredentialsStorage {
             NSLog("Failed to store credentials: \(description(for: status))")
             return
         }
+        _credentials = credentials
         NSLog("Successfully stored credentials.")
     }
 
     /// Reads the stored credentials for the given server.
     private func readCredentials() -> Credentials? {
+        if let credentials = _credentials {
+            return credentials
+        }
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
@@ -62,15 +68,12 @@ class KeychainCredentialsStorage: CredentialsStorage {
             kSecReturnAttributes as String: true,
             kSecReturnData as String: true
         ]
-
         var item: CFTypeRef?
-
         let status = SecItemCopyMatching(query as CFDictionary, &item)
         guard status == errSecSuccess else {
             NSLog("Unable to retieve credentials: \(description(for: status))")
             return nil
         }
-
         guard let existingItem = item as? [String: Any],
             let accessTokenData = existingItem[kSecValueData as String] as? Data,
             let accessToken = String(data: accessTokenData, encoding: String.Encoding.utf8),
@@ -92,6 +95,7 @@ class KeychainCredentialsStorage: CredentialsStorage {
             NSLog("Unable to remove credentials: \(description(for: status))")
             return
         }
+        _credentials = nil
         NSLog("Successfully removed credentials.")
     }
 

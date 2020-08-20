@@ -15,7 +15,7 @@ final class FinesListActionCollectionCell: UICollectionViewCell {
 
     // MARK: - FinesListActionCollectionCell
 
-    static let reuseIdentifier = String(describing: "FinesListActionCollectionCell")
+    static let reuseIdentifier = "FinesListActionCollectionCell"
 
     static var nib: UINib {
         let bundle = Bundle(for: FinesListActionCollectionCell.self)

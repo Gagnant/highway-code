@@ -110,6 +110,7 @@
 		049E71A124C72D0600F6508F /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E71A024C72D0600F6508F /* Camera.swift */; };
 		049E71A324C7369900F6508F /* CLLocationCoordinate2D+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E71A224C7369900F6508F /* CLLocationCoordinate2D+Extensions.swift */; };
 		049E71AC24C741BF00F6508F /* CamerasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E71AB24C741BF00F6508F /* CamerasResponse.swift */; };
+		04A25F8B24EC1F9B00D0C0D2 /* AVPlayerItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A25F8A24EC1F9B00D0C0D2 /* AVPlayerItem+Extensions.swift */; };
 		04A4B65324D31343005FB1D4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4B65224D31343005FB1D4 /* WelcomeViewController.swift */; };
 		04A4B65724D31371005FB1D4 /* WelcomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4B65624D31371005FB1D4 /* WelcomeBuilder.swift */; };
 		04A4B65A24D3237B005FB1D4 /* IWelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4B65924D3237B005FB1D4 /* IWelcomeRouter.swift */; };
@@ -156,6 +157,8 @@
 		04B44FCD24D2F8B300BBCA40 /* ResolutionMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B44FCC24D2F8B300BBCA40 /* ResolutionMediaViewController.xib */; };
 		04B7B1F324D043A500BD5447 /* Resource+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7B1F224D043A500BD5447 /* Resource+Transform.swift */; };
 		04B7B1F624D0446500BD5447 /* HttpConnectorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7B1F524D0446500BD5447 /* HttpConnectorResource.swift */; };
+		04B9ADD824EEAE7600659DF3 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 04B9ADD724EEAE7600659DF3 /* NVActivityIndicatorView */; };
+		04B9ADDA24EEAE7600659DF3 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 04B9ADD924EEAE7600659DF3 /* NVActivityIndicatorViewExtended */; };
 		04BE415124C6DFFF00673E45 /* HttpConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE414124C6DFFF00673E45 /* HttpConnector.swift */; };
 		04BE415624C6DFFF00673E45 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE414824C6DFFF00673E45 /* Request.swift */; };
 		04BE415B24C6DFFF00673E45 /* HttpSessionConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE414E24C6DFFF00673E45 /* HttpSessionConnector.swift */; };
@@ -169,6 +172,7 @@
 		04BEF0AB24C88A25000A3F03 /* FinesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEF0AA24C88A25000A3F03 /* FinesListPresenter.swift */; };
 		04BEF0AD24C88A34000A3F03 /* FinesListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEF0AC24C88A34000A3F03 /* FinesListBuilder.swift */; };
 		04BEF0AF24C88A48000A3F03 /* FinesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEF0AE24C88A48000A3F03 /* FinesListRouter.swift */; };
+		04C1B2F92518AA0B007D5B49 /* FinesListVehiclesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1B2F82518AA0B007D5B49 /* FinesListVehiclesCell.swift */; };
 		04D566EB24D04967009B2E28 /* RemoteResolutionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D566EA24D04967009B2E28 /* RemoteResolutionsService.swift */; };
 		04D566ED24D04A21009B2E28 /* SubscriptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D566EC24D04A21009B2E28 /* SubscriptionRequest.swift */; };
 		04D566EF24D04A49009B2E28 /* SubscriptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D566EE24D04A49009B2E28 /* SubscriptionResponse.swift */; };
@@ -179,8 +183,6 @@
 		04E1471A24C8609200313D01 /* IVehicleSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1471724C8609200313D01 /* IVehicleSubscriptionView.swift */; };
 		04E1471B24C8609200313D01 /* IVehicleSubscriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1471824C8609200313D01 /* IVehicleSubscriptionPresenter.swift */; };
 		04E1471C24C8609200313D01 /* IVehicleSubscriptionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1471924C8609200313D01 /* IVehicleSubscriptionRouter.swift */; };
-		04E1471E24C8623E00313D01 /* NVActivityIndicatorViewExtended.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E1471D24C8623E00313D01 /* NVActivityIndicatorViewExtended.framework */; };
-		04E1471F24C86B8D00313D01 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AF61D424C85F59009E93F3 /* NVActivityIndicatorView.framework */; };
 		04E1475024C8753D00313D01 /* FinesListHeaderCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1473124C8753D00313D01 /* FinesListHeaderCollectionCell.swift */; };
 		04E1475124C8753D00313D01 /* FinesListHeaderCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E1473224C8753D00313D01 /* FinesListHeaderCollectionCell.xib */; };
 		04E1475224C8753D00313D01 /* FinesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1473424C8753D00313D01 /* FinesListViewController.swift */; };
@@ -199,6 +201,7 @@
 		04E1477B24C8893C00313D01 /* IFinesListElementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1477A24C8893C00313D01 /* IFinesListElementViewModel.swift */; };
 		04EB3B0024C6DAE100BD58DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB3AFF24C6DAE100BD58DD /* AppDelegate.swift */; };
 		04EB3B0924C6DAE600BD58DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EB3B0824C6DAE600BD58DD /* Assets.xcassets */; };
+		04ED65B424F5841B000E67B4 /* LocationStatusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED65B324F5841B000E67B4 /* LocationStatusProvider.swift */; };
 		04F9D03524D3461700F4C08D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F9D03724D3461700F4C08D /* InfoPlist.strings */; };
 		04F9D03D24D34C0600F4C08D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F9D03C24D34C0500F4C08D /* LaunchScreen.storyboard */; };
 		04F9D04024D34EA300F4C08D /* IVehicleFinesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9D03F24D34EA300F4C08D /* IVehicleFinesListInteractor.swift */; };
@@ -323,6 +326,7 @@
 		049E71A024C72D0600F6508F /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		049E71A224C7369900F6508F /* CLLocationCoordinate2D+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extensions.swift"; sourceTree = "<group>"; };
 		049E71AB24C741BF00F6508F /* CamerasResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerasResponse.swift; sourceTree = "<group>"; };
+		04A25F8A24EC1F9B00D0C0D2 /* AVPlayerItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayerItem+Extensions.swift"; sourceTree = "<group>"; };
 		04A4B65224D31343005FB1D4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		04A4B65624D31371005FB1D4 /* WelcomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBuilder.swift; sourceTree = "<group>"; };
 		04A4B65924D3237B005FB1D4 /* IWelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IWelcomeRouter.swift; sourceTree = "<group>"; };
@@ -388,6 +392,7 @@
 		04BEF0AA24C88A25000A3F03 /* FinesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinesListPresenter.swift; sourceTree = "<group>"; };
 		04BEF0AC24C88A34000A3F03 /* FinesListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinesListBuilder.swift; sourceTree = "<group>"; };
 		04BEF0AE24C88A48000A3F03 /* FinesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinesListRouter.swift; sourceTree = "<group>"; };
+		04C1B2F82518AA0B007D5B49 /* FinesListVehiclesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinesListVehiclesCell.swift; sourceTree = "<group>"; };
 		04D566EA24D04967009B2E28 /* RemoteResolutionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteResolutionsService.swift; sourceTree = "<group>"; };
 		04D566EC24D04A21009B2E28 /* SubscriptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRequest.swift; sourceTree = "<group>"; };
 		04D566EE24D04A49009B2E28 /* SubscriptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionResponse.swift; sourceTree = "<group>"; };
@@ -417,6 +422,7 @@
 		04EB3AFC24C6DAE100BD58DD /* HighwayCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighwayCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EB3AFF24C6DAE100BD58DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04EB3B0824C6DAE600BD58DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04ED65B324F5841B000E67B4 /* LocationStatusProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStatusProvider.swift; sourceTree = "<group>"; };
 		04F9D03624D3461700F4C08D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		04F9D03824D3461800F4C08D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		04F9D03924D3461900F4C08D /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -435,11 +441,10 @@
 				0482136C24CDB7F100A8BA23 /* libsqlite3.tbd in Frameworks */,
 				0482136A24CDB79000A8BA23 /* libc++.tbd in Frameworks */,
 				049E719F24C72C5500F6508F /* MapKit.framework in Frameworks */,
-				04E1471F24C86B8D00313D01 /* NVActivityIndicatorView.framework in Frameworks */,
-				04E1471E24C8623E00313D01 /* NVActivityIndicatorViewExtended.framework in Frameworks */,
 				0441F27524CB2F1F0012DB5B /* SDWebImage in Frameworks */,
 				0482135524CDB37900A8BA23 /* GoogleUtilities.framework in Frameworks */,
 				0482135624CDB37900A8BA23 /* gRPC-Core.framework in Frameworks */,
+				04B9ADD824EEAE7600659DF3 /* NVActivityIndicatorView in Frameworks */,
 				0482135724CDB37900A8BA23 /* BoringSSL-GRPC.framework in Frameworks */,
 				0482135824CDB37900A8BA23 /* abseil.framework in Frameworks */,
 				0482135924CDB37900A8BA23 /* FirebaseCoreDiagnostics.framework in Frameworks */,
@@ -450,6 +455,7 @@
 				0482135F24CDB37900A8BA23 /* FIRAnalyticsConnector.framework in Frameworks */,
 				0482136024CDB37900A8BA23 /* FirebaseAuth.framework in Frameworks */,
 				0482136124CDB37900A8BA23 /* FirebaseAnalytics.framework in Frameworks */,
+				04B9ADDA24EEAE7600659DF3 /* NVActivityIndicatorViewExtended in Frameworks */,
 				0482136224CDB37900A8BA23 /* GoogleAppMeasurement.framework in Frameworks */,
 				0482136324CDB37900A8BA23 /* FirebaseCore.framework in Frameworks */,
 				0482136424CDB37900A8BA23 /* FirebaseFunctions.framework in Frameworks */,
@@ -464,6 +470,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04051FD2250F73D900B1B00E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				04BE415C24C6E0C100673E45 /* ServiceError.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		0421008224CF414E002BCB9C /* VehiclesList */ = {
 			isa = PBXGroup;
 			children = (
@@ -701,7 +715,6 @@
 			isa = PBXGroup;
 			children = (
 				04B7B1F424D043A700BD5447 /* Resources */,
-				04BE415C24C6E0C100673E45 /* ServiceError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1018,6 +1031,7 @@
 		04BE417024C6F10E00673E45 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				04051FD2250F73D900B1B00E /* Shared */,
 				0482138024CDBCB700A8BA23 /* Authentication */,
 				04BE417124C6F12200673E45 /* Cameras */,
 				04AF61AB24C767B4009E93F3 /* Resolutions */,
@@ -1084,8 +1098,17 @@
 				04B2C0A224C9ECB00059C08C /* Tooltip */,
 				04E1473024C8753D00313D01 /* Header */,
 				04B44FB124D2B87A00BBCA40 /* Action */,
+				04C1B2F72518A9FB007D5B49 /* Vehicles */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04C1B2F72518A9FB007D5B49 /* Vehicles */ = {
+			isa = PBXGroup;
+			children = (
+				04C1B2F82518AA0B007D5B49 /* FinesListVehiclesCell.swift */,
+			);
+			path = Vehicles;
 			sourceTree = "<group>";
 		};
 		04D566F424D04A5F009B2E28 /* Internal */ = {
@@ -1256,11 +1279,13 @@
 		04EB3B1624C6DC2E00BD58DD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				04ED65B324F5841B000E67B4 /* LocationStatusProvider.swift */,
 				049E71A224C7369900F6508F /* CLLocationCoordinate2D+Extensions.swift */,
 				0493058C24D026D400350CB5 /* DecimalNumberFormatter.swift */,
 				0493058E24D026E700350CB5 /* Scanner+Extensions.swift */,
 				047F409C24D1A26B00154191 /* TaggedClosureBox.swift */,
 				0444B6D124D5D958002D6362 /* Comparable+Extension.swift */,
+				04A25F8A24EC1F9B00D0C0D2 /* AVPlayerItem+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1319,6 +1344,8 @@
 			packageProductDependencies = (
 				0441F27424CB2F1F0012DB5B /* SDWebImage */,
 				04D566F624D04E07009B2E28 /* DifferenceKit */,
+				04B9ADD724EEAE7600659DF3 /* NVActivityIndicatorView */,
+				04B9ADD924EEAE7600659DF3 /* NVActivityIndicatorViewExtended */,
 			);
 			productName = HighwayCode;
 			productReference = 04EB3AFC24C6DAE100BD58DD /* HighwayCode.app */;
@@ -1353,6 +1380,7 @@
 			packageReferences = (
 				0441F27324CB2F1F0012DB5B /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				04D566F524D04E07009B2E28 /* XCRemoteSwiftPackageReference "DifferenceKit" */,
+				04B9ADD624EEAE7600659DF3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 04EB3AFD24C6DAE100BD58DD /* Products */;
 			projectDirPath = "";
@@ -1405,15 +1433,11 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorViewExtended.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorViewExtended.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1480,11 +1504,13 @@
 				04B2C0A424C9ECC90059C08C /* FinesListTooltipCollectionCell.swift in Sources */,
 				0493059124D0271400350CB5 /* DecimalNumberCoding.swift in Sources */,
 				0421009424CF6989002BCB9C /* IVehiclesListPresenter.swift in Sources */,
+				04C1B2F92518AA0B007D5B49 /* FinesListVehiclesCell.swift in Sources */,
 				04B44FBB24D2C85C00BBCA40 /* IFinesListInteractor.swift in Sources */,
 				04B44FC924D2F88800BBCA40 /* ResolutionMediaBuilder.swift in Sources */,
 				04AF61AA24C7438D009E93F3 /* RemoteCamerasService.swift in Sources */,
 				04E1471A24C8609200313D01 /* IVehicleSubscriptionView.swift in Sources */,
 				0441F26E24CB2DB80012DB5B /* FineDetailsVideoMediaCollectionCell.swift in Sources */,
+				04ED65B424F5841B000E67B4 /* LocationStatusProvider.swift in Sources */,
 				0444792024CDD7A6007BCEEB /* PaymentBuilder.swift in Sources */,
 				0458EC6B24D000A200DB60E7 /* CallableConnector.swift in Sources */,
 				0482137B24CDB94700A8BA23 /* FirestoreSubscription.swift in Sources */,
@@ -1542,6 +1568,7 @@
 				0458EC6E24D000DC00DB60E7 /* Cancellable.swift in Sources */,
 				04F9D04024D34EA300F4C08D /* IVehicleFinesListInteractor.swift in Sources */,
 				04B44FC724D2F86B00BBCA40 /* ResolutionMediaContentViewController.swift in Sources */,
+				04A25F8B24EC1F9B00D0C0D2 /* AVPlayerItem+Extensions.swift in Sources */,
 				0482137F24CDBA3700A8BA23 /* SubscriptionConnectorRequest.swift in Sources */,
 				0444B6BC24D44224002D6362 /* AccessTokenProvider.swift in Sources */,
 				0482137C24CDB94700A8BA23 /* SubscriptionConnector.swift in Sources */,
@@ -1789,7 +1816,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MDY39C55RJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1800,12 +1829,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gagnant.HighwayCode;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gagnant.highway-code";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1815,7 +1846,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MDY39C55RJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1826,12 +1859,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gagnant.HighwayCode;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gagnant.highway-code";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1869,6 +1904,14 @@
 				minimumVersion = 5.8.4;
 			};
 		};
+		04B9ADD624EEAE7600659DF3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		04D566F524D04E07009B2E28 /* XCRemoteSwiftPackageReference "DifferenceKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ra1028/DifferenceKit";
@@ -1884,6 +1927,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0441F27324CB2F1F0012DB5B /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		04B9ADD724EEAE7600659DF3 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04B9ADD624EEAE7600659DF3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		04B9ADD924EEAE7600659DF3 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04B9ADD624EEAE7600659DF3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
 		};
 		04D566F624D04E07009B2E28 /* DifferenceKit */ = {
 			isa = XCSwiftPackageProductDependency;

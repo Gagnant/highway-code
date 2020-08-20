@@ -14,7 +14,7 @@ final class FinesListHeaderCollectionCell: UICollectionViewCell {
 
     // MARK: - FinesListSectionHeaderView
 
-    static let reuseIdentifier = String(describing: "FinesListHeaderCollectionCell")
+    static let reuseIdentifier = "FinesListHeaderCollectionCell"
 
     static var nib: UINib {
         let bundle = Bundle(for: FinesListHeaderCollectionCell.self)

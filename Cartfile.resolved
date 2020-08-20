@@ -2,4 +2,3 @@ binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.j
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAuthBinary.json" "6.28.1"
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseFirestoreBinary.json" "6.28.1"
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseFunctionsBinary.json" "6.28.1"
-github "ninjaprox/NVActivityIndicatorView" "5.0.0"

@@ -14,12 +14,11 @@ class FineDetailsVideoMediaCollectionCell: UICollectionViewCell {
     @IBOutlet private var videoContainerView: UIView!
     @IBOutlet private var videoPlayerView: PlayerView!
 
-    private var videoPlayerLooper: AVPlayerLooper?
     private var viewModel: FineDetailsViewModel.Media?
 
     // MARK: - FineDetailsImageMediaCollectionCell
 
-    static let reuseIdentifier = String(describing: "FineDetailsVideoMediaCollectionCell")
+    static let reuseIdentifier = "FineDetailsVideoMediaCollectionCell"
 
     static var nib: UINib {
         let bundle = Bundle(for: FineDetailsVideoMediaCollectionCell.self)
@@ -28,7 +27,7 @@ class FineDetailsVideoMediaCollectionCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        configurePlayerLayer()
+        configurePlayerView()
         configureGesture()
     }
 
@@ -40,13 +39,14 @@ class FineDetailsVideoMediaCollectionCell: UICollectionViewCell {
 
     func configure(viewModel: FineDetailsViewModel.Media) {
         assert(viewModel.type == .video)
-        let player = AVPlayer(url: viewModel.url)
-        videoPlayerView.player = player
+        let playerItem = AVPlayerItem(url: viewModel.url)
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(
-            self, selector: #selector(restartPlayer), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem
+            self, selector: #selector(restartPlayer), name: .AVPlayerItemDidPlayToEndTime, object: playerItem
         )
-        player.play()
+        let player = videoPlayerView.player
+        player?.replaceCurrentItem(with: playerItem)
+        player?.play()
         self.viewModel = viewModel
     }
 
@@ -67,7 +67,8 @@ class FineDetailsVideoMediaCollectionCell: UICollectionViewCell {
         contentView.addGestureRecognizer(gesture)
     }
 
-    private func configurePlayerLayer() {
+    private func configurePlayerView() {
+        videoPlayerView.player = AVPlayer(playerItem: nil)
         videoPlayerView.playerLayer.videoGravity = .resizeAspectFill
     }
 
