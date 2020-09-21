@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>596682300877-1pmqdqs8bmmlugaa2b3bq0ucfcumt2nu.apps.googleusercontent.com</string>
+	<string>596682300877-2eb03mmpcf2k1g9g2rv9jgso21as2iej.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.596682300877-1pmqdqs8bmmlugaa2b3bq0ucfcumt2nu</string>
+	<string>com.googleusercontent.apps.596682300877-2eb03mmpcf2k1g9g2rv9jgso21as2iej</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAn7QUmPZ62eVjFfmvZwrTZvOdTFaVplWY</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.gagnant.HighwayCode</string>
+	<string>com.gagnant.highway-code</string>
 	<key>PROJECT_ID</key>
 	<string>highwaycode-25afc</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:596682300877:ios:47886f8c86974d127cf884</string>
+	<string>1:596682300877:ios:a41769912c5746f47cf884</string>
 	<key>DATABASE_URL</key>
 	<string>https://highwaycode-25afc.firebaseio.com</string>
 </dict>
