@@ -40,6 +40,10 @@ struct AnyResource<Value>: Resource {
         box.unrequire(observer)
     }
 
+    var isRequired: Bool {
+        return box.isRequired
+    }
+
 }
 
 
@@ -66,6 +70,10 @@ private class AnyResourceBase<Value>: Resource {
     }
 
     func unrequire(_ observer: AnyObject) {
+        fatalError("Must override")
+    }
+
+    var isRequired: Bool {
         fatalError("Must override")
     }
 
@@ -101,6 +109,10 @@ private final class AnyResourceBox<R: Resource>: AnyResourceBase<R.Value> {
 
     override func update() {
         resource.update()
+    }
+
+    override var isRequired: Bool {
+        return resource.isRequired
     }
 
 }

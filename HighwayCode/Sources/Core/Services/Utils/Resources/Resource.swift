@@ -30,4 +30,17 @@ protocol Resource {
     /// Unrequires resource.
     func unrequire(_ observer: AnyObject)
 
+    /// Returns true if resource has at least one observer attached.
+    var isRequired: Bool { get }
+
+}
+
+protocol CollectionResource: Resource where Value: Collection {
+
+    /// Loads more values if available.
+    func more()
+
+    /// Returns true if more items can be loaded.
+    var isMoreAvailable: Bool { get }
+
 }

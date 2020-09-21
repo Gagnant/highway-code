@@ -32,7 +32,7 @@ class HttpConnectorResource<Content: Encodable, Value: Decodable, Failure: Decod
     private(set) var isLoading: Bool
 
     func update() {
-        guard !isLoading else {
+        guard !(isLoading || observations.isEmpty) else {
             return
         }
         request.success = { [weak self] value in
@@ -65,6 +65,10 @@ class HttpConnectorResource<Content: Encodable, Value: Decodable, Failure: Decod
         let identifier = ObjectIdentifier(observer)
         observations[identifier] = nil
         didUnrequireSubscription()
+    }
+
+    var isRequired: Bool {
+        return !observations.isEmpty
     }
 
     // MARK: -

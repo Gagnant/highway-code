@@ -54,6 +54,10 @@ class SubscriptionConnectorResource<Value: Decodable>: Resource {
         didUnrequireSubscription()
     }
 
+    var isRequired: Bool {
+        return !observations.isEmpty
+    }
+
     // MARK: - Private
 
     private func didRequireSubscription() {

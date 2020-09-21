@@ -6,26 +6,20 @@
 //  Copyright © 2020 Gagnant. All rights reserved.
 //
 
-extension Resource {
+import Foundation
 
-    func map<T>(tranform: @escaping (Value) -> T) -> AnyResource<T> {
-        return AnyResource(ResourceTransform(resource: self, transoform: tranform))
-    }
-
-}
-
-private class ResourceTransform<Value, Input>: Resource {
+class ResourceTransformDecorator<Value, Input>: Resource {
 
     private let resource: AnyResource<Input>
-    private let transoform: (Input) -> Value
+    private let transform: (Input) -> Value
 
-    init<R: Resource>(resource: R, transoform: @escaping (Input) -> Value) where R.Value == Input {
+    init<R: Resource>(resource: R, transform: @escaping (Input) -> Value) where R.Value == Input {
         self.resource = AnyResource(resource)
-        self.transoform = transoform
+        self.transform = transform
     }
 
     var value: Value? {
-        return resource.value.map(transoform)
+        return resource.value.map(transform)
     }
 
     var error: Error? {
@@ -46,6 +40,18 @@ private class ResourceTransform<Value, Input>: Resource {
 
     func unrequire(_ observer: AnyObject) {
         resource.unrequire(observer)
+    }
+
+    var isRequired: Bool {
+        return resource.isRequired
+    }
+
+}
+
+extension Resource {
+
+    func map<T>(tranform: @escaping (Value) -> T) -> AnyResource<T> {
+        return AnyResource(ResourceTransformDecorator(resource: self, transform: tranform))
     }
 
 }

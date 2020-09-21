@@ -15,7 +15,6 @@ final class MutableResourceDecorator<Value>: Resource where Value: Equatable {
     init<R: Resource>(resource: R) where R.Value == Value {
         self.resource = AnyResource(resource)
         self.observations = [:]
-        updateFromDecoratedResource()
     }
 
     // MARK: -
@@ -36,6 +35,7 @@ final class MutableResourceDecorator<Value>: Resource where Value: Equatable {
     }
 
     func require(_ observer: AnyObject, observation: @escaping () -> Void) {
+        // This should be done only once not each time observer is invoked.
         let observationProxy = { [weak self] in
             self?.updateFromDecoratedResource()
             observation()
@@ -52,6 +52,10 @@ final class MutableResourceDecorator<Value>: Resource where Value: Equatable {
     func didChange() {
         assert(Thread.current == .main)
         observations.values.forEach { $0() }
+    }
+
+    var isRequired: Bool {
+        return !observations.isEmpty
     }
 
     // MARK: -
