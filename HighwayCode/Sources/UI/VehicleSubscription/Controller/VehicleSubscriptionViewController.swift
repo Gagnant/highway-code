@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import NVActivityIndicatorViewExtended
+import NVActivityIndicatorView
 
 class VehicleSubscriptionViewController: UIViewController, NVActivityIndicatorViewable {
 

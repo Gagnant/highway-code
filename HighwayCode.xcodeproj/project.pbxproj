@@ -158,7 +158,6 @@
 		04B7B1F324D043A500BD5447 /* Resource+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7B1F224D043A500BD5447 /* Resource+Transform.swift */; };
 		04B7B1F624D0446500BD5447 /* HttpConnectorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7B1F524D0446500BD5447 /* HttpConnectorResource.swift */; };
 		04B9ADD824EEAE7600659DF3 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 04B9ADD724EEAE7600659DF3 /* NVActivityIndicatorView */; };
-		04B9ADDA24EEAE7600659DF3 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 04B9ADD924EEAE7600659DF3 /* NVActivityIndicatorViewExtended */; };
 		04BE415124C6DFFF00673E45 /* HttpConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE414124C6DFFF00673E45 /* HttpConnector.swift */; };
 		04BE415624C6DFFF00673E45 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE414824C6DFFF00673E45 /* Request.swift */; };
 		04BE415B24C6DFFF00673E45 /* HttpSessionConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE414E24C6DFFF00673E45 /* HttpSessionConnector.swift */; };
@@ -455,7 +454,6 @@
 				0482135F24CDB37900A8BA23 /* FIRAnalyticsConnector.framework in Frameworks */,
 				0482136024CDB37900A8BA23 /* FirebaseAuth.framework in Frameworks */,
 				0482136124CDB37900A8BA23 /* FirebaseAnalytics.framework in Frameworks */,
-				04B9ADDA24EEAE7600659DF3 /* NVActivityIndicatorViewExtended in Frameworks */,
 				0482136224CDB37900A8BA23 /* GoogleAppMeasurement.framework in Frameworks */,
 				0482136324CDB37900A8BA23 /* FirebaseCore.framework in Frameworks */,
 				0482136424CDB37900A8BA23 /* FirebaseFunctions.framework in Frameworks */,
@@ -1345,7 +1343,6 @@
 				0441F27424CB2F1F0012DB5B /* SDWebImage */,
 				04D566F624D04E07009B2E28 /* DifferenceKit */,
 				04B9ADD724EEAE7600659DF3 /* NVActivityIndicatorView */,
-				04B9ADD924EEAE7600659DF3 /* NVActivityIndicatorViewExtended */,
 			);
 			productName = HighwayCode;
 			productReference = 04EB3AFC24C6DAE100BD58DD /* HighwayCode.app */;
@@ -1908,8 +1905,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
+				kind = exactVersion;
+				version = 4.8.0;
 			};
 		};
 		04D566F524D04E07009B2E28 /* XCRemoteSwiftPackageReference "DifferenceKit" */ = {
@@ -1932,11 +1929,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04B9ADD624EEAE7600659DF3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
-		};
-		04B9ADD924EEAE7600659DF3 /* NVActivityIndicatorViewExtended */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 04B9ADD624EEAE7600659DF3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
-			productName = NVActivityIndicatorViewExtended;
 		};
 		04D566F624D04E07009B2E28 /* DifferenceKit */ = {
 			isa = XCSwiftPackageProductDependency;

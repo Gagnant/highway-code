@@ -8,7 +8,7 @@
 
 import UIKit
 import DifferenceKit
-import NVActivityIndicatorViewExtended
+import NVActivityIndicatorView
 
 final class FinesListViewController: UIViewController, NVActivityIndicatorViewable {
 
