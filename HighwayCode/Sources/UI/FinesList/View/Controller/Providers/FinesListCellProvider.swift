@@ -8,34 +8,61 @@
 
 import UIKit
 
-struct FinesListCellProvider: IFinesListElementViewModelVisitor {
+protocol IFinesListCellProvider: class {
 
-    private let collectionView: UICollectionView
-    private let indexPath: IndexPath
-    private let controller: UIViewController
-    private let vehiclesListControllerFactory: VehiclesListControllerFactory
+    /// Prepares provider for upcomming work.
+    func prepare(controller: UIViewController, view: UICollectionView)
 
-    init(collectionView: UICollectionView, controller: UIViewController, vehiclesListControllerFactory: VehiclesListControllerFactory, indexPath: IndexPath) {
-        self.collectionView = collectionView
-        self.indexPath = indexPath
-        self.vehiclesListControllerFactory = vehiclesListControllerFactory
+    /// Returns cell for given item.
+    func cell<Item: IFinesListElementViewModel>(for item: Item, at indexPath: IndexPath) -> UICollectionViewCell
+
+}
+
+final class FinesListCellProvider: IFinesListElementViewModelVisitor, IFinesListCellProvider {
+
+    private weak var collectionView: UICollectionView?
+    private weak var controller: UIViewController?
+
+    // MARK: - IFinesListCellProvider
+
+    private var currentIndexPath: IndexPath!
+
+    func prepare(controller: UIViewController, view: UICollectionView) {
+        self.collectionView = view
         self.controller = controller
+        // TODO: Instead of registering and using vehicles cell directly DI should be used to
+        // hide implementation details.
+        view.register(
+            FinesListVehiclesCell.self,
+            forCellWithReuseIdentifier: FinesListVehiclesCell.reuseIdentifier
+        )
+        view.register(reusableCell: FinesListFineDetailsCollectionCell.self)
+        view.register(reusableCell: FinesListHeaderCollectionCell.self)
+        view.register(reusableCell: FinesListActionCollectionCell.self)
+        view.register(reusableCell: FinesListTooltipCollectionCell.self)
     }
 
-    // MARK: - FinesListCellProvider
+    func cell<Item: IFinesListElementViewModel>(for item: Item, at indexPath: IndexPath) -> UICollectionViewCell {
+        currentIndexPath = indexPath
+        let cell = item.accept(visitor: self)
+        currentIndexPath = nil
+        return cell
+    }
+
+    // MARK: - IFinesListElementViewModelVisitor
 
     func visit(viewModel: FinesListVehiclesViewModel) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: HostingCollectionCell.reuseIdentifier, for: indexPath
+        let cell = collectionView!.dequeueReusableCell(
+            withReuseIdentifier: FinesListVehiclesCell.reuseIdentifier, for: currentIndexPath
         )
-        let hostingCell = cell as! HostingCollectionCell
-        hostingCell.configure(hosted: vehiclesListControllerFactory.vehiclesListController(), parent: controller)
+        let vehiclesCell = cell as! FinesListVehiclesCell
+        vehiclesCell.configure(with: controller!)
         return cell
     }
 
     func visit(viewModel: FinesListFineDetailsViewModel) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: FinesListFineDetailsCollectionCell.reuseIdentifier, for: indexPath
+        let cell = collectionView!.dequeueReusableCell(
+            withReuseIdentifier: FinesListFineDetailsCollectionCell.reuseIdentifier, for: currentIndexPath
         )
         let descriptionCell = cell as? FinesListFineDetailsCollectionCell
         descriptionCell?.configure(viewModel: viewModel)
@@ -43,8 +70,8 @@ struct FinesListCellProvider: IFinesListElementViewModelVisitor {
     }
 
     func visit(viewModel: FinesListTooltipViewModel) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: FinesListTooltipCollectionCell.reuseIdentifier, for: indexPath
+        let cell = collectionView!.dequeueReusableCell(
+            withReuseIdentifier: FinesListTooltipCollectionCell.reuseIdentifier, for: currentIndexPath
         )
         let descriptionCell = cell as? FinesListTooltipCollectionCell
         descriptionCell?.configure(viewModel: viewModel)
@@ -52,8 +79,8 @@ struct FinesListCellProvider: IFinesListElementViewModelVisitor {
     }
 
     func visit(viewModel: FinesListHeaderViewModel) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: FinesListHeaderCollectionCell.reuseIdentifier, for: indexPath
+        let cell = collectionView!.dequeueReusableCell(
+            withReuseIdentifier: FinesListHeaderCollectionCell.reuseIdentifier, for: currentIndexPath
         )
         let headerCell = cell as? FinesListHeaderCollectionCell
         headerCell?.configure(title: viewModel.name)
@@ -61,19 +88,12 @@ struct FinesListCellProvider: IFinesListElementViewModelVisitor {
     }
 
     func visit(viewModel: FinesListActionViewModel) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: FinesListActionCollectionCell.reuseIdentifier, for: indexPath
+        let cell = collectionView!.dequeueReusableCell(
+            withReuseIdentifier: FinesListActionCollectionCell.reuseIdentifier, for: currentIndexPath
         )
         let actionCell = cell as? FinesListActionCollectionCell
         actionCell?.configure(viewModel: viewModel)
         return cell
     }
-
-}
-
-protocol VehiclesListControllerFactory {
-
-    /// Creates vehicles list controller.
-    func vehiclesListController() -> UIViewController
 
 }

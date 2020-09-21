@@ -17,9 +17,8 @@ class FinesListBuilder {
             paymentsService: Core.shared.payments
         )
         let presenter = FinesListPresenter(router: router, interactor: interactor)
-        let controller = FinesListViewController(
-            presenter: presenter, vehiclesListControllerFactory: router
-        )
+        let cellProvider = FinesListCellProvider()
+        let controller = FinesListViewController(presenter: presenter, cellProvider: cellProvider)
         presenter.view = controller
         router.controller = controller
         let navigation = UINavigationController(rootViewController: controller)

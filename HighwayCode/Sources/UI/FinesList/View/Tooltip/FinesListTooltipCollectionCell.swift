@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class FinesListTooltipCollectionCell: UICollectionViewCell {
+final class FinesListTooltipCollectionCell: UICollectionViewCell, ReusableView {
 
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!

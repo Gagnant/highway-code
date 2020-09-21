@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class FinesListHeaderCollectionCell: UICollectionViewCell {
+final class FinesListHeaderCollectionCell: UICollectionViewCell, ReusableView {
 
     @IBOutlet private var titleLabel: UILabel!
 

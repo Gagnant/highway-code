@@ -16,7 +16,7 @@ final class FinesListViewController: UIViewController, NVActivityIndicatorViewab
     @IBOutlet private var collectionLayout: CollectionViewDecoratedFlowLayout!
 
     private let presenter: IFinesListPresenter
-    private let vehiclesListControllerFactory: VehiclesListControllerFactory
+    private let cellProvider: IFinesListCellProvider
 
     private lazy var itemSizeProvider: FinesListCellSizeProviderCachingDecorator = {
         let provider = FinesListCellSizeProvider(collectionView: collectionView)
@@ -25,9 +25,9 @@ final class FinesListViewController: UIViewController, NVActivityIndicatorViewab
 
     private var elementsViewModels: [AnyFinesListElementViewModel]
 
-    init(presenter: IFinesListPresenter, vehiclesListControllerFactory: VehiclesListControllerFactory) {
+    init(presenter: IFinesListPresenter, cellProvider: IFinesListCellProvider) {
         self.presenter = presenter
-        self.vehiclesListControllerFactory = vehiclesListControllerFactory
+        self.cellProvider = cellProvider
         self.elementsViewModels = []
         super.init(nibName: nil, bundle: nil)
     }
@@ -96,28 +96,9 @@ extension FinesListViewController {
     }
 
     private func configureCollectionView() {
-        collectionView.register(
-            HostingCollectionCell.self,
-            forCellWithReuseIdentifier: HostingCollectionCell.reuseIdentifier
-        )
-        collectionView.register(
-            FinesListFineDetailsCollectionCell.nib,
-            forCellWithReuseIdentifier: FinesListFineDetailsCollectionCell.reuseIdentifier
-        )
-        collectionView.register(
-            FinesListTooltipCollectionCell.nib,
-            forCellWithReuseIdentifier: FinesListTooltipCollectionCell.reuseIdentifier
-        )
-        collectionView.register(
-            FinesListHeaderCollectionCell.nib,
-            forCellWithReuseIdentifier: FinesListHeaderCollectionCell.reuseIdentifier
-        )
-        collectionView.register(
-            FinesListActionCollectionCell.nib,
-            forCellWithReuseIdentifier: FinesListActionCollectionCell.reuseIdentifier
-        )
         collectionView.contentInset.top = 16
         collectionView.contentInset.bottom = 16
+        cellProvider.prepare(controller: self, view: collectionView)
     }
 
     private func configureCollectionViewLayout() {
@@ -150,13 +131,7 @@ extension FinesListViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellProvider = FinesListCellProvider(
-            collectionView: collectionView,
-            controller: self,
-            vehiclesListControllerFactory: vehiclesListControllerFactory,
-            indexPath: indexPath
-        )
-        return elementsViewModels[indexPath.row].accept(visitor: cellProvider)
+        return cellProvider.cell(for: elementsViewModels[indexPath.row], at: indexPath)
     }
 
 }

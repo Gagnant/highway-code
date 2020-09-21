@@ -20,7 +20,8 @@ class VehicleFinesListBuilder {
         let presenter = VehicleFinesListPresenter(
             router: router, interactor: interactor, subscriptionId: subscriptionId
         )
-        let controller = FinesListViewController(presenter: presenter, vehiclesListControllerFactory: router)
+        let cellProvider = FinesListCellProvider()
+        let controller = FinesListViewController(presenter: presenter, cellProvider: cellProvider)
         presenter.view = controller
         router.controller = controller
         return controller

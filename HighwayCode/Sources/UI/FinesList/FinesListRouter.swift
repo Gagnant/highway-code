@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FinesListRouter: IFinesListRouter, VehiclesListControllerFactory {
+class FinesListRouter: IFinesListRouter {
 
     weak var controller: UIViewController?
 
@@ -20,12 +20,6 @@ class FinesListRouter: IFinesListRouter, VehiclesListControllerFactory {
     func payment(resolutionId: Int) {
         let destination = PaymentBuilder.build(resolutionId: resolutionId)
         controller?.present(destination, animated: true, completion: nil)
-    }
-
-    // MARK: - VehiclesListControllerFactory
-
-    func vehiclesListController() -> UIViewController {
-        return VehiclesListBuilder.build()
     }
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class FinesListActionCollectionCell: UICollectionViewCell {
+final class FinesListActionCollectionCell: UICollectionViewCell, ReusableView {
 
     @IBOutlet private var actionButton: UIButton!
     private var viewModel: FinesListActionViewModel?

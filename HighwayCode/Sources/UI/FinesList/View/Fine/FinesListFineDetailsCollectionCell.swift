@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FinesListFineDetailsCollectionCell: UICollectionViewCell {
+class FinesListFineDetailsCollectionCell: UICollectionViewCell, ReusableView {
 
     @IBOutlet private var amountLabel: UILabel!
     @IBOutlet private var reducedAmountLabel: UILabel!
@@ -97,6 +97,26 @@ class FinesListFineDetailsCollectionCell: UICollectionViewCell {
         )
         amountLabel.isHidden = viewModel.amount == viewModel.payAmount
         reducedAmountLabel.text = currencyNumberFormatter.string(from: viewModel.payAmount as NSNumber)
+    }
+
+}
+
+
+
+protocol ReusableView {
+
+    /// Returns reuse identifier for given view type.
+    static var reuseIdentifier: String { get }
+
+    /// Returns nib for given reusable view type.
+    static var nib: UINib { get }
+
+}
+
+extension UICollectionView {
+
+    func register<Cell>(reusableCell: Cell.Type) where Cell: UICollectionViewCell & ReusableView {
+        self.register(reusableCell.nib, forCellWithReuseIdentifier: reusableCell.reuseIdentifier)
     }
 
 }
