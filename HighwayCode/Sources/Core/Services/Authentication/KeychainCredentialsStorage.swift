@@ -30,6 +30,7 @@ class KeychainCredentialsStorage: CredentialsStorage {
 
     private func setCredentials(credentials: Credentials?) {
         if let credentials = credentials {
+            removeCredentials()
             storeCredentials(credentials)
         } else {
             removeCredentials()
@@ -82,7 +83,9 @@ class KeychainCredentialsStorage: CredentialsStorage {
             NSLog("Unable to retieve credentials: \(description(for: status))")
             return nil
         }
-        return Credentials(userId: account, accessToken: accessToken)
+        let credentials = Credentials(userId: account, accessToken: accessToken)
+        _credentials = credentials
+        return credentials
     }
 
     private func removeCredentials() {
