@@ -28,10 +28,17 @@ final class KeyboardAvoidanceManager {
     /// Changed tracked view.
     func setTrackedView(_ trackedView: UIView) {
         self.trackedView = trackedView
+        guard let keyboard = keyboard else {
+            return
+        }
+        UIView.animate(withDuration: 0.25) {
+            self.keyboardWillShow(keyboardFrame: keyboard.frame, trackedView: trackedView)
+        }
     }
 
     /// Starts manager.
     func start() {
+        keyboard = nil
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIWindow.keyboardWillHideNotification, object: nil)
     }
@@ -39,9 +46,12 @@ final class KeyboardAvoidanceManager {
     /// Stops manager.
     func stop() {
         NotificationCenter.default.removeObserver(self)
+        keyboard = nil
     }
 
     // MARK: -
+
+    private var keyboard: KeyboardDescription?
 
     @objc private func keyboardWillShow(notification: Notification) {
         guard
@@ -51,10 +61,12 @@ final class KeyboardAvoidanceManager {
         else {
             return
         }
+        keyboard = KeyboardDescription(frame: keyboardFrame)
         keyboardWillShow(keyboardFrame: keyboardFrame, trackedView: trackedView)
     }
 
     @objc private func keyboardWillHide() {
+        keyboard = nil
         scrollView.contentInset.bottom = 0
         scrollView.scrollIndicatorInsets.bottom = 0
     }
@@ -78,5 +90,14 @@ final class KeyboardAvoidanceManager {
         )
         scrollView.scrollIndicatorInsets.bottom = max(0, adjustedKeyboardHeight)
     }
+
+}
+
+private struct KeyboardDescription {
+
+    /// CGRect that identifies the ending frame rectangle of the keyboard in screen
+    /// coordinates. The frame rectangle reflects the current orientation of the
+    /// device.
+    var frame: CGRect
 
 }
