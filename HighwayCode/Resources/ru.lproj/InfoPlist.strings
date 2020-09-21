@@ -11,3 +11,8 @@
 
 // Short name of the bundle.
 "CFBundleName" = "Штрафы ПДД";
+
+// A message that tells the user why the app is requesting access
+// to the user’s location information while the app is running
+// in the foreground.
+"NSLocationWhenInUseUsageDescription" = "Ваше местоположение необходимо для упрощения поиска ближайших камер автофиксации.";

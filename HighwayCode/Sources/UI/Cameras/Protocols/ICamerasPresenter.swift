@@ -11,6 +11,9 @@ protocol ICamerasPresenter {
     /// Invoked when view is about to appear.
     func viewWillAppear()
 
+    /// Invoked after view becomes completly visible on screen.
+    func viewDidAppear()
+
     /// Invoked when view has disappeared from screen.
     func viewDidDisappear()
 

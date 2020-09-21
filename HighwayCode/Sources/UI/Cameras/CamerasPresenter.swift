@@ -9,10 +9,13 @@
 final class CamerasPresenter: ICamerasPresenter {
 
     private let camerasService: CamerasService
+    private var locationAccessProvider: LocationAccessStatusProvider
+
     weak var view: ICamerasView?
 
-    init(camerasService: CamerasService) {
+    init(camerasService: CamerasService, locationAccessProvider: LocationAccessStatusProvider) {
         self.camerasService = camerasService
+        self.locationAccessProvider = locationAccessProvider
     }
 
     // MARK: - ICamerasPresenter
@@ -22,11 +25,17 @@ final class CamerasPresenter: ICamerasPresenter {
         camerasResource.require(self) { [weak self] in
             self?.updateView()
         }
+        startLocationStatusMonitoring()
         camerasResource.update()
         updateView()
     }
 
+    func viewDidAppear() {
+        requestLocationAccessIfNeeded()
+    }
+
     func viewDidDisappear() {
+        locationAccessProvider.stop()
         camerasService.cameras.unrequire(self)
     }
 
@@ -42,9 +51,39 @@ final class CamerasPresenter: ICamerasPresenter {
         }
         let viewModel = CamerasViewModel(
             cameras: cameras ?? [],
+            locationAccess: locationAccessViewModel,
             isLoading: camerasService.cameras.isLoading
         )
         view?.update(with: viewModel)
+    }
+
+    private func requestLocationAccessIfNeeded() {
+        guard locationAccessProvider.status == .notDetermined else {
+            return
+        }
+        locationAccessProvider.requestWhenInUseAccess()
+    }
+
+    private func startLocationStatusMonitoring() {
+        locationAccessProvider.onStatusChanged = { [weak self] in
+            self?.updateView()
+        }
+        locationAccessProvider.start()
+    }
+
+    private var locationAccessViewModel: CamerasViewModel.LocationAccess {
+        switch locationAccessProvider.status {
+        case .notDetermined:
+            return .notDetermined
+        case .restricted:
+            return .restricted
+        case .denied:
+            return .denied
+        case .allowedAlways, .allowedWhenInUse:
+            return .allowed
+        case .disabled:
+            return .disabled
+        }
     }
 
 }
