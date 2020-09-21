@@ -36,7 +36,7 @@ class RemoteResolutionsService: ResolutionsService, ResolutionProvider {
             success()
         }
         request.failure = { [weak self] failure in
-            // Workaround for the shitty MIU API behaviour. 107 error code means that vehicle was
+            // Workaround for the shitty API behaviour. 107 error code means that vehicle was
             // added to subscriptions but there are no resolutions for it which is totally fine.
             if let failure = failure as? ServiceError, failure.code == 107 {
                 // Since actual subscription is unknown here we are simply triggering
@@ -81,7 +81,12 @@ class RemoteResolutionsService: ResolutionsService, ResolutionProvider {
     }()
 
     private lazy var _resolutions: MutableResourceDecorator<[Int: Resolution]> = {
-        let request = Request<VoidCodable, ResolutionsListResponse, ServiceError>(method: "GET", path: "resolutions")
+        // Starting date is hardcoded to date before automatic spped cameras were deployed to
+        // always receive all available resolutions.
+        let queryItems = ["dateFrom": "2020-01-01"]
+        let request = Request<VoidCodable, ResolutionsListResponse, ServiceError>(
+            method: "GET", path: "resolutions", queryItems: queryItems
+        )
         let resource = HttpConnectorResource(connector: connectors.http, request: request).map {
             Dictionary(uniqueKeysWithValues: $0.resolutions.lazy.map { ($0.id, $0) })
         }
