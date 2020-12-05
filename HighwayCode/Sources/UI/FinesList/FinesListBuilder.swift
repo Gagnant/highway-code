@@ -23,7 +23,7 @@ class FinesListBuilder {
         router.controller = controller
         let navigation = UINavigationController(rootViewController: controller)
         navigation.navigationBar.prefersLargeTitles = true
-        navigation.tabBarItem.title = NSLocalizedString("screen-fines-list-tab-title", comment: "")
+        navigation.tabBarItem.title = Localized.Screen.FinesList.tabTitle
         navigation.tabBarItem.image = #imageLiteral(resourceName: "LawFile")
         return navigation
     }

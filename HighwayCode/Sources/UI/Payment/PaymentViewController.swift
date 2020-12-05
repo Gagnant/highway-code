@@ -85,9 +85,8 @@ class PaymentViewController: UIViewController {
     }
 
     private func presentGenericError(action: @escaping () -> Void) {
-        let alert = UIAlertController(title: "", message: NSLocalizedString("generic-error-message", comment: ""), preferredStyle: .alert)
-        let actionTitle = NSLocalizedString("generic-error-continue", comment: "")
-        let action = UIAlertAction(title: actionTitle, style: .default) { _ in action() }
+        let alert = UIAlertController(title: "", message: Localized.Error.Generic.message, preferredStyle: .alert)
+        let action = UIAlertAction(title: Localized.Error.Generic.continue, style: .default) { _ in action() }
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }

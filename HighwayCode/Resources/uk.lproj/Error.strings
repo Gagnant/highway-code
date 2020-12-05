@@ -1,0 +1,13 @@
+/* 
+  Error.strings
+  HighwayCode
+
+  Created by Andrii Vysotskyi on 05.12.2020.
+  Copyright © 2020 Gagnant. All rights reserved.
+*/
+
+/*No comment provided by engineer.*/
+"generic.message" = "На жаль, щось пішло не так, будь ласка, спробуйте ще раз.";
+
+/*No comment provided by engineer.*/
+"generic.continue" = "Продовжити";

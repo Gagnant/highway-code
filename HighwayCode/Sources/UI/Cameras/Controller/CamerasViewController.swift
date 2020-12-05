@@ -66,7 +66,7 @@ class CamerasViewController: UIViewController, ICamerasView {
     }()
 
     private func configureNavigationBar() {
-        navigationItem.title = NSLocalizedString("screen-cameras-navigation-title", comment: "")
+        navigationItem.title = Localized.Screen.Cameras.navigationTitle
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .refresh, target: self, action: #selector(didTapRefreshButton)
         )

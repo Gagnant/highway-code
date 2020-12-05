@@ -29,9 +29,8 @@ class WelcomeRouter: IWelcomeRouter {
     }
 
     func error() {
-        let alert = UIAlertController(title: "", message: NSLocalizedString("generic-error-message", comment: ""), preferredStyle: .alert)
-        let actionTitle = NSLocalizedString("generic-error-continue", comment: "")
-        let action = UIAlertAction(title: actionTitle, style: .default, handler: nil)
+        let alert = UIAlertController(title: "", message: Localized.Error.Generic.message, preferredStyle: .alert)
+        let action = UIAlertAction(title: Localized.Error.Generic.continue, style: .default, handler: nil)
         alert.addAction(action)
         controller?.present(alert, animated: true, completion: nil)
     }

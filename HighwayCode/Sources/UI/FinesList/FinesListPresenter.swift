@@ -52,7 +52,7 @@ class FinesListPresenter: IFinesListPresenter, FinesListInteractorDelegate {
         ]
         elements += unpaidResolutionsElements + paidResolutionsElements + extinguishedResolutionsElements
         let viewModel = FinesListViewModel(
-            title: NSLocalizedString("resolutions-list-navigation-title", comment: ""),
+            title: Localized.Screen.ResolutionsList.navigationTitle,
             elements: elements,
             isRefreshing: interactor.isLoading
         )
@@ -67,13 +67,15 @@ class FinesListPresenter: IFinesListPresenter, FinesListInteractorDelegate {
             return []
         }
         var elements: [AnyFinesListElementViewModel] = [
-            .init(FinesListHeaderViewModel(id: "section-unpaid-header", name: NSLocalizedString("resolutions-list-unpaid-title", comment: "")))
+            .init(FinesListHeaderViewModel(
+                id: "section-unpaid-header", name: Localized.Screen.ResolutionsList.unpaidTitle
+            ))
         ]
         elements.append(contentsOf: resolutions.map(createViewModel))
         let tooltip = FinesListTooltipViewModel(
             id: "section-unpaid-tooltip",
-            title: NSLocalizedString("resolutions-list-tooltip-unpaid-title", comment: ""),
-            description: NSLocalizedString("resolutions-list-tooltip-unpaid-description", comment: "")
+            title: Localized.Screen.ResolutionsList.Tooltip.unpaidTitle,
+            description: Localized.Screen.ResolutionsList.Tooltip.unpaidDescription
         )
         elements.append(.init(tooltip))
         return elements
@@ -85,13 +87,15 @@ class FinesListPresenter: IFinesListPresenter, FinesListInteractorDelegate {
             return []
         }
         var elements: [AnyFinesListElementViewModel] = [
-            .init(FinesListHeaderViewModel(id: "section-paid-header", name: NSLocalizedString("resolutions-list-paid-title", comment: "")))
+            .init(FinesListHeaderViewModel(
+                id: "section-paid-header", name: Localized.Screen.ResolutionsList.paidTitle
+            ))
         ]
         elements.append(contentsOf: resolutions.map(createViewModel))
         let tooltip = FinesListTooltipViewModel(
             id: "section-paid-tooltip",
-            title: NSLocalizedString("resolutions-list-tooltip-paid-title", comment: ""),
-            description: NSLocalizedString("resolutions-list-tooltip-paid-description", comment: "")
+            title: Localized.Screen.ResolutionsList.Tooltip.paidTitle,
+            description: Localized.Screen.ResolutionsList.Tooltip.paidDescription
         )
         elements.append(.init(tooltip))
         return elements
@@ -103,7 +107,9 @@ class FinesListPresenter: IFinesListPresenter, FinesListInteractorDelegate {
             return []
         }
         var elements: [AnyFinesListElementViewModel] = [
-            .init(FinesListHeaderViewModel(id: "section-extinguished-header", name: NSLocalizedString("resolutions-list-extinguished-title", comment: "")))
+            .init(FinesListHeaderViewModel(
+                id: "section-extinguished-header", name: Localized.Screen.ResolutionsList.extinguishedTitle
+            ))
         ]
         elements.append(contentsOf: resolutions.map(createViewModel))
         return elements

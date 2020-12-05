@@ -24,7 +24,7 @@ final class VehicleFinesListPresenter: FinesListPresenter {
         elements += unpaidResolutionsElements + paidResolutionsElements + extinguishedResolutionsElements
         let actionElement = FinesListActionViewModel(
             id: "vehicle-action",
-            title: NSLocalizedString("vehicle-resolutions-action-remove", comment: ""),
+            title: Localized.Screen.VehicleResolutions.actionRemove,
             isDestructive: true,
             handler: TaggedClosureBox(id: "vehicle-action") { [weak self] in self?.removeSubscription() }
         )

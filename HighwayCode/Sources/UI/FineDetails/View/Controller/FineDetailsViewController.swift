@@ -150,7 +150,7 @@ class FineDetailsViewController: UIViewController, IFineDetailsView {
 
     private func configureNavigationItem() {
         navigationItem.largeTitleDisplayMode = .never
-        navigationItem.title = NSLocalizedString("fine-details-navigation-title", comment: "")
+        navigationItem.title = Localized.Screen.FineDetails.navigationTitle
     }
 
     private func configureMediaCollectionView() {

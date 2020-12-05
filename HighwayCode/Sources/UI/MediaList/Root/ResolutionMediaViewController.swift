@@ -67,8 +67,8 @@ class ResolutionMediaViewController: UIViewController {
         guard let referenceMediaIndex = _referenceMediaIndex else {
             return
         }
-        let localizedTitle = String.localizedStringWithFormat(
-            NSLocalizedString("resolution-media-title-connector", comment: ""), referenceMediaIndex + 1, mediaItems.count
+        let localizedTitle = Localized.Screen.ResolutionMedia.titleConnector(
+            referenceMediaIndex + 1, mediaItems.count
         )
         contentTitleLabel.text = localizedTitle
     }

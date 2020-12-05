@@ -28,6 +28,9 @@ xcuserdata/
 Carthage/Build
 Carthage/Checkouts
 
+# Codegen
+HighwayCode/Sources/Generated/*.swift
+
 # Code Injection
 iOSInjectionProject/
 

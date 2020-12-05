@@ -26,11 +26,10 @@ struct ServiceError: LocalizedError, Decodable {
 
     private func localizedDescriptions(for code: Int) -> String {
         let descriptionKeys = [
-            107: "error-missing-vehicle",
-            108: "error-document-not-related-to-vehicle"
+            107: Localized.Core.errorMissingVehicle,
+            108: Localized.Core.errorDocumentNotRelatedToVehicle
         ]
-        let key = descriptionKeys[code] ?? "error-client-internal"
-        return NSLocalizedString(key, tableName: "Core", bundle: .main, comment: "")
+        return descriptionKeys[code] ?? Localized.Core.errorClientInternal
     }
 
 }

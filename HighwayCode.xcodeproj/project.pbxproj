@@ -117,7 +117,7 @@
 		04B2C0C724CB05880059C08C /* FineDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2C0C624CB05880059C08C /* FineDetailsPresenter.swift */; };
 		04B2C0C924CB05960059C08C /* FineDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2C0C824CB05960059C08C /* FineDetailsRouter.swift */; };
 		04B2C0CB24CB05A10059C08C /* FineDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2C0CA24CB05A10059C08C /* FineDetailsBuilder.swift */; };
-		04B44FA524D1FABD00BBCA40 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04B44FA324D1FABD00BBCA40 /* Localizable.strings */; };
+		04B44FA524D1FABD00BBCA40 /* Screen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04B44FA324D1FABD00BBCA40 /* Screen.strings */; };
 		04B44FAE24D21D5900BBCA40 /* VehicleFinesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B44FAD24D21D5900BBCA40 /* VehicleFinesListPresenter.swift */; };
 		04B44FB024D21D6A00BBCA40 /* VehicleFinesListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B44FAF24D21D6A00BBCA40 /* VehicleFinesListBuilder.swift */; };
 		04B44FB324D2B89A00BBCA40 /* FinesListActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B44FB224D2B89A00BBCA40 /* FinesListActionViewModel.swift */; };
@@ -187,6 +187,9 @@
 		46003974257BC94300E16ADD /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 46003973257BC94300E16ADD /* FirebaseFunctions */; };
 		46003976257BC94300E16ADD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46003975257BC94300E16ADD /* FirebaseAuth */; };
 		46003978257BC94300E16ADD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 46003977257BC94300E16ADD /* FirebaseFirestore */; };
+		461A2679257BDE6D006841AD /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A2677257BDE6D006841AD /* Strings+Generated.swift */; };
+		461A267A257BDE6D006841AD /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A2678257BDE6D006841AD /* XCAssets+Generated.swift */; };
+		461A267F257BE03A006841AD /* Error.strings in Resources */ = {isa = PBXBuildFile; fileRef = 461A2681257BE03A006841AD /* Error.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -338,9 +341,9 @@
 		04B2C0C824CB05960059C08C /* FineDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDetailsRouter.swift; sourceTree = "<group>"; };
 		04B2C0CA24CB05A10059C08C /* FineDetailsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDetailsBuilder.swift; sourceTree = "<group>"; };
 		04B44FA024D1F9C700BBCA40 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/FineDetailsViewController.strings; sourceTree = "<group>"; };
-		04B44FA424D1FABD00BBCA40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		04B44FA624D1FAD300BBCA40 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		04B44FA724D1FAF700BBCA40 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04B44FA424D1FABD00BBCA40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Screen.strings; sourceTree = "<group>"; };
+		04B44FA624D1FAD300BBCA40 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Screen.strings; sourceTree = "<group>"; };
+		04B44FA724D1FAF700BBCA40 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Screen.strings; sourceTree = "<group>"; };
 		04B44FAB24D1FE1500BBCA40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FineDetailsViewController.strings; sourceTree = "<group>"; };
 		04B44FAD24D21D5900BBCA40 /* VehicleFinesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleFinesListPresenter.swift; sourceTree = "<group>"; };
 		04B44FAF24D21D6A00BBCA40 /* VehicleFinesListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleFinesListBuilder.swift; sourceTree = "<group>"; };
@@ -411,6 +414,11 @@
 		04F9D03F24D34EA300F4C08D /* IVehicleFinesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVehicleFinesListInteractor.swift; sourceTree = "<group>"; };
 		04F9D04124D34FD000F4C08D /* IVehicleFinesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVehicleFinesListRouter.swift; sourceTree = "<group>"; };
 		04F9D04324D3501E00F4C08D /* VehicleFinesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleFinesListRouter.swift; sourceTree = "<group>"; };
+		461A2677257BDE6D006841AD /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		461A2678257BDE6D006841AD /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		461A2680257BE03A006841AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Error.strings; sourceTree = "<group>"; };
+		461A2683257BE03D006841AD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Error.strings; sourceTree = "<group>"; };
+		461A2684257BE03E006841AD /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Error.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1253,7 +1261,8 @@
 		04EB3B1724C6DC4300BD58DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				04B44FA324D1FABD00BBCA40 /* Localizable.strings */,
+				461A2681257BE03A006841AD /* Error.strings */,
+				04B44FA324D1FABD00BBCA40 /* Screen.strings */,
 				0444B6CC24D593C8002D6362 /* Core.strings */,
 				04F9D03724D3461700F4C08D /* InfoPlist.strings */,
 				04F9D03B24D34BEA00F4C08D /* Info.plist */,
@@ -1271,6 +1280,7 @@
 				04EB3B1424C6DC2300BD58DD /* Core */,
 				04EB3B1524C6DC2800BD58DD /* UI */,
 				04EB3B1624C6DC2E00BD58DD /* Utils */,
+				461A2676257BDE6D006841AD /* Generated */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1284,6 +1294,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		461A2676257BDE6D006841AD /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				461A2677257BDE6D006841AD /* Strings+Generated.swift */,
+				461A2678257BDE6D006841AD /* XCAssets+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1291,6 +1310,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04EB3B1024C6DAE600BD58DD /* Build configuration list for PBXNativeTarget "HighwayCode" */;
 			buildPhases = (
+				461A2672257BDD0F006841AD /* Swiftgen */,
 				04EB3AF824C6DAE100BD58DD /* Sources */,
 				04EB3AF924C6DAE100BD58DD /* Frameworks */,
 				04EB3AFA24C6DAE100BD58DD /* Resources */,
@@ -1359,7 +1379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B44FB924D2BA4000BBCA40 /* FinesListActionCollectionCell.xib in Resources */,
-				04B44FA524D1FABD00BBCA40 /* Localizable.strings in Resources */,
+				04B44FA524D1FABD00BBCA40 /* Screen.strings in Resources */,
 				0421008C24CF5D2B002BCB9C /* VehiclesListElementCollectionCell.xib in Resources */,
 				04E1475624C8753D00313D01 /* FinesListViewController.xib in Resources */,
 				04B2C0A724CA24280059C08C /* VehicleSubscriptionViewController.xib in Resources */,
@@ -1373,6 +1393,7 @@
 				04B44FC124D2E1F800BBCA40 /* ResolutionMediaImageViewController.xib in Resources */,
 				044E3C5124CC2EE700E3F370 /* FineDetailsViewController.xib in Resources */,
 				0444B6CA24D593C8002D6362 /* Core.strings in Resources */,
+				461A267F257BE03A006841AD /* Error.strings in Resources */,
 				0444791E24CDD40A007BCEEB /* PaymentViewController.xib in Resources */,
 				04B2C0A624C9ECD30059C08C /* FinesListTooltipCollectionCell.xib in Resources */,
 				049E718D24C7282400F6508F /* CamerasViewController.xib in Resources */,
@@ -1385,6 +1406,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		461A2672257BDD0F006841AD /* Swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftgen config run\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04EB3AF824C6DAE100BD58DD /* Sources */ = {
@@ -1508,6 +1550,7 @@
 				0421009624CF6993002BCB9C /* VehiclesListViewModel.swift in Sources */,
 				0458EC6E24D000DC00DB60E7 /* Cancellable.swift in Sources */,
 				04F9D04024D34EA300F4C08D /* IVehicleFinesListInteractor.swift in Sources */,
+				461A267A257BDE6D006841AD /* XCAssets+Generated.swift in Sources */,
 				04B44FC724D2F86B00BBCA40 /* ResolutionMediaContentViewController.swift in Sources */,
 				04A25F8B24EC1F9B00D0C0D2 /* AVPlayerItem+Extensions.swift in Sources */,
 				0482137F24CDBA3700A8BA23 /* SubscriptionConnectorRequest.swift in Sources */,
@@ -1525,6 +1568,7 @@
 				04D566EB24D04967009B2E28 /* RemoteResolutionsService.swift in Sources */,
 				04E1476B24C881DE00313D01 /* IFinesListPresenter.swift in Sources */,
 				049E719324C7285000F6508F /* CamerasPresenter.swift in Sources */,
+				461A2679257BDE6D006841AD /* Strings+Generated.swift in Sources */,
 				04AF61CE24C856AA009E93F3 /* VehicleSubscriptionPresenter.swift in Sources */,
 				04E1476F24C881FD00313D01 /* FinesListViewModel.swift in Sources */,
 				0493058B24D01A5100350CB5 /* RemotePaymentsService.swift in Sources */,
@@ -1614,14 +1658,14 @@
 			name = VehicleSubscriptionViewController.xib;
 			sourceTree = "<group>";
 		};
-		04B44FA324D1FABD00BBCA40 /* Localizable.strings */ = {
+		04B44FA324D1FABD00BBCA40 /* Screen.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				04B44FA424D1FABD00BBCA40 /* en */,
 				04B44FA624D1FAD300BBCA40 /* ru */,
 				04B44FA724D1FAF700BBCA40 /* uk */,
 			);
-			name = Localizable.strings;
+			name = Screen.strings;
 			sourceTree = "<group>";
 		};
 		04F9D03724D3461700F4C08D /* InfoPlist.strings */ = {
@@ -1632,6 +1676,16 @@
 				04F9D03924D3461900F4C08D /* uk */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		461A2681257BE03A006841AD /* Error.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				461A2680257BE03A006841AD /* en */,
+				461A2683257BE03D006841AD /* ru */,
+				461A2684257BE03E006841AD /* uk */,
+			);
+			name = Error.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1763,10 +1817,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MDY39C55RJ;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = HighwayCode/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1793,10 +1844,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MDY39C55RJ;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = HighwayCode/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

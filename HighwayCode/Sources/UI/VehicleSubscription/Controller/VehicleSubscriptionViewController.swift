@@ -78,7 +78,7 @@ class VehicleSubscriptionViewController: UIViewController, NVActivityIndicatorVi
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .cancel, target: self, action: #selector(didTapCancelButton)
         )
-        navigationItem.title = NSLocalizedString("vehicle-subscription-navigation-title", comment: "")
+        navigationItem.title = Localized.Screen.VehicleSubscription.navigationTitle
         navigationItem.largeTitleDisplayMode = .never
     }
 

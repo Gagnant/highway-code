@@ -16,9 +16,9 @@ final class VehicleFinesListRouter: FinesListRouter, IVehicleFinesListRouter {
 
     func removal(confirmation: @escaping () -> Void) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let removeActionTitle = NSLocalizedString("vehicle-resolutions-removal-approve", comment: "")
+        let removeActionTitle = Localized.Screen.VehicleResolutions.removalApprove
         let removeAction = UIAlertAction(title: removeActionTitle, style: .destructive) { _ in confirmation() }
-        let cancelActionTitle = NSLocalizedString("vehicle-resolutions-removal-cancel", comment: "")
+        let cancelActionTitle = Localized.Screen.VehicleResolutions.removalCancel
         let cancelAction = UIAlertAction(title: cancelActionTitle, style: .cancel, handler: nil)
         alert.addAction(removeAction)
         alert.addAction(cancelAction)
@@ -26,8 +26,8 @@ final class VehicleFinesListRouter: FinesListRouter, IVehicleFinesListRouter {
     }
 
     func error() {
-        let alert = UIAlertController(title: "", message: NSLocalizedString("generic-error-message", comment: ""), preferredStyle: .alert)
-        let actionTitle = NSLocalizedString("generic-error-continue", comment: "")
+        let alert = UIAlertController(title: "", message: Localized.Error.Generic.message, preferredStyle: .alert)
+        let actionTitle = Localized.Error.Generic.continue
         let action = UIAlertAction(title: actionTitle, style: .default, handler: nil)
         alert.addAction(action)
         controller?.present(alert, animated: true, completion: nil)

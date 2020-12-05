@@ -1,0 +1,53 @@
+/*No comment provided by engineer.*/
+"fine-details.navigation-title" = "Resolution";
+
+/*No comment provided by engineer.*/
+"resolutions-list.extinguished-title" = "Suppressed resolutions";
+
+/*No comment provided by engineer.*/
+"resolutions-list.navigation-title" = "My fines";
+
+/*No comment provided by engineer.*/
+"resolutions-list.paid-title" = "Paid Resolutions";
+
+/*No comment provided by engineer.*/
+"resolutions-list.tooltip.paid-description" = "After the fine has been paid, its repayment takes place within 5-10 business days.";
+
+/*No comment provided by engineer.*/
+"resolutions-list.tooltip.paid-title" = "NOTE!";
+
+/*No comment provided by engineer.*/
+"resolutions-list.tooltip.unpaid-description" = "If the administrative fine is paid within 10 days, the amount of the fine is 50%% of the total amount.";
+
+/*No comment provided by engineer.*/
+"resolutions-list.tooltip.unpaid-title" = "NOTE!";
+
+/*No comment provided by engineer.*/
+"resolutions-list.unpaid-title" = "Outstanding resolutions";
+
+/*No comment provided by engineer.*/
+"cameras.tab-title" = "Radars map";
+
+/*No comment provided by engineer.*/
+"cameras.navigation-title" = "Traffic cameras";
+
+/*No comment provided by engineer.*/
+"fine-details.navigation-title" = "Resolution";
+
+/*No comment provided by engineer.*/
+"fines-list.tab-title" = "Fines";
+
+/*No comment provided by engineer.*/
+"vehicle-subscription.navigation-title" = "Add vehicle";
+
+/*No comment provided by engineer.*/
+"resolution-media.title-connector" = "%d of %d";
+
+/*No comment provided by engineer.*/
+"vehicle-resolutions.action-remove" = "Delete";
+
+/*No comment provided by engineer.*/
+"vehicle-resolutions.removal-approve" = "Delete";
+
+/*No comment provided by engineer.*/
+"vehicle-resolutions.removal-cancel" = "Cancel";
