@@ -48,6 +48,17 @@ class FirebaseAuthenticationService: AuthenticationService, AccessTokenProvider 
         auth.signInAnonymously(completion: completion)
     }
 
+    func signOut(success: (() -> Void)?, failure: (() -> Void)?) {
+        do {
+            try auth.signOut()
+            updateUser()
+            success?()
+        } catch {
+            updateUser()
+            failure?()
+        }
+    }
+
     // MARK: - Private
 
     private func didSetUser(_ oldValue: User?) {

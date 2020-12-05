@@ -20,6 +20,9 @@ protocol AuthenticationService {
     /// Authenticates user.
     func authenticate(success: (() -> Void)?, failure: (() -> Void)?)
 
+    /// Performs user sign out.
+    func signOut(success: (() -> Void)?, failure: (() -> Void)?)
+
 }
 
 protocol AuthenticationServiceDelegate: class {
