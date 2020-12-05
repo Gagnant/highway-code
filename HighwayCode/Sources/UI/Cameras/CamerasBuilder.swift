@@ -19,8 +19,7 @@ class CamerasBuilder {
         presenter.view = controller
         let navigation = UINavigationController(rootViewController: controller)
         navigation.tabBarItem.title = Localized.Screen.Cameras.tabTitle
-        
-        navigation.tabBarItem.image = #imageLiteral(resourceName: "SpeedCamera")
+        navigation.tabBarItem.image = Asset.Images.speedCamera.image
         return navigation
     }
 

@@ -18,7 +18,8 @@ strings:
 ## Generate constants for your Assets Catalogs, including constants for images, colors, ARKit resources, etc.
 xcassets:
   inputs:
-    - Resources/Assets.xcassets
+    - Resources/Images.xcassets
+    - Resources/Colors.xcassets
   outputs:
     - templateName: swift5
       params:

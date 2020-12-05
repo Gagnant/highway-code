@@ -24,7 +24,8 @@ class FinesListBuilder {
         let navigation = UINavigationController(rootViewController: controller)
         navigation.navigationBar.prefersLargeTitles = true
         navigation.tabBarItem.title = Localized.Screen.FinesList.tabTitle
-        navigation.tabBarItem.image = #imageLiteral(resourceName: "LawFile")
+
+        navigation.tabBarItem.image = Asset.Images.lawFile.image
         return navigation
     }
 

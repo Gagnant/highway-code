@@ -177,7 +177,7 @@
 		04E1477924C8891500313D01 /* FinesListTooltipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1477824C8891500313D01 /* FinesListTooltipViewModel.swift */; };
 		04E1477B24C8893C00313D01 /* IFinesListElementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1477A24C8893C00313D01 /* IFinesListElementViewModel.swift */; };
 		04EB3B0024C6DAE100BD58DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB3AFF24C6DAE100BD58DD /* AppDelegate.swift */; };
-		04EB3B0924C6DAE600BD58DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EB3B0824C6DAE600BD58DD /* Assets.xcassets */; };
+		04EB3B0924C6DAE600BD58DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EB3B0824C6DAE600BD58DD /* Images.xcassets */; };
 		04ED65B424F5841B000E67B4 /* LocationStatusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED65B324F5841B000E67B4 /* LocationStatusProvider.swift */; };
 		04F9D03524D3461700F4C08D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F9D03724D3461700F4C08D /* InfoPlist.strings */; };
 		04F9D03D24D34C0600F4C08D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F9D03C24D34C0500F4C08D /* LaunchScreen.storyboard */; };
@@ -190,6 +190,7 @@
 		461A2679257BDE6D006841AD /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A2677257BDE6D006841AD /* Strings+Generated.swift */; };
 		461A267A257BDE6D006841AD /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A2678257BDE6D006841AD /* XCAssets+Generated.swift */; };
 		461A267F257BE03A006841AD /* Error.strings in Resources */ = {isa = PBXBuildFile; fileRef = 461A2681257BE03A006841AD /* Error.strings */; };
+		461A2688257BE623006841AD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461A2687257BE623006841AD /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -404,7 +405,7 @@
 		04E1477A24C8893C00313D01 /* IFinesListElementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFinesListElementViewModel.swift; sourceTree = "<group>"; };
 		04EB3AFC24C6DAE100BD58DD /* HighwayCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighwayCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EB3AFF24C6DAE100BD58DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04EB3B0824C6DAE600BD58DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04EB3B0824C6DAE600BD58DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		04ED65B324F5841B000E67B4 /* LocationStatusProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStatusProvider.swift; sourceTree = "<group>"; };
 		04F9D03624D3461700F4C08D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		04F9D03824D3461800F4C08D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -419,6 +420,7 @@
 		461A2680257BE03A006841AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Error.strings; sourceTree = "<group>"; };
 		461A2683257BE03D006841AD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Error.strings; sourceTree = "<group>"; };
 		461A2684257BE03E006841AD /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Error.strings; sourceTree = "<group>"; };
+		461A2687257BE623006841AD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1267,7 +1269,8 @@
 				04F9D03724D3461700F4C08D /* InfoPlist.strings */,
 				04F9D03B24D34BEA00F4C08D /* Info.plist */,
 				0482133F24CDB1C200A8BA23 /* GoogleService-Info.plist */,
-				04EB3B0824C6DAE600BD58DD /* Assets.xcassets */,
+				04EB3B0824C6DAE600BD58DD /* Images.xcassets */,
+				461A2687257BE623006841AD /* Colors.xcassets */,
 				04F9D03C24D34C0500F4C08D /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -1389,10 +1392,11 @@
 				0494CFCE24D3421400E2884D /* WelcomeViewController.xib in Resources */,
 				04F9D03D24D34C0600F4C08D /* LaunchScreen.storyboard in Resources */,
 				04F9D03524D3461700F4C08D /* InfoPlist.strings in Resources */,
-				04EB3B0924C6DAE600BD58DD /* Assets.xcassets in Resources */,
+				04EB3B0924C6DAE600BD58DD /* Images.xcassets in Resources */,
 				04B44FC124D2E1F800BBCA40 /* ResolutionMediaImageViewController.xib in Resources */,
 				044E3C5124CC2EE700E3F370 /* FineDetailsViewController.xib in Resources */,
 				0444B6CA24D593C8002D6362 /* Core.strings in Resources */,
+				461A2688257BE623006841AD /* Colors.xcassets in Resources */,
 				461A267F257BE03A006841AD /* Error.strings in Resources */,
 				0444791E24CDD40A007BCEEB /* PaymentViewController.xib in Resources */,
 				04B2C0A624C9ECD30059C08C /* FinesListTooltipCollectionCell.xib in Resources */,

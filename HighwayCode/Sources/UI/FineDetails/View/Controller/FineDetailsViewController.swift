@@ -122,9 +122,9 @@ class FineDetailsViewController: UIViewController, IFineDetailsView {
 
     private func configureStampImage(viewModel: FineDetailsViewModel) {
         if viewModel.isPaid && !viewModel.isPaymentApproved {
-            stampImageView.image = #imageLiteral(resourceName: "Stamps/Paid")
+            stampImageView.image = Asset.Images.Stamps.paid.image
         } else if viewModel.isPaymentApproved {
-            stampImageView.image = #imageLiteral(resourceName: "Stamps/Suppressed")
+            stampImageView.image = Asset.Images.Stamps.suppressed.image
         } else {
             stampImageView.image = nil
         }
